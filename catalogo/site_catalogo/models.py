@@ -3,16 +3,11 @@ from django.contrib.auth.models import User
 
 # Create your models here.
 
-class Postagem(models.Model):
-    titulo = models.Charfield(max_length=30)
-    descricao = models.Charfield(max_length=200)
-    imagem = models.ImageFiel(upload_to='uploads/')
-
 class Roupa(models.Model):
     nome_roupa = models.CharField(max_length=50)
     descricao_roupa = models.CharField(max_length=250)
     composicao_roupa = models.CharField(max_length=100)
-    foto_roupa = models.ImageField()
+    foto_roupa = models.ImageField(upload_to='uploads/')
     marca = models.ForeignKey("Marca", on_delete=models.CASCADE, related_name='roupas')
     modelo = models.ForeignKey("Modelo", on_delete=models.CASCADE, related_name='roupas')
 
