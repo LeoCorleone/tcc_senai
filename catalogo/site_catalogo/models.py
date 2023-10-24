@@ -4,10 +4,10 @@ from django.contrib.auth.models import User
 # Create your models here.
 
 class Roupa(models.Model):
-    nome_roupa = models.CharField(max_length=50)
+    titulo_roupa = models.CharField(max_length=50)
     descricao_roupa = models.CharField(max_length=250)
     composicao_roupa = models.CharField(max_length=100)
-    foto_roupa = models.ImageField(upload_to='uploads/')
+    imagem_roupa = models.ImageField(upload_to='uploads/')
     marca = models.ForeignKey("Marca", on_delete=models.CASCADE, related_name='roupas')
     modelo = models.ForeignKey("Modelo", on_delete=models.CASCADE, related_name='roupas')
 
