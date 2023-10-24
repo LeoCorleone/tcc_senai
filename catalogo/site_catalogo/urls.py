@@ -12,7 +12,6 @@ urlpatterns = [
     path("", views.index, name="index"),
     path("adm", views.adm, name= "adm"),
     path('postagem/', postagem, name = 'postagem'),
-    path('success/', uploadok, name = 'success'),
 ]
 
 if settings.DEBUG:

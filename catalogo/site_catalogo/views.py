@@ -18,7 +18,3 @@ def postagem(request):
     else:
         form = PostagemForms()
     return render(request, 'postagemform.html', {'form' : form})
-  
-  
-def uploadok(request):
-    return HttpResponse(' upload successful')

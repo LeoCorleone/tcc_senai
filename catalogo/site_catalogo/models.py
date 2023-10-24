@@ -11,12 +11,20 @@ class Roupa(models.Model):
     marca = models.ForeignKey("Marca", on_delete=models.CASCADE, related_name='roupas')
     modelo = models.ForeignKey("Modelo", on_delete=models.CASCADE, related_name='roupas')
 
+    
+
 class Marca(models.Model):
     nome_marca = models.CharField(max_length=50)
+    
+    def __str__(self):
+        return self.nome_marca
 
 class Modelo(models.Model):
     nome_modelo = models.CharField(max_length=50)
     descricao_modelo = models.CharField(max_length=250)
+
+    def __str__(self):
+        return self.nome_modelo
 
 class UserRoupa(models.Model):
     curtida_roupa = models.IntegerField()
