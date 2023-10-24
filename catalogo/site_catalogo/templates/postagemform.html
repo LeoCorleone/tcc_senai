@@ -2,14 +2,31 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
+    <link rel="stylesheet" href="{% static 'assets/css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+    <script src="{% static 'assets/js/bootstrap.bundle.js' %}"></script>
     <meta charset="UTF-8">
     <title>Postagem</title>
 </head>
 <body>
-    <form method = "post" enctype="multipart/form-data">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Upload</button>
-    </form>
+    <div class="container-fluid">
+        <div class="login-card">
+            <div class="card-header">
+                <h1 class="log">Adicionar Roupa</h1>
+            </div>
+            <form method = "post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <!-- {{ form.as_p }}
+                <button type="submit">Upload</button> -->
+                {% for field in form.visible_fields %}
+                  <div class="mb-3">
+                      <label for="{{field.id_for_label}}" class="form-label">{{field.label}}</label>
+                      {{field}}
+                  </div>
+                    {% endfor %}
+                  <button class="btn btn-success" type="submit">Postar</button>
+            </form>
+        </div>
+      </div>    
 </body>
 </html>
