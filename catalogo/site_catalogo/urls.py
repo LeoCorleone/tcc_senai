@@ -9,9 +9,10 @@ from django.conf.urls.static import static
 from . import views 
 
 urlpatterns = [
-    path("", views.index, name="index"),
-    path("adm", views.adm, name= "adm"),
+    path("", index, name="index"),
+    path("adm", adm, name= "adm"),
     path('postagem/', postagem, name = 'postagem'),
+    path('login/', login, name='login')
 ]
 
 if settings.DEBUG:
