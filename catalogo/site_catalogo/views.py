@@ -2,6 +2,8 @@ from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from .models import Roupa
 from .forms import *
+from django.contrib import auth
+from django.contrib.auth.models import User
 
 def index(request):
     postagem = Roupa.objects.all()
@@ -21,3 +23,4 @@ def postagem(request):
     else:
         form = PostagemForms()
     return render(request, 'postagemform.html', {'form' : form})
+
