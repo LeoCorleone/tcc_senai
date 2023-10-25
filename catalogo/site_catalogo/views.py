@@ -6,8 +6,7 @@ from django.contrib import auth
 from django.contrib.auth.models import User
 
 def index(request):
-    postagem = Roupa.objects.all()
-    return render(request, 'index.html', {"postagem": postagem})
+    return render(request, 'index.html')
 
 def adm(request):
     return render(request, 'adm.html')
@@ -23,4 +22,3 @@ def postagem(request):
     else:
         form = PostagemForms()
     return render(request, 'postagemform.html', {'form' : form})
-
