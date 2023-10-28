@@ -13,7 +13,7 @@ urlpatterns = [
     path("", views.index, name="index"),
     path("adm/", views.adm, name= "adm"),
     path('postagem/', postagem, name = 'postagem'),
-    # path('login/', views.login, name='login')
+    path('login', login, name='login')
 ]
 
 # if settings.DEBUG:

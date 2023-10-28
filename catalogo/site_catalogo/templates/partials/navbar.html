@@ -21,7 +21,7 @@
                             <div class="myform bg-dark">
                                 <h1 class="text-center">Login</h1>
                                 <ul class="nav justify-content-center border-bottom pb-3 mb-3;"></ul>
-                                <form style="text-align: left;" action="{% url 'login' %}">
+                                <form style="text-align: left;" method="post" action="{% url 'login' %}">
                                     {% csrf_token %}
                                     {% for field in form.visible_fields %}
                                     <div class="mb-3 mt-4">
@@ -30,8 +30,8 @@
                                     </div>
                                     {% endfor %}
                                     <button type="submit" class="btn btn-light mt-3">LOGIN</button>
-                                    <!-- <button type="submit" class="btn btn-light mt-3">CANCELAR</button>
-                                    <p><a href="#">Cadastre-se</a></p> -->
+                                    <button type="submit" class="btn btn-light mt-3">CANCELAR</button>
+                                    <p><a href="#">Cadastre-se</a></p>
                                 </form>
                             </div>
                         </div>
