@@ -8,7 +8,8 @@ from django.contrib.auth import login, authenticate
 
 def index(request):
     form = LoginForms()
-    return render(request, 'index.html', {'form': form})
+    postagem = Roupa.objects.all()
+    return render(request, 'index.html', {'form': form, 'postagem': postagem})
 
 def login(request):
     if request.method == 'POST':
