@@ -7,6 +7,9 @@ class PostagemForms(forms.ModelForm):
         model = Roupa
         fields = ['titulo_roupa', 'descricao_roupa', 'composicao_roupa', 'imagem_roupa', 'marca', 'modelo']
 
+class ComentarioForm(forms.Form):
+    comentario_roupa = forms.CharField(widget=forms.Textarea)
+
 from django import forms
 
 class LoginForms(forms.Form):

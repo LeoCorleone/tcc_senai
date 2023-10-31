@@ -13,7 +13,9 @@ urlpatterns = [
     path("", views.index, name="index"),
     path("adm/", views.adm, name= "adm"),
     path('postagem/', postagem, name = 'postagem'),
-    path('login', login, name='login')
+    path('login', login, name='login'),
+    path('listarroupas/', views.listar_roupas, name='listar_roupas'),
+
 ]
 
 # if settings.DEBUG:

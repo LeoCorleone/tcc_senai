@@ -48,3 +48,9 @@ def postagem(request):
     else:
         form = PostagemForms()
     return render(request, 'postagemform.html', {'form' : form})
+
+def listar_roupas(request):
+    postagem = Roupa.objects.all()
+    return render(request, 'listagemroupas.html', {'postagem': postagem})
+
+
