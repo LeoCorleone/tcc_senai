@@ -12,10 +12,9 @@ class Roupa(models.Model):
     modelo = models.ForeignKey("Modelo", on_delete=models.CASCADE, related_name='roupas')
 
     
-
 class Marca(models.Model):
     nome_marca = models.CharField(max_length=50)
-    
+
     def __str__(self):
         return self.nome_marca
 
@@ -31,3 +30,4 @@ class UserRoupa(models.Model):
     comentario_roupa = models.TextField()
     usuario = models.ForeignKey(to=User, on_delete=models.CASCADE, related_name="usuario")
     roupa = models.ForeignKey(to=Roupa, on_delete=models.CASCADE, related_name="roupa")
+

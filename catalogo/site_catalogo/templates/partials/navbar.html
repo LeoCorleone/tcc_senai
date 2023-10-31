@@ -21,15 +21,14 @@
                             <div class="myform bg-dark">
                                 <h1 class="text-center">Login</h1>
                                 <ul class="nav justify-content-center border-bottom pb-3 mb-3;"></ul>
-                                <form style="text-align: left;">
+                                <form style="text-align: left;" method="post" action="{% url 'login' %}">
+                                    {% csrf_token %}
+                                    {% for field in form.visible_fields %}
                                     <div class="mb-3 mt-4">
-                                        <label for="exampleInputEmail1" class="form-label">Email</label>
-                                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                        <label for="{{ field.id_for_label }}" class="form-label">{{field.label}}</label>
+                                        {{field}}
                                     </div>
-                                    <div class="mb-3">
-                                        <label for="exampleInputPassword1" class="form-label">Senha</label>
-                                        <input type="password" class="form-control" id="exampleInputPassword1">
-                                    </div>
+                                    {% endfor %}
                                     <button type="submit" class="btn btn-light mt-3">LOGIN</button>
                                     <button type="submit" class="btn btn-light mt-3">CANCELAR</button>
                                     <p><a href="#">Cadastre-se</a></p>

@@ -9,10 +9,15 @@ from django.conf.urls.static import static
 from . import views 
 
 urlpatterns = [
+
     path("", views.index, name="index"),
-    path("adm", views.adm, name= "adm"),
+    path("adm/", views.adm, name= "adm"),
     path('postagem/', postagem, name = 'postagem'),
+    path('login', login, name='login'),
+    path('deletar/<int:id>', views.delete, name="delete"),
+    path('listarroupas/', views.listar_roupas, name='listar_roupas'),
+
 ]
 
-if settings.DEBUG:
-    urlpatterns += static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
+# if settings.DEBUG:
+#     urlpatterns += static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
