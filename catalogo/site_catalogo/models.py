@@ -30,3 +30,4 @@ class UserRoupa(models.Model):
     comentario_roupa = models.TextField()
     usuario = models.ForeignKey(to=User, on_delete=models.CASCADE, related_name="usuario")
     roupa = models.ForeignKey(to=Roupa, on_delete=models.CASCADE, related_name="roupa")
+

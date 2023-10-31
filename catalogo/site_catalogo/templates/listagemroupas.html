@@ -1,0 +1,35 @@
+{% extends 'layouts/layout.html' %}
+{% load static %}
+{% block content %}
+
+{% include 'partials/adm/navbar.html' %}
+
+<div class="container text-center" style="padding: 5%;">
+    <!-- {% include 'partials/alerts.html' %} -->
+    <div class="row">
+        {% for x in postagem %}
+      <div class="col" style="padding: 3%;">
+        <div class="container-fluid">
+            <div class="card" style="width: 18rem;">
+                <img src="{{x.imagem_roupa.url}}" style="width: 100%; height: 250px;" class="card-img-top" alt="{{x.titulo_roupa}}">
+                <div class="card-body">
+                  <h5 class="card-title">{{x.titulo_roupa}}</h5>
+                  <p class="card-text">{{x.descricao_roupa}}</p>
+                  <a href="{% url 'delete' x.id %}">
+                   <button type="button" class="btn">
+                      <img src="{% static 'assets/img/lixeira.png' %}" alt="botao-excluir">
+                    </button>
+                  </a>
+                </div>
+            </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+</div>
+
+
+{% include 'partials/footer.html' %}
+    
+{% endblock%}
+

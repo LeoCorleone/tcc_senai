@@ -13,7 +13,10 @@ urlpatterns = [
     path("", views.index, name="index"),
     path("adm/", views.adm, name= "adm"),
     path('postagem/', postagem, name = 'postagem'),
-    # path('login/', views.login, name='login')
+    path('login', login, name='login'),
+    path('deletar/<int:id>', views.delete, name="delete"),
+    path('listarroupas/', views.listar_roupas, name='listar_roupas'),
+
 ]
 
 # if settings.DEBUG:
