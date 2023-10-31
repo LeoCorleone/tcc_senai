@@ -53,4 +53,10 @@ def listar_roupas(request):
     postagem = Roupa.objects.all()
     return render(request, 'listagemroupas.html', {'postagem': postagem})
 
+def delete(request, id):
+    roupa = Roupa.objects.get(pk=id)
+    roupa.delete()
+    # messages.success(request, f'Postagem deletada com sucesso!')
+    return redirect('listar_roupas')
+
 

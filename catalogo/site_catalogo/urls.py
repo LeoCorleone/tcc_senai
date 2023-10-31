@@ -14,6 +14,7 @@ urlpatterns = [
     path("adm/", views.adm, name= "adm"),
     path('postagem/', postagem, name = 'postagem'),
     path('login', login, name='login'),
+    path('deletar/<int:id>', views.delete, name="delete"),
     path('listarroupas/', views.listar_roupas, name='listar_roupas'),
 
 ]
