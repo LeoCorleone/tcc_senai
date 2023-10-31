@@ -59,4 +59,57 @@ def delete(request, id):
     # messages.success(request, f'Postagem deletada com sucesso!')
     return redirect('listar_roupas')
 
+def updateroupa(request, id):
+    roupas = Roupa.objects.get(pk=id)
+    if request.method == 'POST':
+        roupas.titulo_roupa = request.POST['titulo_roupa']
+        roupas.descricao_roupa = request.POST['descricao_roupa']
+        roupas.composicao_roupa = request.POST['composicao_roupa']
+        roupas.imagem_roupa = request.POST['imagem_roupa']
+        roupas.marca = request.POST['marca']
+        roupas.modelo = request.POST['modelo']
+        roupas.save()
+        # messages.success(request, f'Livro editado com sucesso!')
+        return redirect('listagem')
+    return render(request, "adm/editar.html",{'livro':roupas})
 
+def adicionar_usuario(request):
+    usuario = UsuarioForms()
+    if request.method == "POST":
+        cadastrouser = User.objects.create_user(
+            username = request.POST['nome'], password = request.POST['password'],
+                            email = request.POST['email'])
+        cadastrouser.save()
+        # messages.success(request, f'Usuario cadastrado com sucesso!')
+        return redirect('listauser')
+
+    return render(request, "adm/addusuario.html", {
+        'form':usuario
+    })
+
+def listar_usuario(request):
+    usuarios = User.objects.all()
+    return render(request, 'listagemusuarios.html', {
+        'usuarios': usuarios
+    })
+
+def delete_usuario(request, id):
+    usuarios = User.objects.get(pk=id)
+    usuarios.delete()
+    # messages.success(request, f'Postagem deletada com sucesso!')
+    return redirect('listar_usuario')
+
+def update_usuario(request, id):
+    usuario = User.objects.get(pk=id)
+    if request.method == 'POST':
+        usuario.username = request.POST['nome']
+        usuario.set_password(request.POST['senha'])
+        usuario.email = request.POST['email']
+        usuario.save()
+        return redirect('listagemusuario')
+    return render(request, 'adm/editaruser.html', {'usuario': usuario})
+
+def logout(request):
+    auth.logout(request)
+    # messages.success(request, 'Logout efetuado com sucesso!')
+    return redirect('index')
