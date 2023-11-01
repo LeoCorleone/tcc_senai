@@ -10,7 +10,7 @@
 
 - `Objetivo 01`: Criação de um catalálogo virtual focado no nicho de roupas e calçados infantis. 
 
-- `Objetivo 02 `: total liberdade do usuário para interagir (curtir/descurtir e comentar/exluir comentário) nas imagens publicadas pelas empresas. Assim como em redes sociais já conhecidas como: Instagram e Pinterest. 
+- `Objetivo 02`: Total liberdade ao usuário para interagir (curtir/descurtir e comentar/exluir comentário) nas imagens publicadas pelas empresas. Assim como em redes sociais já conhecidas como: Instagram e Pinterest. 
 
 # 📁 Acesso ao projeto
 
