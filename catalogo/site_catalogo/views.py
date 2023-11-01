@@ -115,7 +115,7 @@ def logout(request):
     # messages.success(request, 'Logout efetuado com sucesso!')
     return redirect('index')
 
-# @login_required  # Certifique-se de que o usuário esteja autenticado
+#                 # Certifique-se de que o usuário esteja autenticado
 def curtir_postagem(request, postagem_id):
     postagem = get_object_or_404(Roupa, id=postagem_id)
     user = request.user
@@ -130,4 +130,4 @@ def curtir_postagem(request, postagem_id):
         postagem.likes += 1
 
     postagem.save()
-    return redirect('nome_da_view_onde_as_postagens_sao_exibidas')
+    return redirect('index')
