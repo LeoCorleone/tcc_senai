@@ -8,7 +8,7 @@
 
  # :dart: Objetivos do projeto
 
-- `Objetivo 01`: Criação de um catalálogo virtual focado no nicho de roupas e calçados infantis. Dando total liberdade ao usuário para interagir (curtir/descurtir e comentar/exluir comentário) com as imagens publicadas pelas empresas. Assim como em redes sociais já conhecidas como: Instagram e Pinterest. 
+- `Objetivo`: Criação de um catalálogo virtual focado no nicho de roupas e calçados infantis. Dando total liberdade ao usuário para interagir (curtir/descurtir e comentar/exluir comentário) com as imagens publicadas pelas empresas. Assim como em redes sociais já conhecidas como: Instagram e Pinterest. 
 
 # 📁 Acesso ao projeto
 
