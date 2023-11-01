@@ -8,13 +8,15 @@
 
  # :dart: Objetivos do projeto
 
-- `Objetivo`:Esse projeto tem como objetivo a criação de um catalálogo virtual focado no nicho de roupas e calçados infantis. O usuário ao acessar esse sistema, terá total liberdade para curtir/descurtir e comentar/exluir comentário nas imagens publicadas pelas empresas. Assim como em redes sociais já conhecidas como: Instagram e Pinterest. 
+- `Objetivo`: Esse projeto tem como objetivo a criação de um catalálogo virtual focado no nicho de roupas e calçados infantis. O usuário ao acessar esse sistema, terá total liberdade para curtir/descurtir e comentar/exluir comentário nas imagens publicadas pelas empresas. Assim como em redes sociais já conhecidas como: Instagram e Pinterest. 
 
+# 📁 Acesso ao projeto
 
+**Indique como é possível baixar ou acessar o código fonte do projeto, seja projeto inicial ou final**
 
+# 🛠️ Abrir e rodar o projeto
 
-Para instalar esse projeto em seu pc, siga os passos abaixo:
-Projeto desenvolvido em:
+...
 
 Python - Utilizado para a criação e desenvolvimento do site; 
 HTML   - Utilizada para estruturar os elementos da página;
