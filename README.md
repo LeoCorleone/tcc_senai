@@ -1,17 +1,15 @@
 # tcc_senai
 
-TCC Trilhas02 
+<h1 align ="center">TCC Trilhas02 - 2023</h1>
+
+![Badge em Desenvolvimento](http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=GREEN&style=for-the-badge)
+
 
 Esse projeto tem como objetivo a criação de um catalálogo virtual focado no nicho de roupas e calçados infantis. O usuário ao acessar esse sistema, terá total liberdade para curtir/descurtir e comentar/exluir comentário nas imagens publicadas pelas empresas. Assim como em redes sociais já conhecidas como: Instagram e Pinterest. 
 
-Para possuir o sistema apresentado acima em seu PC execute os seguintes comandos: 
-Antes de executar os comandos a seguir ligue o seu banco de dados e depois execute:
+Para instalar esse projeto em seu pc, siga os passos abaixo:
 
-python3 manage.py migrate
-python3 manage.py createsuperuser
-python3 manage.py runserver
 
-Após executar o último comando será aberto um link em seu terminal no Visual Studio Code. Clique no mesmo e em seguida vc será direcionado a página do login para que possa acessar a pagina principal do catálago. 
 
 Projeto desenvolvido em:
 
