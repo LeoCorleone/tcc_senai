@@ -5,6 +5,9 @@
 <p align="center">
 <img loading="lazy" src="http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=GREEN&style=for-the-badge"/>
 </p>
+<h4 align="center"> 
+    :construction:  Projeto em construção  :construction:
+</h4>
 
 
 Esse projeto tem como objetivo a criação de um catalálogo virtual focado no nicho de roupas e calçados infantis. O usuário ao acessar esse sistema, terá total liberdade para curtir/descurtir e comentar/exluir comentário nas imagens publicadas pelas empresas. Assim como em redes sociais já conhecidas como: Instagram e Pinterest. 
