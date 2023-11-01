@@ -1,24 +1,29 @@
 # tcc_senai
 
-TCC Trilhas02 
+<h1 align ="center">TCC Trilhas02 - 2023</h1>
 
-Esse projeto tem como objetivo a criação de um catalálogo virtual focado no nicho de roupas e calçados infantis. O usuário ao acessar esse sistema, terá total liberdade para curtir/descurtir e comentar/exluir comentário nas imagens publicadas pelas empresas. Assim como em redes sociais já conhecidas como: Instagram e Pinterest. 
+<p align="center">
+<img loading="lazy" src="http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=GREEN&style=for-the-badge"/>
+</p>
 
-Para possuir o sistema apresentado acima em seu PC execute os seguintes comandos: 
-Antes de executar os comandos a seguir ligue o seu banco de dados e depois execute:
+ # :dart: Objetivos do Projeto
 
-python3 manage.py migrate
-python3 manage.py createsuperuser
-python3 manage.py runserver
+- `Objetivo`: Criação de um catalálogo virtual focado no nicho de roupas e calçados infantis. Dando total liberdade ao usuário para interagir (curtir/descurtir e comentar/exluir comentário) com as imagens publicadas pelas empresas. Assim como em redes sociais já conhecidas como: Instagram e Pinterest. 
 
-Após executar o último comando será aberto um link em seu terminal no Visual Studio Code. Clique no mesmo e em seguida vc será direcionado a página do login para que possa acessar a pagina principal do catálago. 
+# 📁 Acesso ao projeto
 
-Projeto desenvolvido em:
+**Indique como é possível baixar ou acessar o código fonte do projeto, seja projeto inicial ou final**
 
-Python - Utilizado para a criação e desenvolvimento do site; 
-HTML   - Utilizada para estruturar os elementos da página;
-CSS    - Utilizada para definir cores, fontes, tamanhos, posicionamento;
-MYSQL  - Utilizado para o gerenciamento de base de dados relacionais;
-Django - Utilizado para o desenvolvimento, de forma mais prática, para web e também para a dinâmica e interatividade no site.
+# 🛠️ Abrir e rodar o projeto
 
-Grupo formado por: Alice Fritz, Daniel Magalhães, Kauã Souza, Leonardo Corleone e Rebeca Velasco.
+...
+
+# :wrench: Ferramentas Utilizadas
+- `Python` 
+- `HTML`   
+- `CSS`    
+- `MYSQL`  
+- `Django` 
+
+
+
