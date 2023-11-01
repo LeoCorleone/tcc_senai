@@ -1,10 +1,11 @@
 from django.http import HttpResponse
-from django.shortcuts import render, redirect
-from .models import Roupa
+from django.shortcuts import render, redirect, get_object_or_404
+from .models import Roupa, Mensagem
 from .forms import *
 from django.contrib import auth
 from django.contrib.auth.models import User
 from django.contrib.auth import login, authenticate
+
 
 def index(request):
     form = LoginForms()
@@ -70,8 +71,8 @@ def updateroupa(request, id):
         roupas.modelo = request.POST['modelo']
         roupas.save()
         # messages.success(request, f'Livro editado com sucesso!')
-        return redirect('listagem')
-    return render(request, "adm/editar.html",{'livro':roupas})
+        return redirect('listar_roupas')
+    return render(request, "updateroupa.html",{'roupas':roupas})
 
 def adicionar_usuario(request):
     usuario = UsuarioForms()
@@ -113,3 +114,20 @@ def logout(request):
     auth.logout(request)
     # messages.success(request, 'Logout efetuado com sucesso!')
     return redirect('index')
+
+# @login_required  # Certifique-se de que o usuário esteja autenticado
+def curtir_postagem(request, postagem_id):
+    postagem = get_object_or_404(Roupa, id=postagem_id)
+    user = request.user
+
+    if user in postagem.liked_by.all():
+        # O usuário já curtiu a postagem, então vamos remover a curtida
+        postagem.liked_by.remove(user)
+        postagem.likes -= 1
+    else:
+        # O usuário não curtiu a postagem, vamos adicionar a curtida
+        postagem.liked_by.add(user)
+        postagem.likes += 1
+
+    postagem.save()
+    return redirect('nome_da_view_onde_as_postagens_sao_exibidas')

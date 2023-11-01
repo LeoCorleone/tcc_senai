@@ -17,13 +17,14 @@ urlpatterns = [
     path('logout/', logout, name='logout'),
     path('deletar/<int:id>', delete, name="delete"),
     path('listarroupas/', listar_roupas, name='listar_roupas'),
-    path('editar/<int:id>', updateroupa, name="editar_roupa"),
+    path('updateroupa/<int:id>', updateroupa, name="updateroupa"),
     path('update/<int:id>', updateroupa, name='update_roupa'),
     path('listarusuario', listar_usuario, name='lista_usuario'),
     path('adicionarusuario', adicionar_usuario, name='adicionar_usuario'),
     path('deleteusuario/<int:id>', delete_usuario, name='delete_usuario'),
     path('editarusuario/<int:id>', update_usuario, name='editar_usuario'),
     path('updateusuario/<int:id>', update_usuario, name='update_roupa'),
+    path('curtir/<int:postagem_id>/', views.curtir_postagem, name='curtir_postagem'),
 
 ]
 

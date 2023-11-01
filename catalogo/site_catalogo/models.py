@@ -10,6 +10,8 @@ class Roupa(models.Model):
     imagem_roupa = models.ImageField(upload_to='uploads/')
     marca = models.ForeignKey("Marca", on_delete=models.CASCADE, related_name='roupas')
     modelo = models.ForeignKey("Modelo", on_delete=models.CASCADE, related_name='roupas')
+    likes = models.PositiveIntegerField(default=0)
+    liked_by = models.ManyToManyField(User, blank=True)
 
     
 class Marca(models.Model):
@@ -30,4 +32,10 @@ class UserRoupa(models.Model):
     comentario_roupa = models.TextField()
     usuario = models.ForeignKey(to=User, on_delete=models.CASCADE, related_name="usuario")
     roupa = models.ForeignKey(to=Roupa, on_delete=models.CASCADE, related_name="roupa")
+
+class Mensagem(models.Model):
+    roupa = models.ForeignKey(Roupa, on_delete=models.CASCADE)
+    remetente = models.ForeignKey(User, on_delete=models.CASCADE)  # Suponha que você tenha um modelo User
+    mensagem = models.TextField()
+    data_envio = models.DateTimeField(auto_now_add=True)
 
