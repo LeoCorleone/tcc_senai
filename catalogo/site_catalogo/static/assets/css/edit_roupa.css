@@ -1,0 +1,26 @@
+
+#foto img{
+    border-radius: 10%;
+    width: auto;
+    margin-top: 5%;
+}
+#info{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: rgba(255, 255, 255, 0.26);
+    padding: 3%;
+    border-radius: 9%;
+}
+#info h1{
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+}
+#info label{
+    color: black;
+}
+#info input{
+    color:black;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 0.5%;
+    background-color: rgba(255, 252, 249, 0.678);
+}
+

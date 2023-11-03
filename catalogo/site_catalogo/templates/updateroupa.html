@@ -2,19 +2,52 @@
 {% load static %}
 {% block content %}
 
-{% include 'partials/adm/navbar.html' %}
+<style>
+#foto img{
+    border-radius: 10%;
+    width: auto;
+    margin-top: 5%;
+}
+#info{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: rgba(255, 255, 255, 0.26);
+    padding: 3%;
+    border-radius: 9%;
+}
+#info h1{
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+}
+#info label{
+    color: black;
+}
+#info input{
+    color:black;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 0.5%;
+    background-color: rgba(255, 252, 249, 0.678);
+}
 
-  <div class="container">
-    {%if roupa.imagem_roupa%}
-    <img src="{{roupa.imagem_roupa.url}}" alt="photo.name" width="200px" height="200px">
-    {%endif%}
-  <form action="{% url 'update_roupa' roupa.id %}" method="post" enctype="multipart/form-data">
-    {% csrf_token %}
-    {{form.as_p}}
-    <button type="submit" class= "btn btn-primary">Atualizar</div>
-  </form>
-</div>
+</style>
+ {% include 'partials/adm/navbar.html' %}
+    <div class="container text-center" style="padding: 5%;">
+        <div class="row shadow" id="info">
+            <h1>Editar Postagem</h1>
+        <div class="col" id="foto">
+            {%if roupa.imagem_roupa%}
+                <img class="shadow" src="{{roupa.imagem_roupa.url}}" alt="roupa.titulo_roupa" width="200px" height="200px">
+            {%endif%}
+        </div>
+        <div class="col">
+            <form action="{% url 'update_roupa' roupa.id %}" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{form.as_p}}
+                <button type="submit" class= "btn btn-primary">Salvar</div>
+            </form>
+        </div>
+        </div>
+    </div> 
   {% include 'partials/footer.html' %}
     
   {% endblock%}
-  
+
