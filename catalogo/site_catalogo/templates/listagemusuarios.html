@@ -1,0 +1,56 @@
+{% extends 'layouts/layout.html' %}
+{% load static %}
+{% block content %}
+
+{% include 'partials/adm/background.html' %}
+{% include 'partials/adm/navbar.html' %}
+
+<div class="container-fluid text-center" style="background-image: url({% static 'img/fundo.png' %}); padding: 18%;">
+
+  <table class="table table-dark table-striped">
+      <thead>
+          <tr>
+              <th scope="col" colspan="4">
+                  <form method="GET" action="{% url 'listar_usuario' %}" class="form-inline">
+                  </form>
+              </th>
+          </tr>
+          <tr>
+              <th scope="col">Id</th>
+              <th scope="col">Nome</th>
+              <th scope="col">E-Mail</th>
+              <th scope="col">
+                  <a href="{% url 'adicionar_usuario' %}">
+                      <button type="button" class="btn">
+                          <img src="{% static 'assets/img/adicionar.png' %}" alt="" style="height: 40px; width: 40px;">
+                      </button>
+                  </a>
+              </th>
+          </tr>
+      </thead>
+      <tbody>
+          {% for x in usuarios %}
+          <tr>
+              <th scope="row">{{x.id}}</th>
+              <td>{{x.username}}</td>
+              <td>{{x.email}}</td>
+              <td>
+                  <a href="{% url 'update_usuario' x.id %}">
+                      <button type="button" class="btn">
+                          <img src="{% static 'assets/img/editar.png' %}" alt="botaoeditar">
+                      </button>
+                  </a>
+                  <a href="{% url 'delete_usuario' x.id %}">
+                      <button type="button" class="btn">
+                          <img src="{% static 'assets/img/lixeira.png' %}" alt="botao-excluir">
+                      </button>
+                  </a>
+              </td>
+          </tr>
+          {% endfor %}
+      </tbody>
+  </table>
+</div>
+
+{% include 'partials/footer.html' %}
+{% endblock %}
