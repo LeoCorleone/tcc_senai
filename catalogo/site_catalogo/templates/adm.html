@@ -1,12 +1,8 @@
 {% extends 'layouts/layout.html' %}
 {% load static %}
 {% block content %}
-<style>
-  body{
-    background-image: url({% static 'assets/img/10.jpg' %});
-  }
 
-</style>
+      {% include 'partials/adm/background.html' %}
       <!-- navbar  -->
       {% include 'partials/adm/navbar.html' %}
       <!-- fim navbar  -->

@@ -2,10 +2,11 @@
 {% load static %}
 {% block content %}
 
+{% include 'partials/adm/background.html' %}
  {% include 'partials/adm/navbar.html' %}
-    <div class="container-sm text-center" id="info" style="padding: 10%;">
-        <div class="card shadow">
-            <div class="card-header" style="padding: 2%;">
+    <div class="container-sm text-center"  style="padding: 10%;">
+        <div class="shadow" id="info">
+            <div class="header" style="padding: 2%;">
                 <h1 class="log">Adicionar Roupa</h1>
             </div>
             <form method = "post" enctype="multipart/form-data" style="padding: 2%;">
