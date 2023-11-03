@@ -8,9 +8,9 @@
             <a class="nav-link active" aria-current="page" href="{% url 'listar_usuario' %}">Usuários</a>
           </li>      
         </ul>
-        <form class="d-flex" role="search">
+        <a href="{% url 'logout' %}">
           <button class="btn btn-outline-success" type="submit" style="margin-right: 5px;">Logout</button>
-        </form>
+        </a>
       </div>
     </div>
 </nav>

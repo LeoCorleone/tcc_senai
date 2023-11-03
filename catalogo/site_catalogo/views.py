@@ -6,6 +6,7 @@ from django.contrib import auth
 from django.contrib.auth.models import User
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.decorators import login_required
+from django.contrib import messages
 
 
 def index(request):
@@ -30,10 +31,10 @@ def login(request):
 
         if user is not None:
             auth.login(request, user)
-            # messages.success(request, f'Foi logado com sucesso!')
-            return redirect('postagem')
+            messages.success(request, f'Foi logado com sucesso!')
+            return redirect('index')
         else:
-            # messages.error(request, 'Erro ao efetuar login')
+            messages.error(request, 'Erro ao efetuar login')
             return redirect('index')
 
 def adm(request):
@@ -46,6 +47,7 @@ def postagem(request):
   
         if form.is_valid():
             form.save()
+            messages.success(request, f'Postagem criada com sucesso!')
             return redirect('listar_roupas')
     else:
         form = PostagemForms()
@@ -58,23 +60,9 @@ def listar_roupas(request):
 def delete(request, id):
     roupa = Roupa.objects.get(pk=id)
     roupa.delete()
-    # messages.success(request, f'Postagem deletada com sucesso!')
+    messages.success(request, f'Postagem deletada com sucesso!')
     return redirect('listar_roupas')
 
-# def updateroupa(request, id):
-#     roupas = Roupa.objects.get(pk=id)
-#     if request.method == 'POST':
-#         roupas.titulo_roupa = request.POST['titulo_roupa']
-#         roupas.descricao_roupa = request.POST['descricao_roupa']
-#         roupas.composicao_roupa = request.POST['composicao_roupa']
-#         roupas.imagem_roupa = request.POST['imagem_roupa']
-#         roupas.marca = request.POST['marca']
-#         roupas.modelo = request.POST['modelo']
-#         roupas.save()
-#         # messages.success(request, f'Livro editado com sucesso!')
-#         return redirect('listar_roupas')
-#     return render(request, "updateroupa.html",{'roupas':roupas})
-# @login_required
 def edit_roupa(request, id):
     roupa = Roupa.objects.get(pk=id)
     form = PostagemForms(instance=roupa)
@@ -89,10 +77,10 @@ def update_roupa(request, id):
             
             if form.is_valid():
                 form.save()
-                # messages.success(request, 'postagem foi alterada com sucesso!')
+                messages.success(request, 'postagem foi alterada com sucesso!')
                 return redirect('listar_roupas')
     except Exception as e:
-        # messages.error(request, e)
+        messages.error(request, e)
         return redirect('listar_roupas')
 
 def adicionar_usuario(request):
@@ -102,7 +90,7 @@ def adicionar_usuario(request):
             username = request.POST['nome'], password = request.POST['senha'],
                             email = request.POST['email'])
         cadastrouser.save()
-        # messages.success(request, f'Usuario cadastrado com sucesso!')
+        messages.success(request, f'Usuario cadastrado com sucesso!')
         return redirect('listar_usuario')
 
     return render(request, "addusuario.html", {
@@ -118,7 +106,7 @@ def listar_usuario(request):
 def delete_usuario(request, id):
     usuarios = User.objects.get(pk=id)
     usuarios.delete()
-    # messages.success(request, f'Postagem deletada com sucesso!')
+    messages.success(request, f'Usuario deletado com sucesso!')
     return redirect('listar_usuario')
 
 def update_usuario(request, id):
@@ -133,10 +121,10 @@ def update_usuario(request, id):
 
 def logout(request):
     auth.logout(request)
-    # messages.success(request, 'Logout efetuado com sucesso!')
+    messages.success(request, 'Logout efetuado com sucesso!')
     return redirect('index')
 
-#                 # Certifique-se de que o usuário esteja autenticado
+
 def curtir_postagem(request, postagem_id):
     postagem = get_object_or_404(Roupa, id=postagem_id)
     user = request.user

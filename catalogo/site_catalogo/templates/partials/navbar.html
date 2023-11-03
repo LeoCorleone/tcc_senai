@@ -13,6 +13,9 @@
                 <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#ModalForm" style="background-color: #203540; color: #FFFFFF;">
                     Login
                 </button>
+                <a href="{% url 'logout' %}">
+                    <button class="btn btn-outline-success" type="submit" style="margin-right: 5px;">Logout</button>
+                  </a>
                 <div class="modal fade" id="ModalForm" tabindex="-1" aria-labelledby="ModalFormLabel" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered">
                       <div class="modal-content">
