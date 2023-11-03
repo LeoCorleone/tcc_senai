@@ -1,21 +1,14 @@
+{% extends 'layouts/layout.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <link rel="stylesheet" href="{% static 'assets/css/bootstrap.css' %}">
-    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
-    <script src="{% static 'assets/js/bootstrap.bundle.js' %}"></script>
-    <meta charset="UTF-8">
-    <title>Postagem</title>
-</head>
-<body>
-    {% include 'partials/adm/navbar.html' %}
-    <div class="container-fluid text-center" style="padding: 20%;">
-        <div class="login-card">
-            <div class="card-header">
+{% block content %}
+
+ {% include 'partials/adm/navbar.html' %}
+    <div class="container-sm text-center" id="info" style="padding: 10%;">
+        <div class="card shadow">
+            <div class="card-header" style="padding: 2%;">
                 <h1 class="log">Adicionar Roupa</h1>
             </div>
-            <form method = "post" enctype="multipart/form-data">
+            <form method = "post" enctype="multipart/form-data" style="padding: 2%;">
                 {% csrf_token %}
                 <!-- {{ form.as_p }}
                 <button type="submit">Upload</button> -->
@@ -29,6 +22,6 @@
             </form>
         </div>
       </div>    
-      {% include 'partials/footer.html' %}
-</body>
-</html>
+{% include 'partials/footer.html' %}
+{% endblock%}
+    
