@@ -24,10 +24,12 @@
                    <button type="button" class="btn">
                       <img src="{% static 'assets/img/lixeira.png' %}" alt="botao-excluir">
                     </button>
-                    <!-- <button type="button" class="btn">
-                      <img src="{% static 'assets/img/adicionar.png' %}" alt="botao-add" style="height: 40px; width: 40px;">
-                    </button> -->
                   </a>
+                  <a href="{% url 'edit_roupa' x.id %}">
+                    <button type="button" class="btn">
+                       <img src="{% static 'assets/img/editar.png' %}" alt="botao-editar">
+                     </button>
+                   </a>
                 </div>
             </div>
         </div>

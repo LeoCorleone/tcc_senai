@@ -3,24 +3,17 @@
 {% block content %}
 
 {% include 'partials/adm/navbar.html' %}
-<div class="container-fluid text-center" style="padding: 20%;">
-    <div class="login-card">
-        <div class="card-header">
-            <h1 class="log">Update Roupa</h1>
-        </div>
-        <form action="{% url 'updateroupa' roupas.id %}" method="POST">
-            {% csrf_token %}
-                <input type="text" name="nome" value="{{roupas.titulo_roupa}}"><br>
-                <input type="text" name="descricao"  value="{{roupas.descricao_roupa}}"><br>
-                <input type="text" name="composicao" value="{{roupas.composicao_roupa}}"><br>
-                <!-- <input type="text" name="composicao" value="{{roupas.imagem_roupa}}">-->
-                <input type="file" name="imagem_roupa" accept="image/*" required="" id="{{roupas.id}}"> 
-                <button class="btn btn-success" type="submit">Salvar</button>
-                <div class="container text-center" style="padding: 2%;">
-                </div>
-        </form>
-    </div>
-  </div> 
+
+  <div class="container">
+    {%if roupa.imagem_roupa%}
+    <img src="{{roupa.imagem_roupa.url}}" alt="photo.name" width="200px" height="200px">
+    {%endif%}
+  <form action="{% url 'update_roupa' roupa.id %}" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button type="submit" class= "btn btn-primary">Atualizar</div>
+  </form>
+</div>
   {% include 'partials/footer.html' %}
     
   {% endblock%}

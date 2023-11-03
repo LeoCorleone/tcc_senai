@@ -5,6 +5,7 @@ from .forms import *
 from django.contrib import auth
 from django.contrib.auth.models import User
 from django.contrib.auth import login, authenticate
+from django.contrib.auth.decorators import login_required
 
 
 def index(request):
@@ -60,19 +61,39 @@ def delete(request, id):
     # messages.success(request, f'Postagem deletada com sucesso!')
     return redirect('listar_roupas')
 
-def updateroupa(request, id):
-    roupas = Roupa.objects.get(pk=id)
-    if request.method == 'POST':
-        roupas.titulo_roupa = request.POST['titulo_roupa']
-        roupas.descricao_roupa = request.POST['descricao_roupa']
-        roupas.composicao_roupa = request.POST['composicao_roupa']
-        roupas.imagem_roupa = request.POST['imagem_roupa']
-        roupas.marca = request.POST['marca']
-        roupas.modelo = request.POST['modelo']
-        roupas.save()
-        # messages.success(request, f'Livro editado com sucesso!')
+# def updateroupa(request, id):
+#     roupas = Roupa.objects.get(pk=id)
+#     if request.method == 'POST':
+#         roupas.titulo_roupa = request.POST['titulo_roupa']
+#         roupas.descricao_roupa = request.POST['descricao_roupa']
+#         roupas.composicao_roupa = request.POST['composicao_roupa']
+#         roupas.imagem_roupa = request.POST['imagem_roupa']
+#         roupas.marca = request.POST['marca']
+#         roupas.modelo = request.POST['modelo']
+#         roupas.save()
+#         # messages.success(request, f'Livro editado com sucesso!')
+#         return redirect('listar_roupas')
+#     return render(request, "updateroupa.html",{'roupas':roupas})
+# @login_required
+def edit_roupa(request, id):
+    roupa = Roupa.objects.get(pk=id)
+    form = PostagemForms(instance=roupa)
+    return render(request, "updateroupa.html",{"form":form, "roupa":roupa})
+
+# @login_required
+def update_roupa(request, id):
+    try:
+        if request.method == "POST":
+            photo = Roupa.objects.get(pk=id)
+            form = PostagemForms(request.POST, request.FILES, instance=photo)
+            
+            if form.is_valid():
+                form.save()
+                # messages.success(request, 'postagem foi alterada com sucesso!')
+                return redirect('listar_roupas')
+    except Exception as e:
+        # messages.error(request, e)
         return redirect('listar_roupas')
-    return render(request, "updateroupa.html",{'roupas':roupas})
 
 def adicionar_usuario(request):
     usuario = UsuarioForms()
