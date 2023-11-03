@@ -96,7 +96,7 @@ def update_roupa(request, id):
         return redirect('listar_roupas')
 
 def adicionar_usuario(request):
-    usuario = LoginForms()
+    usuario = CriarLoginForms()
     if request.method == "POST":
         cadastrouser = User.objects.create_user(
             username = request.POST['nome'], password = request.POST['senha'],
