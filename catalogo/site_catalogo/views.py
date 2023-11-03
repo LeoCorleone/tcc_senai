@@ -96,16 +96,16 @@ def update_roupa(request, id):
         return redirect('listar_roupas')
 
 def adicionar_usuario(request):
-    usuario = UsuarioForms()
+    usuario = LoginForms()
     if request.method == "POST":
         cadastrouser = User.objects.create_user(
-            username = request.POST['nome'], password = request.POST['password'],
+            username = request.POST['nome'], password = request.POST['senha'],
                             email = request.POST['email'])
         cadastrouser.save()
         # messages.success(request, f'Usuario cadastrado com sucesso!')
-        return redirect('listauser')
+        return redirect('listar_usuario')
 
-    return render(request, "adm/addusuario.html", {
+    return render(request, "addusuario.html", {
         'form':usuario
     })
 

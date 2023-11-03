@@ -1,0 +1,31 @@
+{% extends 'layouts/layout.html' %}
+{% load static %}
+{% block content %}
+
+{% include 'partials/adm/background.html' %}
+{% include 'partials/adm/navbar.html' %}
+
+<!-- navbar fim -->
+
+<div class="container-fluid" style="background-image: url({% static 'img/fundo.png' %}); padding: 8%;">
+  <div class="login-card">
+      <div class="card-header">
+          <h1 class="log">Adicionar Usuário</h1>
+      </div>
+      <form action="{% url 'adicionar_usuario' %}" method="POST">
+        {% csrf_token %}
+        {% for field in form.visible_fields %}
+          <div class="mb-3">
+              <label for="{{field.id_for_label}}" class="form-label">{{field.label}}</label>
+              {{field}}
+          </div>
+            {% endfor %}
+          <button class="btn btn-success" type="submit">Adicionar</button>
+          <div class="container text-center" style="padding: 2%;">
+          </div>
+      </form>
+  </div>
+</div>
+
+{% include 'partials/footer.html' %}
+{% endblock %}

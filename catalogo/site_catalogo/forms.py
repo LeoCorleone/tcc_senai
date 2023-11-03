@@ -7,12 +7,24 @@ class PostagemForms(forms.ModelForm):
         model = Roupa
         fields = ['titulo_roupa', 'descricao_roupa', 'composicao_roupa', 'imagem_roupa', 'marca', 'modelo']
 
+
 class ComentarioForm(forms.Form):
     comentario_roupa = forms.CharField(widget=forms.Textarea)
 
 from django import forms
 
 class LoginForms(forms.Form):
+    nome = forms.CharField(
+        label = 'Nome Completo',
+        required = True,
+        max_length = 100,
+        widget = forms.TextInput (
+            attrs= {
+            'class': 'form-control',
+            'placeholder': 'Digite seu nome',
+            }
+        )
+    )
     email = forms.EmailField(
         label='Email',
         required=True,
