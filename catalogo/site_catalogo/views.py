@@ -128,8 +128,8 @@ def update_usuario(request, id):
         usuario.set_password(request.POST['senha'])
         usuario.email = request.POST['email']
         usuario.save()
-        return redirect('listagemusuario')
-    return render(request, 'adm/editaruser.html', {'usuario': usuario})
+        return redirect('listar_usuario')
+    return render(request, 'editaruser.html', {'usuario': usuario})
 
 def logout(request):
     auth.logout(request)

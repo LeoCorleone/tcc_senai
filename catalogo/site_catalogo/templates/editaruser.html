@@ -1,0 +1,32 @@
+{% extends 'layouts/layout.html' %}
+{% load static %}
+{% block content %}
+
+{% include 'partials/adm/background.html' %}
+{% include 'partials/adm/navbar.html' %}
+<style>
+  input, button{
+    margin: 2%;
+  }
+</style>
+
+<div class="container text-center" id="info" style="margin-top: 2%; width: 35%;">
+  <div class="form">
+      <div class="card-header">
+          <h1>Editar User</h1>
+      </div>
+      <form action="{% url 'update_usuario' usuario.id %}" method="POST">
+        {% csrf_token %}
+          <input type="text" name="nome" value="{{usuario.username}}"><br>
+          <input type="text" name="senha"  value="{{usuario.password}}"><br>
+          <input type="text" name="email" value="{{usuario.email}}"><br>
+          <button class="btn btn-success" type="submit">Salvar</button>
+          <div class="container text-center" style="padding: 2%;">
+          </div>
+      </form>
+  </div>
+</div>
+
+{% include 'partials/footer.html' %}
+{% endblock%}
+    
