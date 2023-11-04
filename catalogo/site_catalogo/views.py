@@ -13,6 +13,16 @@ from django.contrib import messages
 def index(request):
     form = LoginForms()
     postagem = Roupa.objects.all()
+    paginator = Paginator(postagem, 6) 
+    try:
+        page = int(request.GET.get('page', '1'))
+    except ValueError:
+        page = 1
+
+    try:
+        postagem = paginator.page(page)
+    except (EmptyPage, InvalidPage):
+        postagem = paginator.page(paginator.num_pages)
     return render(request, 'index.html', {'form': form, 'postagem': postagem})
 
 def login(request):
