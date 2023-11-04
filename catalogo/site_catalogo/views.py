@@ -62,6 +62,11 @@ def login(request):
             messages.error(request, 'Erro ao efetuar login')
             return redirect('index')
 
+def logout(request):
+    auth.logout(request)
+    messages.success(request, 'Logout efetuado com sucesso!')
+    return redirect('index')
+
 def adm(request):
     return render(request, 'adm.html')
 
@@ -154,10 +159,20 @@ def update_usuario(request, id):
         return redirect('listar_usuario')
     return render(request, 'editaruser.html', {'usuario': usuario})
 
-def logout(request):
-    auth.logout(request)
-    messages.success(request, 'Logout efetuado com sucesso!')
-    return redirect('index')
+def inative(request, id):
+    user = User.objects.get(id=id)
+    user.is_active = False
+    user.save()
+    messages.success(request, 'Usuario inativado com sucesso!')
+    return redirect('listar_usuario')
+
+
+def active(request, id):
+    user = User.objects.get(id=id)
+    user.is_active = True
+    user.save()
+    messages.success(request, 'Usuario ativado com sucesso!')
+    return redirect('listar_usuario')
 
 
 def curtir_postagem(request, postagem_id):
@@ -175,3 +190,5 @@ def curtir_postagem(request, postagem_id):
 
     postagem.save()
     return redirect('indexlogin')
+
+
