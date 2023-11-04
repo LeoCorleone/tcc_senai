@@ -1,6 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Roupa, Mensagem
+from django.core.paginator import Paginator, InvalidPage, EmptyPage
 from .forms import *
 from django.contrib import auth
 from django.contrib.auth.models import User
@@ -55,6 +56,16 @@ def postagem(request):
 
 def listar_roupas(request):
     postagem = Roupa.objects.all()
+    paginator = Paginator(postagem, 6) 
+    try:
+        page = int(request.GET.get('page', '1'))
+    except ValueError:
+        page = 1
+
+    try:
+        postagem = paginator.page(page)
+    except (EmptyPage, InvalidPage):
+        postagem = paginator.page(paginator.num_pages)
     return render(request, 'listagemroupas.html', {'postagem': postagem})
 
 def delete(request, id):
