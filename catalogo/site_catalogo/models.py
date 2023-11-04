@@ -11,7 +11,7 @@ class Roupa(models.Model):
     marca = models.ForeignKey("Marca", on_delete=models.CASCADE, related_name='roupas')
     modelo = models.ForeignKey("Modelo", on_delete=models.CASCADE, related_name='roupas')
     likes = models.PositiveIntegerField(default=0)
-    liked_by = models.ManyToManyField(User, blank=True)
+    # liked_by = models.ManyToManyField(User, blank=True)
 
     
 class Marca(models.Model):
@@ -22,7 +22,7 @@ class Marca(models.Model):
 
 class Modelo(models.Model):
     nome_modelo = models.CharField(max_length=50)
-    descricao_modelo = models.CharField(max_length=250)
+    # descricao_modelo = models.CharField(max_length=250)
 
     def __str__(self):
         return self.nome_modelo

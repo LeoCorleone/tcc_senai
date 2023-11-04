@@ -27,8 +27,71 @@
         "model": "site_catalogo.Modelo",
         "pk" : 17,
         "fields":{
-            "nome_modelo" : "Vestido",
-            "descricao_modelo" : "Vermelho"
+            "nome_modelo" : "Vestido"
+            
+        }
+    },
+
+    {
+        "model": "site_catalogo.Modelo",
+        "pk" : 19,
+        "fields":{
+            "nome_modelo" : "Calça"
+            
+        }
+    },
+
+    {
+        "model": "site_catalogo.Modelo",
+        "pk" : 20,
+        "fields":{
+            "nome_modelo" : "Camisa"
+            
+        }
+    },
+
+    {
+        "model": "site_catalogo.Modelo",
+        "pk" : 21,
+        "fields":{
+            "nome_modelo" : "Short"
+            
+        }
+    },
+
+    {
+        "model": "site_catalogo.Modelo",
+        "pk" : 22,
+        "fields":{
+            "nome_modelo" : "Moletom"
+            
+        }
+    },
+
+    {
+        "model": "site_catalogo.Modelo",
+        "pk" : 23,
+        "fields":{
+            "nome_modelo" : "Macacão"
+            
+        }
+    },
+
+    {
+        "model": "site_catalogo.Modelo",
+        "pk" : 24,
+        "fields":{
+            "nome_modelo" : "Jaqueta"
+            
+        }
+    },
+
+    {
+        "model": "site_catalogo.Modelo",
+        "pk" : 25,
+        "fields":{
+            "nome_modelo" : "Pijama"
+            
         }
     },
 
@@ -39,9 +102,130 @@
             "titulo_roupa": "Pijama Infantil",
             "descricao_roupa" : "Lindo Pijama Infantil",
             "composicao_roupa" : "Algodão",
-            "marca" : "Aprender Kids",
+            "imagem_roupa" : "uploads/4.jpg",
+            "marca" : 19,
+            "modelo" : 25,
+            "likes" : 34
+
+        }
+    },
+
+    {
+        "model": "site_catalogo.Roupa",
+        "pk": 21,
+        "fields":{
+            "titulo_roupa": "Jaqueta Infantil",
+            "descricao_roupa" : "Jaqueta Infantil super estilosa",
+            "composicao_roupa" : "Jeans",
+            "imagem_roupa" : "uploads/jaqueta.jpg",
+            "marca" : 21,
+            "modelo" : 24,
+            "likes" : 55
+
+        }
+    },
+
+    {
+        "model": "site_catalogo.Roupa",
+        "pk": 22,
+        "fields":{
+            "titulo_roupa": "Vestido Infantil",
+            "descricao_roupa" : "Vestido Infantil super confortável",
+            "composicao_roupa" : "Jeans",
+            "imagem_roupa" : "uploads/1.jpg",
+            "marca" : 20,
             "modelo" : 17,
-            "likes" : 120
+            "likes" : 55
+
+        }
+    },
+
+    {
+        "model": "site_catalogo.Roupa",
+        "pk": 23,
+        "fields":{
+            "titulo_roupa": "Calça Infantil",
+            "descricao_roupa" : "Calça Infantil super confortável",
+            "composicao_roupa" : "Jeans",
+            "imagem_roupa" : "uploads/calça.jpg",
+            "marca" : 20,
+            "modelo" : 19,
+            "likes" : 40
+
+        }
+    },
+
+    {
+        "model": "site_catalogo.Roupa",
+        "pk": 24,
+        "fields":{
+            "titulo_roupa": "Camisa Infantil",
+            "descricao_roupa" : "Camisa Infantil super confortável",
+            "composicao_roupa" : "Algodão",
+            "imagem_roupa" : "uploads/2.jpg",
+            "marca" : 19,
+            "modelo" : 20,
+            "likes" : 47
+
+        }
+    },
+
+    {
+        "model": "site_catalogo.Roupa",
+        "pk": 25,
+        "fields":{
+            "titulo_roupa": "Moletom Infantil",
+            "descricao_roupa" : "Moletom Infantil super confortável",
+            "composicao_roupa" : "Algodão",
+            "imagem_roupa" : "uploads/moletom.jpg",
+            "marca" : 20,
+            "modelo" : 22,
+            "likes" : 60
+
+        }
+    },
+
+    {
+        "model": "site_catalogo.Roupa",
+        "pk": 26,
+        "fields":{
+            "titulo_roupa": "Macacão Infantil",
+            "descricao_roupa" : "Macacão Infantil super estiloso",
+            "composicao_roupa" : "Algodão",
+            "imagem_roupa" : "uploads/macacao.jpg",
+            "marca" : 20,
+            "modelo" : 23,
+            "likes" : 40
+
+        }
+    },
+
+    {
+        "model": "site_catalogo.Roupa",
+        "pk": 27,
+        "fields":{
+            "titulo_roupa": "Vestido Infantil",
+            "descricao_roupa" : "Vestido Infantil super confortável",
+            "composicao_roupa" : "Jeans",
+            "imagem_roupa" : "uploads/3.jpg",
+            "marca" : 19,
+            "modelo" : 17,
+            "likes" : 70
+
+        }
+    },
+
+    {
+        "model": "site_catalogo.Roupa",
+        "pk": 28,
+        "fields":{
+            "titulo_roupa": "Vestido Infantil",
+            "descricao_roupa" : "Vestido Infantil super confortável",
+            "composicao_roupa" : "Jeans",
+            "imagem_roupa" : "uploads/vestido3.jpg",
+            "marca" : 19,
+            "modelo" : 17,
+            "likes" : 79
 
         }
     }
