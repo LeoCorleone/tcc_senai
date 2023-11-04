@@ -1,0 +1,49 @@
+[
+    {
+        "model": "site_catalogo.Marca",
+        "pk" : 19,
+        "fields":{
+            "nome_marca" : "Aprender Kids"
+        }
+    },
+
+    {
+        "model": "site_catalogo.Marca",
+        "pk" : 20,
+        "fields":{
+            "nome_marca" : "Jacarezinho"
+        }
+    },
+
+    {
+        "model": "site_catalogo.Marca",
+        "pk" : 21,
+        "fields":{
+            "nome_marca" : "Abc Kids"
+        }
+    },
+
+    {
+        "model": "site_catalogo.Modelo",
+        "pk" : 17,
+        "fields":{
+            "nome_modelo" : "Vestido",
+            "descricao_modelo" : "Vermelho"
+        }
+    },
+
+    {
+        "model": "site_catalogo.Roupa",
+        "pk": 20,
+        "fields":{
+            "titulo_roupa": "Pijama Infantil",
+            "descricao_roupa" : "Lindo Pijama Infantil",
+            "composicao_roupa" : "Algodão",
+            "marca" : "Aprender Kids",
+            "modelo" : 17,
+            "likes" : 120
+
+        }
+    }
+      
+]
