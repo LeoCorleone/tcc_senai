@@ -25,6 +25,20 @@ def index(request):
         postagem = paginator.page(paginator.num_pages)
     return render(request, 'index.html', {'form': form, 'postagem': postagem})
 
+def indexlogin(request):
+    postagem = Roupa.objects.all()
+    paginator = Paginator(postagem, 6) 
+    try:
+        page = int(request.GET.get('page', '1'))
+    except ValueError:
+        page = 1
+
+    try:
+        postagem = paginator.page(page)
+    except (EmptyPage, InvalidPage):
+        postagem = paginator.page(paginator.num_pages)
+    return render(request, 'indexlogin.html', {'postagem': postagem})
+
 def login(request):
     if request.method == 'POST':
         form = LoginForms(request.POST)
@@ -43,7 +57,7 @@ def login(request):
         if user is not None:
             auth.login(request, user)
             messages.success(request, f'Foi logado com sucesso!')
-            return redirect('index')
+            return redirect('indexlogin')
         else:
             messages.error(request, 'Erro ao efetuar login')
             return redirect('index')
@@ -160,4 +174,4 @@ def curtir_postagem(request, postagem_id):
         postagem.likes += 1
 
     postagem.save()
-    return redirect('index')
+    return redirect('indexlogin')
