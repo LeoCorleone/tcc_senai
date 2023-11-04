@@ -4,14 +4,15 @@
     <div class="navbar-principal" style=" padding: 5px;">
         <div class="row">
             <div class="col">
-                <a class="navbar-brand" href="#">Empresa</a>
+                <a class="navbar-brand" href="{% url 'index' %}"><img src="{% static 'assets/img/logo1.png' %}" style="height: 35px; height: 35px;" alt="logo-marca"></a>
             </div>
             <div class="col text-center">
                 <a class="nav-link active" aria-current="page" href="#">Home</a>
             </div>
             <div class="col text-end">
+                <a class="navbar-brand" href="{% url 'adm' %}"><img src="{% static 'assets/img/adm.png' %}" style="height: 35px; height: 35px;" alt="logo-marca"></a>
                 <a href="{% url 'logout' %}">
-                    <button class="btn btn-outline-success" type="submit" style="margin-right: 5px;">Logout</button>
+                    <button class="btn btn-outline-danger" type="submit" style="margin-right: 5px;">Logout</button>
                   </a>
                 <div class="modal fade" id="ModalForm" tabindex="-1" aria-labelledby="ModalFormLabel" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered">

@@ -108,7 +108,6 @@ def edit_roupa(request, id):
     form = PostagemForms(instance=roupa)
     return render(request, "updateroupa.html",{"form":form, "roupa":roupa})
 
-# @login_required
 def update_roupa(request, id):
     try:
         if request.method == "POST":
@@ -180,11 +179,9 @@ def curtir_postagem(request, postagem_id):
     user = request.user
 
     if user in postagem.liked_by.all():
-        # O usuário já curtiu a postagem, então vamos remover a curtida
         postagem.liked_by.remove(user)
         postagem.likes -= 1
     else:
-        # O usuário não curtiu a postagem, vamos adicionar a curtida
         postagem.liked_by.add(user)
         postagem.likes += 1
 
