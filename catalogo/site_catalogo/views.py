@@ -37,7 +37,7 @@ def indexlogin(request):
         postagem = paginator.page(page)
     except (EmptyPage, InvalidPage):
         postagem = paginator.page(paginator.num_pages)
-    return render(request, 'indexlogin.html', {'postagem': postagem})
+    return render(request, 'adm/indexlogin.html', {'postagem': postagem})
 
 def login(request):
     if request.method == 'POST':
@@ -68,7 +68,7 @@ def logout(request):
     return redirect('index')
 
 def adm(request):
-    return render(request, 'adm.html')
+    return render(request, 'adm/adm.html')
 
 def postagem(request):
   
@@ -81,7 +81,7 @@ def postagem(request):
             return redirect('listar_roupas')
     else:
         form = PostagemForms()
-    return render(request, 'postagemform.html', {'form' : form})
+    return render(request, 'adm/postagemform.html', {'form' : form})
 
 def listar_roupas(request):
     postagem = Roupa.objects.all()
@@ -95,7 +95,7 @@ def listar_roupas(request):
         postagem = paginator.page(page)
     except (EmptyPage, InvalidPage):
         postagem = paginator.page(paginator.num_pages)
-    return render(request, 'listagemroupas.html', {'postagem': postagem})
+    return render(request, 'adm/listagemroupas.html', {'postagem': postagem})
 
 def delete(request, id):
     roupa = Roupa.objects.get(pk=id)
@@ -106,7 +106,7 @@ def delete(request, id):
 def edit_roupa(request, id):
     roupa = Roupa.objects.get(pk=id)
     form = PostagemForms(instance=roupa)
-    return render(request, "updateroupa.html",{"form":form, "roupa":roupa})
+    return render(request, "adm/updateroupa.html",{"form":form, "roupa":roupa})
 
 def update_roupa(request, id):
     try:
@@ -132,13 +132,13 @@ def adicionar_usuario(request):
         messages.success(request, f'Usuario cadastrado com sucesso!')
         return redirect('listar_usuario')
 
-    return render(request, "addusuario.html", {
+    return render(request, "adm/addusuario.html", {
         'form':usuario
     })
 
 def listar_usuario(request):
     usuarios = User.objects.all()
-    return render(request, 'listagemusuarios.html', {
+    return render(request, 'adm/listagemusuarios.html', {
         'usuarios': usuarios
     })
 
@@ -156,7 +156,7 @@ def update_usuario(request, id):
         usuario.email = request.POST['email']
         usuario.save()
         return redirect('listar_usuario')
-    return render(request, 'editaruser.html', {'usuario': usuario})
+    return render(request, 'adm/editaruser.html', {'usuario': usuario})
 
 def inative(request, id):
     user = User.objects.get(id=id)
