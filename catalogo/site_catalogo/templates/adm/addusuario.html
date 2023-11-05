@@ -6,25 +6,27 @@
 {% include 'partials/adm/navbar.html' %}
 
 <!-- navbar fim -->
-    <div class="container" id="info" style="margin: 5%; width: 30%;">
-        <div class="col">
-            <div class="card-header">
-                <h1 class="log">Adicionar Usuário</h1>
+    <div class="d-flex justify-content-center">
+        <div class="container" id="info" style="margin: 5%; width: 30%;">
+            <div class="col">
+                <div class="card-header">
+                    <h1 class="log">Adicionar Usuário</h1>
+                </div>
+                <form action="{% url 'adicionar_usuario' %}" method="POST">
+                  {% csrf_token %}
+                  {% for field in form.visible_fields %}
+                    <div class="mb-1" style="width: 35%;">
+                        <label for="{{field.id_for_label}}" class="form-label">{{field.label}}</label>
+                        {{field}}
+                    </div>
+                      {% endfor %}
+                    <button class="btn btn-success" type="submit">Adicionar</button>
+                    <div class="container text-center" style="padding: 2%;">
+                    </div>
+                </form>
             </div>
-            <form action="{% url 'adicionar_usuario' %}" method="POST">
-              {% csrf_token %}
-              {% for field in form.visible_fields %}
-                <div class="mb-1" style="width: 35%;">
-                    <label for="{{field.id_for_label}}" class="form-label">{{field.label}}</label>
-                    {{field}}
-                </div>
-                  {% endfor %}
-                <button class="btn btn-success" type="submit">Adicionar</button>
-                <div class="container text-center" style="padding: 2%;">
-                </div>
-            </form>
         </div>
+    
     </div>
-
 {% include 'partials/footer.html' %}
 {% endblock %}

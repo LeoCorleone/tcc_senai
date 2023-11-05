@@ -61,8 +61,7 @@
                 <a class="page-link" href="?page={{ postagem.previous_page_number }}">anterior</a>
                 {% endif %}
             </li>
-            <li class="page-item disabled"><a class="page-link" href="#">{{ postagem.number }} de {{
-                    postagem.paginator.num_pages }}</a></li>
+            <li class="page-item disabled"><a class="page-link" href="#">{{ postagem.number }} de {{postagem.paginator.num_pages }}</a></li>
             <li class="page-item">
                 {% if postagem.has_next %}
                 <a class="page-link" href="?page={{ postagem.next_page_number }}">próxima</a>
