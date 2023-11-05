@@ -203,3 +203,7 @@ def adicionar_comentario(request, roupa_id):
         form = ComentarioForm()
 
     return render(request, 'index.html', {'form': form})
+
+def exibir_comentario(request, roupa_id):
+    roupa = get_object_or_404(Roupa, pk=roupa_id)
+    comentarios = Comentario.objects.filter(roupa=roupa)

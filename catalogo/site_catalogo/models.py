@@ -33,6 +33,4 @@ class Comentario(models.Model):
     roupa = models.ForeignKey("Roupa", on_delete=models.CASCADE, related_name="comentarios")
     data_publicacao = models.DateTimeField(auto_now_add=True)
 
-def exibir_comentario(request, roupa_id):
-    roupa = get_object_or_404(Roupa, pk=roupa_id)
-    comentarios = Comentario.objects.filter(roupa=roupa)
+
