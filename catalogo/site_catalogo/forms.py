@@ -12,17 +12,6 @@ class ComentarioForm(forms.Form):
     comentario_roupa = forms.CharField(widget=forms.Textarea)
 
 class LoginForms(forms.Form):
-    # nome = forms.CharField(
-    #     label = 'Nome Completo',
-    #     required = True,
-    #     max_length = 100,
-    #     widget = forms.TextInput (
-    #         attrs= {
-    #         'class': 'form-control',
-    #         'placeholder': 'Digite seu nome',
-    #         }
-    #     )
-    # )
     email = forms.EmailField(
         label='Email',
         required=True,
@@ -80,3 +69,11 @@ class CriarLoginForms(forms.Form):
             }
         )
     )
+
+class ComentarioForm(forms.ModelForm):
+    class Meta:
+        model = Comentario
+        fields = ['texto']
+        widgets = {
+            'texto': forms.Textarea(attrs={'placeholder': 'Digite seu comentário aqui...'}),
+        }

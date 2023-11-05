@@ -27,15 +27,12 @@ class Modelo(models.Model):
     def __str__(self):
         return self.nome_modelo
 
-class UserRoupa(models.Model):
-    curtida_roupa = models.IntegerField()
-    comentario_roupa = models.TextField()
-    usuario = models.ForeignKey(to=User, on_delete=models.CASCADE, related_name="usuario")
-    roupa = models.ForeignKey(to=Roupa, on_delete=models.CASCADE, related_name="roupa")
+class Comentario(models.Model):
+    texto = models.TextField()
+    usuario = models.ForeignKey(User, on_delete=models.CASCADE)
+    roupa = models.ForeignKey("Roupa", on_delete=models.CASCADE, related_name="comentarios")
+    data_publicacao = models.DateTimeField(auto_now_add=True)
 
-class Mensagem(models.Model):
-    roupa = models.ForeignKey(Roupa, on_delete=models.CASCADE)
-    remetente = models.ForeignKey(User, on_delete=models.CASCADE)  # Suponha que você tenha um modelo User
-    mensagem = models.TextField()
-    data_envio = models.DateTimeField(auto_now_add=True)
-
+def exibir_comentario(request, roupa_id):
+    roupa = get_object_or_404(Roupa, pk=roupa_id)
+    comentarios = Comentario.objects.filter(roupa=roupa)

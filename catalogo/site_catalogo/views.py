@@ -1,6 +1,6 @@
 from django.http import HttpResponse
 from django.shortcuts import render, redirect, get_object_or_404
-from .models import Roupa, Mensagem
+from .models import Roupa, Comentario
 from django.core.paginator import Paginator, InvalidPage, EmptyPage
 from .forms import *
 from django.contrib import auth
@@ -188,4 +188,18 @@ def curtir_postagem(request, postagem_id):
     postagem.save()
     return redirect('index')
 
+def adicionar_comentario(request, roupa_id):
+    roupa = get_object_or_404(Roupa, pk=roupa_id)
 
+    if request.method == 'POST':
+        form = ComentarioForm(request.POST)
+        if form.is_valid():
+            comentario = form.save(commit=False)
+            comentario.usuario = request.user
+            comentario.roupa = roupa
+            comentario.save()
+            return redirect('index.html', roupa_id=roupa_id)
+    else:
+        form = ComentarioForm()
+
+    return render(request, 'index.html', {'form': form})

@@ -27,7 +27,9 @@ urlpatterns = [
     path('updateusuario/<int:id>', update_usuario, name='update_usuario'),
     path('inativar/<int:id>', inative, name="inative_user"),
     path('ativar/<int:id>', active, name="active_user"),
-    path('curtir/<int:postagem_id>/', views.curtir_postagem, name='curtir_postagem'),
+    path('curtir/<int:postagem_id>/', curtir_postagem, name='curtir_postagem'),
+    path('roupa/<int:roupa_id>/adicionar_comentario/', adicionar_comentario, name='adicionar_comentario'),
+    path('roupa/<int:roupa_id>/', exibir_comentario, name='exibir_comentario'),
 
 ]
 
