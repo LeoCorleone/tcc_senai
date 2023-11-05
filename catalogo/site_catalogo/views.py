@@ -186,6 +186,6 @@ def curtir_postagem(request, postagem_id):
         postagem.likes += 1
 
     postagem.save()
-    return redirect('indexlogin')
+    return redirect('index')
 
 
