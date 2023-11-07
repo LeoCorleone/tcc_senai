@@ -51,14 +51,17 @@ def login(request):
             messages.error(request, 'Erro ao efetuar login')
             return redirect('index')
 
+@login_required
 def logout(request):
     auth.logout(request)
     messages.success(request, 'Logout efetuado com sucesso!')
     return redirect('index')
 
+@login_required
 def adm(request):
     return render(request, 'adm/adm.html')
 
+@login_required
 def postagem(request):
   
     if request.method == 'POST':
@@ -72,6 +75,7 @@ def postagem(request):
         form = PostagemForms()
     return render(request, 'adm/postagemform.html', {'form' : form})
 
+@login_required
 def listar_roupas(request):
     postagem = Roupa.objects.all()
     paginator = Paginator(postagem, 6) 
@@ -86,17 +90,20 @@ def listar_roupas(request):
         postagem = paginator.page(paginator.num_pages)
     return render(request, 'adm/listagemroupas.html', {'postagem': postagem})
 
+@login_required
 def delete(request, id):
     roupa = Roupa.objects.get(pk=id)
     roupa.delete()
     messages.success(request, f'Postagem deletada com sucesso!')
     return redirect('listar_roupas')
 
+@login_required
 def edit_roupa(request, id):
     roupa = Roupa.objects.get(pk=id)
     form = PostagemForms(instance=roupa)
     return render(request, "adm/updateroupa.html",{"form":form, "roupa":roupa})
 
+@login_required
 def update_roupa(request, id):
     try:
         if request.method == "POST":
@@ -111,6 +118,7 @@ def update_roupa(request, id):
         messages.error(request, e)
         return redirect('listar_roupas')
 
+@login_required
 def adicionar_usuario(request):
     usuario = CriarLoginForms()
     if request.method == "POST":
@@ -125,18 +133,21 @@ def adicionar_usuario(request):
         'form':usuario
     })
 
+@login_required
 def listar_usuario(request):
     usuarios = User.objects.all()
     return render(request, 'adm/listagemusuarios.html', {
         'usuarios': usuarios
     })
 
+@login_required
 def delete_usuario(request, id):
     usuarios = User.objects.get(pk=id)
     usuarios.delete()
     messages.success(request, f'Usuario deletado com sucesso!')
     return redirect('listar_usuario')
 
+@login_required
 def update_usuario(request, id):
     usuario = User.objects.get(pk=id)
     if request.method == 'POST':
@@ -147,6 +158,7 @@ def update_usuario(request, id):
         return redirect('listar_usuario')
     return render(request, 'adm/editaruser.html', {'usuario': usuario})
 
+@login_required
 def inative(request, id):
     user = User.objects.get(id=id)
     user.is_active = False
@@ -154,7 +166,7 @@ def inative(request, id):
     messages.success(request, 'Usuario inativado com sucesso!')
     return redirect('listar_usuario')
 
-
+@login_required
 def active(request, id):
     user = User.objects.get(id=id)
     user.is_active = True
@@ -162,7 +174,7 @@ def active(request, id):
     messages.success(request, 'Usuario ativado com sucesso!')
     return redirect('listar_usuario')
 
-
+@login_required
 def curtir_postagem(request, postagem_id):
     postagem = get_object_or_404(Roupa, id=postagem_id)
     user = request.user
@@ -177,6 +189,7 @@ def curtir_postagem(request, postagem_id):
     postagem.save()
     return redirect('index')
 
+@login_required
 def adicionar_comentario(request, roupa_id):
     roupa = get_object_or_404(Roupa, pk=roupa_id)
 
@@ -187,8 +200,4 @@ def adicionar_comentario(request, roupa_id):
             comentario.usuario = request.user
             comentario.roupa = roupa
             comentario.save()
-            return redirect('index')
-
-# def exibir_comentario(request, roupa_id):
-#     roupa = get_object_or_404(Roupa, pk=roupa_id)
-#     comentarios = Comentario.objects.filter(roupa=roupa)
+            return redirect('index') 
