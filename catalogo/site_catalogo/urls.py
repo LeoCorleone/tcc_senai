@@ -11,7 +11,6 @@ from . import views
 urlpatterns = [
 
     path("", index, name="index"),
-    path("indexlogin", indexlogin, name="indexlogin"),
     path("adm/", adm, name= "adm"),
     path('postagem/', postagem, name = 'postagem'),
     path('login', login, name='login'),
@@ -28,8 +27,8 @@ urlpatterns = [
     path('inativar/<int:id>', inative, name="inative_user"),
     path('ativar/<int:id>', active, name="active_user"),
     path('curtir/<int:postagem_id>/', curtir_postagem, name='curtir_postagem'),
-    path('roupa/<int:roupa_id>/adicionar_comentario/', adicionar_comentario, name='adicionar_comentario'),
-    path('roupa/<int:roupa_id>/', exibir_comentario, name='exibir_comentario'),
+    path('index/<int:roupa_id>/adicionar_comentario/', adicionar_comentario, name='adicionar_comentario'),
+    # path('index/<int:roupa_id>/exibir', exibir_comentario, name='exibir_comentario'),
 
 ]
 

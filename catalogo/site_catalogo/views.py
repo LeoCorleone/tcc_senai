@@ -14,6 +14,8 @@ def index(request):
     form = LoginForms()
     postagem = Roupa.objects.all()
     paginator = Paginator(postagem, 6) 
+    formcomentario = ComentarioForm()
+    
     try:
         page = int(request.GET.get('page', '1'))
     except ValueError:
@@ -23,21 +25,8 @@ def index(request):
         postagem = paginator.page(page)
     except (EmptyPage, InvalidPage):
         postagem = paginator.page(paginator.num_pages)
-    return render(request, 'index.html', {'form': form, 'postagem': postagem})
+    return render(request, 'index.html', {'postagem': postagem, 'formcomentario': formcomentario, 'form':form})
 
-def indexlogin(request):
-    postagem = Roupa.objects.all()
-    paginator = Paginator(postagem, 6) 
-    try:
-        page = int(request.GET.get('page', '1'))
-    except ValueError:
-        page = 1
-
-    try:
-        postagem = paginator.page(page)
-    except (EmptyPage, InvalidPage):
-        postagem = paginator.page(paginator.num_pages)
-    return render(request, 'adm/indexlogin.html', {'postagem': postagem})
 
 def login(request):
     if request.method == 'POST':
@@ -57,7 +46,7 @@ def login(request):
         if user is not None:
             auth.login(request, user)
             messages.success(request, f'Foi logado com sucesso!')
-            return redirect('indexlogin')
+            return redirect('adm')
         else:
             messages.error(request, 'Erro ao efetuar login')
             return redirect('index')
@@ -198,12 +187,8 @@ def adicionar_comentario(request, roupa_id):
             comentario.usuario = request.user
             comentario.roupa = roupa
             comentario.save()
-            return redirect('index.html', roupa_id=roupa_id)
-    else:
-        form = ComentarioForm()
+            return redirect('index')
 
-    return render(request, 'index.html', {'form': form})
-
-def exibir_comentario(request, roupa_id):
-    roupa = get_object_or_404(Roupa, pk=roupa_id)
-    comentarios = Comentario.objects.filter(roupa=roupa)
+# def exibir_comentario(request, roupa_id):
+#     roupa = get_object_or_404(Roupa, pk=roupa_id)
+#     comentarios = Comentario.objects.filter(roupa=roupa)

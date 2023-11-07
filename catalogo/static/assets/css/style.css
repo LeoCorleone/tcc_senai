@@ -4,26 +4,11 @@
 }
 
 .icone1 {
-    display:block;
-    width: 40px; 
     height: 40px;
-    border: solid 1px blue;
+    left: 30px;
 }
 
 .icone2 {
-    display:block;
-    width: 35px; 
     height: 35px;
-    border: solid 1px red;
-}
-
-.navbar-principal{
-    color: #203540; 
-    font-family:'Roboto', sans-serif; 
-    font-size:25px;
-}
-
-.teste {
-    width: 100%;
-    border: solid 1px red;
+    left: 90px;
 }
