@@ -1,57 +1,54 @@
 {% load static %}
-<div class="modal fade" id="modalFoto{{x.id}}" tabindex="-1" role="dialog" aria-labelledby="modalFotoLabel"
-            aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="modalFotoLabel">{{x.titulo_roupa}}</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
+<div class="modal fade" id="modalFoto{{x.id}}" tabindex="-1" role="dialog" aria-labelledby="modalFotoLabel"aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalFotoLabel">{{x.titulo_roupa}}</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <!-- Imagem ampliada à esquerda -->
+                        <img src="{{x.imagem_roupa.url}}" alt="{{x.titulo_roupa}}" class="img-fluid">
                     </div>
-                    <div class="modal-body">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <!-- Imagem ampliada à esquerda -->
-                                <img src="{{x.imagem_roupa.url}}" alt="{{x.titulo_roupa}}" class="img-fluid">
-                            </div>
-                            <div class="col-md-6">
-                                <!-- Informações sobre a roupa alinhadas à esquerda -->
-                                <h4 class="text-left">Descrição:</h4>
-                                <p class="text-left">{{x.descricao_roupa}}</p>
+                    <div class="col-md-6">
+                        <!-- Informações sobre a roupa alinhadas à esquerda -->
+                        <h4 class="text-left">Descrição:</h4>
+                        <p class="text-left">{{x.descricao_roupa}}</p>
 
-                                <h4 class="text-left">Composição:</h4>
-                                <p class="text-left">{{x.composicao_roupa}}</p>
+                        <h4 class="text-left">Composição:</h4>
+                        <p class="text-left">{{x.composicao_roupa}}</p>
 
-                                <h4 class="text-left">Marca:</h4>
-                                <p class="text-left">{{x.marca}}</p>
+                        <h4 class="text-left">Marca:</h4>
+                        <p class="text-left">{{x.marca}}</p>
 
-                                <h4 class="text-left">Modelo:</h4>
-                                <p class="text-left">{{x.modelo}}</p>
-                            </div>
+                        <h4 class="text-left">Modelo:</h4>
+                        <p class="text-left">{{x.modelo}}</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <!-- Área de comentários -->
+                        <h4>Comentários</h4>
+                        {% for comentario in x.comentarios.all %}
+                        <div class="container-md justify-content-begin">
+                            <p >{{ comentario.usuario }} : {{ comentario.texto }}</p>
                         </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <!-- Área de comentários -->
-                                <h4>Comentários</h4>
-                                {% for comentario in x.comentarios.all %}
-                                <p>{{ comentario.texto }}</p>
-                                {% endfor %}
+                        {% endfor %}
 
-                            </div>
-                            <div class="col-md-6">
-
-                                <form method="post" action="{% url 'adicionar_comentario' roupa_id=x.id %}">
-                                    {% csrf_token %}
-                                    {{ formcomentario.as_p }}
-                                    <button type="submit" class="btn btn-primary">Adicionar Comentário</button>
-                                </form>
-
-
-
-                            </div>
-                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <form method="post" action="{% url 'adicionar_comentario' roupa_id=x.id %}">
+                            {% csrf_token %}
+                            {{ formcomentario.as_p }}
+                            <button type="submit" class="btn btn-primary">Adicionar Comentário</button>
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
+</div>
