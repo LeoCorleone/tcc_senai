@@ -178,7 +178,7 @@ def active(request, id):
 def curtir_postagem(request, postagem_id):
     postagem = get_object_or_404(Roupa, id=postagem_id)
     user = request.user
-
+    
     if user in postagem.liked_by.all():
         postagem.liked_by.remove(user)
         postagem.likes -= 1

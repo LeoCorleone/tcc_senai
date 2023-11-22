@@ -1,57 +1,84 @@
 {% load static %}
-<div class="modal fade" id="modalFoto{{x.id}}" tabindex="-1" role="dialog" aria-labelledby="modalFotoLabel"
-            aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="modalFotoLabel">{{x.titulo_roupa}}</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
+<style>
+*{
+    padding: 0%;
+}
+#coments h4{
+    margin: 0px;
+    text-align: center;
+    margin-bottom: 2%;
+    font-size: 20px;
+}
+#coment p{
+    padding-bottom: 2px;
+    padding-top: 1%;
+    color: black;
+    padding: 3px;
+    border-color: grey;
+    border-top-style: ridge;
+}
+#description p{
+    padding-top: 1%;
+    text-align: left;
+}
+#area-coment p{
+    border-color: grey;
+    border-top-style: groove;
+    padding-top: 1%;
+    text-align: left;
+    color: black;
+    font-size: 25px;
+    margin-bottom: 3%;
+}
+
+#area-coment input{
+   width: 100%;
+}
+
+</style>
+<div class="modal fade" id="modalFoto{{x.id}}" tabindex="-1" role="dialog" aria-labelledby="modalFotoLabel"aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalFotoLabel">{{x.titulo_roupa}}</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <!-- Imagem ampliada à esquerda -->
+                        <img src="{{x.imagem_roupa.url}}" alt="{{x.titulo_roupa}}" class="img-fluid">
                     </div>
-                    <div class="modal-body">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <!-- Imagem ampliada à esquerda -->
-                                <img src="{{x.imagem_roupa.url}}" alt="{{x.titulo_roupa}}" class="img-fluid">
-                            </div>
-                            <div class="col-md-6">
-                                <!-- Informações sobre a roupa alinhadas à esquerda -->
-                                <h4 class="text-left">Descrição:</h4>
-                                <p class="text-left">{{x.descricao_roupa}}</p>
-
-                                <h4 class="text-left">Composição:</h4>
-                                <p class="text-left">{{x.composicao_roupa}}</p>
-
-                                <h4 class="text-left">Marca:</h4>
-                                <p class="text-left">{{x.marca}}</p>
-
-                                <h4 class="text-left">Modelo:</h4>
-                                <p class="text-left">{{x.modelo}}</p>
-                            </div>
+                    <div class="col-md-3" id="description">
+                        <!-- Informações sobre a roupa alinhadas à esquerda -->
+                        <h4 class="text-left">Descrição: <p>{{x.descricao_roupa}}.</p></h4>
+                        <h4 class="text-left">Composição: <p>{{x.composicao_roupa}}.</p></h4>
+                        <h4 class="text-left">Marca: <p>{{x.marca}}.</p></h4>                       
+                        <h4 class="text-left">Modelo: <p>{{x.modelo}}.</p></h4>                     
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6" id="coments">
+                        <!-- Área de comentários -->
+                        <h4>Comentários</h4>
+                        {% for comentario in x.comentarios.all %}
+                        <div class="container-md justify-content-begin" id="coment">
+                            <p><b>{{ comentario.usuario }}:</b> {{ comentario.texto }}</p>
                         </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <!-- Área de comentários -->
-                                <h4>Comentários</h4>
-                                {% for comentario in x.comentarios.all %}
-                                <p>{{ comentario.texto }}</p>
-                                {% endfor %}
+                        {% endfor %}
 
-                            </div>
-                            <div class="col-md-6">
-
-                                <form method="post" action="{% url 'adicionar_comentario' roupa_id=x.id %}">
-                                    {% csrf_token %}
-                                    {{ formcomentario.as_p }}
-                                    <button type="submit" class="btn btn-primary">Adicionar Comentário</button>
-                                </form>
-
-
-
-                            </div>
-                        </div>
+                    </div>
+                    <div class="col-md-6" id="area-coment">
+                        <form method="post" action="{% url 'adicionar_comentario' roupa_id=x.id %}">
+                            {% csrf_token %}
+                            {{ formcomentario.as_p }}
+                            <button type="submit" class="btn btn-primary">Comentar</button>
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
+</div>

@@ -26,17 +26,12 @@ Instale o MYSQL;
 $ git clone https://github.com/LeoCorleone/tcc_senai.git
 
 
-# Acesse a pasta do projeto no terminal/cmd
-$ cd nlw1
-
-# Vá para a pasta server
-$ cd server
 
 # Instale as dependências
-$ npm install
+
 python3 manage.py migrate
 python3 manage.py createsuperuser
-python3 manage.py runserver
+
 
 Para semearmos dados já pre definidos vamos usar o seed: Primeiro vamos fazer a execução da nossa fixture
 
@@ -46,7 +41,7 @@ Para semearmos dados já pre definidos vamos usar o seed: Primeiro vamos fazer a
 python3 .\manage.py loaddata .\catalogo\fixtures\roupas.json
 
 # Execute a aplicação em modo de desenvolvimento
-$ npm run dev:server
+python manage.py runserver 
 
 # :wrench: Ferramentas Utilizadas
 - `Python` 
