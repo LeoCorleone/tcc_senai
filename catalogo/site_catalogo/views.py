@@ -123,8 +123,9 @@ def adicionar_usuario(request):
     usuario = CriarLoginForms()
     if request.method == "POST":
         cadastrouser = User.objects.create_user(
-            username = request.POST['nome'], password = request.POST['senha'],
-                            email = request.POST['email'])
+            username = request.POST['nome'], 
+            password = request.POST['senha'],
+            email = request.POST['email'])
         cadastrouser.save()
         messages.success(request, f'Usuario cadastrado com sucesso!')
         return redirect('listar_usuario')
