@@ -5,34 +5,41 @@
 }
 #coments h4{
     margin: 0px;
-    text-align: center;
     margin-bottom: 2%;
-    font-size: 20px;
+    font-size: 25px;
 }
 #coment p{
     padding-bottom: 2px;
     padding-top: 1%;
     color: black;
     padding: 3px;
-    border-color: grey;
-    border-top-style: ridge;
+    text-align: left;
+}
+#description{
+    padding: 2%;
+    opacity: 85%;
 }
 #description p{
     padding-top: 1%;
     text-align: left;
-}
-#area-coment p{
-    border-color: grey;
-    border-top-style: groove;
-    padding-top: 1%;
-    text-align: left;
+    font-size: 15px;   
     color: black;
-    font-size: 25px;
+    margin-bottom:1px;
+}
+#formulario p{
+    text-align: center;
+    color: black;
+    font-size: 20px;
     margin-bottom: 3%;
 }
+#formulario label{
+    font-size: 25px;
+}
 
-#area-coment input{
-   width: 100%;
+#formulario input{
+    border: 1px solid gray;
+    padding: 1%;
+    border-radius: 10px;
 }
 
 </style>
@@ -46,38 +53,35 @@
                 </button>
             </div>
             <div class="modal-body">
-                <div class="row">
-                    <div class="col-md-6">
+                <div class="row d-flex">
+                    <!-- <div class="col-md-6"> -->
                         <!-- Imagem ampliada à esquerda -->
                         <img src="{{x.imagem_roupa.url}}" alt="{{x.titulo_roupa}}" class="img-fluid">
-                    </div>
-                    <div class="col-md-3" id="description">
+                    <!-- </div> -->
+                    <div id="description">
                         <!-- Informações sobre a roupa alinhadas à esquerda -->
-                        <h4 class="text-left">Descrição: <p>{{x.descricao_roupa}}.</p></h4>
-                        <h4 class="text-left">Composição: <p>{{x.composicao_roupa}}.</p></h4>
-                        <h4 class="text-left">Marca: <p>{{x.marca}}.</p></h4>                       
-                        <h4 class="text-left">Modelo: <p>{{x.modelo}}.</p></h4>                     
+                        <p><b>Descrição:</b> {{x.descricao_roupa}}.</p>
+                        <p><b>Composição: </b>{{x.composicao_roupa}}.</p>
+                        <p><b>Marca: </b>{{x.marca}}.</p>                       
+                        <p><b>Modelo: </b>{{x.modelo}}.</p>                
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-md-6" id="coments">
+                    <div class="container-fluid text-center" id="coments" style="padding: 3%;">
                         <!-- Área de comentários -->
                         <h4>Comentários</h4>
-                        {% for comentario in x.comentarios.all %}
-                        <div class="container-md justify-content-begin" id="coment">
-                            <p><b>{{ comentario.usuario }}:</b> {{ comentario.texto }}</p>
+                        <div class="container-sm shadow" style="height: 180px; overflow-y: scroll;">
+                            {% for comentario in x.comentarios.all %}
+                            <div class="container-md justify-content-begin" id="coment">
+                                <p><b>{{ comentario.usuario }}:</b> {{ comentario.texto }}</p>
+                            </div>
+                            {% endfor %}
                         </div>
-                        {% endfor %}
-
-                    </div>
-                    <div class="col-md-6" id="area-coment">
-                        <form method="post" action="{% url 'adicionar_comentario' roupa_id=x.id %}">
+                        <form method="post" id="formulario" action="{% url 'adicionar_comentario' roupa_id=x.id %}">
                             {% csrf_token %}
                             {{ formcomentario.as_p }}
-                            <button type="submit" class="btn btn-primary">Comentar</button>
+                            <button type="submit" class="btn btn-dark btn-lg">Comentar</button>
                         </form>
-                    </div>
-                </div>
+                    </div>                
             </div>
         </div>
     </div>
