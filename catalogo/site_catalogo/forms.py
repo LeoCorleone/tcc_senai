@@ -1,6 +1,6 @@
 from django import forms
 from .models import *
-from django.contrib.auth.forms import AuthenticationForm
+from django.contrib.auth.forms import UserCreationForm
 
 class PostagemForms(forms.ModelForm):
     class Meta:
@@ -37,13 +37,13 @@ class LoginForms(forms.Form):
 
 class CriarLoginForms(forms.Form):
     nome = forms.CharField(
-        label = 'Nome Completo',
-        required = True,
-        max_length = 100,
-        widget = forms.TextInput (
-            attrs= {
-            'class': 'form-control',
-            'placeholder': 'Digite seu nome',
+        label='Nome Completo',
+        required=True,
+        max_length=100,
+        widget=forms.TextInput(
+            attrs={
+                'class': 'form-control my-custom-input',
+                'placeholder': 'Digite seu nome',
             }
         )
     )
@@ -53,7 +53,7 @@ class CriarLoginForms(forms.Form):
         max_length=100,
         widget=forms.EmailInput(
             attrs={
-                'class': 'form-control',
+                'class': 'form-control my-custom-input',
                 'placeholder': 'Ex.: leleo@leleo.com.br',
             }
         )
@@ -64,8 +64,17 @@ class CriarLoginForms(forms.Form):
         max_length=70,
         widget=forms.PasswordInput(
             attrs={
-                'class': 'form-control',
+                'class': 'form-control my-custom-input',
                 'placeholder': 'Digite a sua senha',
+            }
+        )
+    )
+    is_admin = forms.BooleanField(
+        label='Administrador?',
+        required=False,
+        widget=forms.CheckboxInput(
+            attrs={
+                'class': 'form-check-input my-custom-checkbox',
             }
         )
     )
