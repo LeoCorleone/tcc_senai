@@ -49,10 +49,10 @@ class Comentario(models.Model):
 #     descricao_produto = models.CharField(max_length=250)
 #     composicao_produto = models.CharField(max_length=100)
 #     imagem_produto = models.ImageField(upload_to='uploads/')
-#     modelo = models.ForeignKey("Modelo", on_delete=models.CASCADE, related_name='produtos')
 #     ano = models.ForeignKey(Ano, on_delete=models.CASCADE)
 #     colecao = models.ForeignKey(Colecao, on_delete=models.CASCADE)
 #     tipo = models.ForeignKey(Tipo, on_delete=models.CASCADE)
+#     comentarios = modelsPositiveInterField(default=0)
 #     likes = models.PositiveIntegerField(default=0)
 #     liked_by = models.ManyToManyField(User, blank=True)
 
