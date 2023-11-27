@@ -11,6 +11,7 @@ from . import views
 urlpatterns = [
 
     path("", index, name="index"),
+    path("artdicas/", artdicas, name="artdicas"),
     path("adm/", adm, name= "adm"),
     path('postagem/', postagem, name = 'postagem'),
     path('login', login, name='login'),
