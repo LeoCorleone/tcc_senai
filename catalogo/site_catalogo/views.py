@@ -30,6 +30,9 @@ def index(request):
         postagem = paginator.page(paginator.num_pages)
     return render(request, 'index.html', {'postagem': postagem, 'formcomentario': formcomentario, 'form':form})
 
+def artdicas(request):
+    return render(request, 'artdicas.html')
+
 
 def login(request):
     if request.method == 'POST':
