@@ -4,7 +4,45 @@
 {% include 'partials/navbar.html' %}
 {% include 'partials/alerts.html' %}
 
-<h1>sobre</h1>
+<div class="container-flluid">
+    <div class="container text-begin">
+        <h2>High Fashion Confecções Ltda.</h2>
+        <p>Moda com Elegância e Inovação desde 1972</p>
+    </div>
+    <div class="container text-center" id="Sobre">     
+        <h1>Sobre</h1>
+    </div>
+    <div class="container text-begin" id="quemsomos">
+        <div class="container row align-items-start">
+            <div class="col">
+                <h3>Quem Somos</h3>
+                <p>A High Fashion Confecções Ltda. Ltda. foi fundada em São João Nepomuceno, em 25 de fevereiro de 1972, 
+                    pelos visionários Gianni Givenchy e Yves Dior. Desde o início, a empresa tem se dedicado à criação de 
+                    moda adulta feminina, com um compromisso inabalável de combinar praticidade, conforto e beleza cotidiana em cada peça.</p>
+            </div>
+            <img src="{% static 'assets/img/manequin.jpg' %}" alt="Foto-Manequin">
+            <div class="col">
+                <h3>Nossa História</h3>
+                <p>
+                    Começamos com poucas máquinas, mas muita criatividade. O sucesso nos levou a expandir, 
+                    incorporando tecnologia de ponta e automação. Em 1994, Christian Vuitton e Gabrielle Courrège 
+                    juntaram-se à empresa, trazendo nova energia. Em 2000, investimos em lojas próprias, representando 
+                    35% do faturamento em 2002. Em 2009, abraçamos franquias, ampliando nossa presença global.</p>
+            </div>         
+        </div>
+        <div class="container row align-items-start" id="compromisso">
+            <div class="col">
+                <h3>Nosso Compromisso</h3>
+                <p>Somos uma empresa comprometida com a qualidade, inovação e satisfação do cliente. 
+                    Cada peça que produzimos reflete não apenas as últimas tendências da moda, mas também 
+                    a nossa paixão por criar roupas que fazem as mulheres se sentirem confiantes e elegantes em seu dia a dia.</p>
+            </div>
+            <div class="col" >
+                <img src="{% static 'assets/img/sobre1.jpg' %}" alt="Foto-Equipe">
+            </div>
+        </div>
+   </div>
+</div>
 
 {% include 'partials/footer.html' %}
 {% endblock%}
