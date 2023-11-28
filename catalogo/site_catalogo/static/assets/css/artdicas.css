@@ -8,9 +8,9 @@
     margin-bottom: 3%;
     width: 100%;
 }
-.artdicas2{
+.artdicas{
     background-color: #CBD0D5;
-    padding-top: 2%;
+    padding: 2%;
 }
 p{
     text-align: justify;
@@ -25,4 +25,7 @@ h3{
 .artdicas2 img{
     height: 750px;
     width: 533px;
+}
+.artdicas3 img{
+    padding-bottom:3% ;
 }
