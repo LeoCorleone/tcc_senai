@@ -1,48 +1,77 @@
 {% load static %}
 <!-- navbar  -->
+<style>
+    .navbar-link {
+        text-decoration: none;
+        color: #203540;
+        cursor: pointer;
+    }
+
+    .navbar-link:hover {
+        border-bottom: 2px solid #203540;
+    }
+
+    .navbar-links-container {
+        display: flex;
+        align-items: center;
+        margin-left: 50px;
+    }
+
+    .navbar-links-container a {
+        margin-right: 30px;
+    }
+
+    .navbar-links-container button {
+        background-color: #203540;
+        color: #FFFFFF;
+    }
+</style>
+
 <div class="container-fluid border border-3">
-    <div class="navbar-principal" style=" padding: 5px;">
-        <div class="row">
+    <div class="navbar-principal" style="padding: 5px;">
+        <div class="row align-items-center">
             <div class="col">
-                <a class="navbar-brand" href="{% url 'index' %}"><img src="{% static 'assets/img/logo1.png' %}" style="height: 35px; height: 35px;" alt="logo-marca"></a>
+                <h1><a href="#"></a>High Fashion</h1>
             </div>       
-            <div class="col text-center">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
-            </div>
-            <div class="col text-end">
+            <div class="col">
                 {% if user.is_authenticated %}
-                <a class="navbar-brand" href="{% url 'adm' %}"><img src="{% static 'assets/img/adm.png' %}" style="height: 35px; height: 35px;" alt="logo-marca"></a>
-    <a href="{% url 'logout' %}" class="btn" style="background-color: #203540; color: #FFFFFF;">
-        Logout
-    </a>
-{% else %}
-    <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#ModalForm" style="background-color: #203540; color: #FFFFFF;">
-        Login
-    </button>
-{% endif %}
+                    <a class="navbar-brand" href="{% url 'adm' %}"><img src="{% static 'assets/img/adm.png' %}" style="height: 35px; height: 35px;" alt="logo-marca"></a>
+                    <a href="{% url 'logout' %}" class="btn" style="background-color: #203540; color: #FFFFFF;">
+                        Logout
+                    </a>
+                {% else %}
+                    <div class="navbar-links-container">
+                        <a href="#" class="navbar-link">Dicas</a>
+                        <a href="#" class="navbar-link">Sobre</a>
+                        <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#ModalForm">
+                            Login
+                        </button>
+                    </div>
+                {% endif %}
+                
                 <div class="modal fade" id="ModalForm" tabindex="-1" aria-labelledby="ModalFormLabel" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered">
-                      <div class="modal-content">
-                        <div class="modal-body">
-                            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close" style="padding-right: 50px; padding-top: 20px;"></button>
-                            <div class="myform bg-dark">
-                                <h1 class="text-center">Login</h1>
-                                <ul class="nav justify-content-center border-bottom pb-3 mb-3;"></ul>
-                                <form style="text-align: left;" method="post" action="{% url 'login' %}">
-                                    {% csrf_token %}
-                                    {% for field in form.visible_fields %}
-                                    <div class="mb-3 mt-4">
-                                        <label for="{{ field.id_for_label }}" class="form-label">{{field.label}}</label>
-                                        {{field}}
-                                    </div>
-                                    {% endfor %}
-                                    <button type="submit" class="btn btn-light mt-3">LOGIN</button>
-                                    <button type="submit" class="btn btn-light mt-3">CANCELAR</button>
-                                    <p><a href="#">Cadastre-se</a></p>
-                                </form>
+                        <div class="modal-content">
+                            <div class="modal-body">
+                                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close" style="padding-right: 50px; padding-top: 20px;"></button>
+                                <div class="myform bg-dark">
+                                    <h1 class="text-center">Login</h1>
+                                    <ul class="nav justify-content-center border-bottom pb-3 mb-3;"></ul>
+                                    <form style="text-align: left;" method="post" action="{% url 'login' %}">
+                                        {% csrf_token %}
+                                        {% for field in form.visible_fields %}
+                                            <div class="mb-3 mt-4">
+                                                <label for="{{ field.id_for_label }}" class="form-label">{{field.label}}</label>
+                                                {{field}}
+                                            </div>
+                                        {% endfor %}
+                                        <button type="submit" class="btn btn-light mt-3">LOGIN</button>
+                                        <button type="submit" class="btn btn-light mt-3">CANCELAR</button>
+                                        <p><a href="#">Cadastre-se</a></p>
+                                    </form>
+                                </div>
                             </div>
                         </div>
-                      </div>
                     </div>
                 </div>                
             </div>
