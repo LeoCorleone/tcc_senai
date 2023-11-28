@@ -3,9 +3,34 @@
 {% block content %}
 
 
-</style>
 {% include 'partials/navbar.html' %}
 {% include 'partials/alerts.html' %}
+
+
+<!-- início carrossel -->
+<div id="carouselExample" class="carousel slide">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="{% static 'assets/img/car1.jpg' %}" class="d-block w-100" style="height: 600px;" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="{% static 'assets/img/car1.jpg' %}" class="d-block w-100" style="height: 600px;" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="{% static 'assets/img/car1.jpg' %}" class="d-block w-100" style="height: 600px;" alt="...">
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Anterior</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Próximo</span>
+    </button>
+  </div>
+  <!-- fim carrossel -->
+
 <!-- inicio body  -->
 <div class="container-md">
     <div class="row" style="padding-top: 20px; padding-bottom: 20px;">
