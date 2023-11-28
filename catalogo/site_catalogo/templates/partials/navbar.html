@@ -1,33 +1,62 @@
 <div class="px-3 py-2 text-white border-bottom" style="background-color: #ADE0DB;">
-      <div class="container">
-        <div class="d-flex flex-wrap align-items-center justify-content-between">
-          <a href="/" class="d-flex align-items-center my-2 my-lg-0 text-dark text-decoration-none">
-            High Fashion
-          </a>
-    
-          <div class="text-end">
-            <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
-              <li>
-                <a href="{% url 'artdicas' %}" class="nav-link text-dark">
+  <div class="container">
+    <div class="d-flex flex-wrap align-items-center justify-content-between">
+      <a href="/" class="d-flex align-items-center my-2 my-lg-0 text-dark text-decoration-none">
+        High Fashion
+      </a>
+
+      <div class="text-end">
+        <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
+          <li>
+              <a href="{% url 'artdicas' %}" class="nav-link text-dark">
                   Dicas
                 </a>
               </li>
               <li>
                 <a href="{% url 'sobre' %}" class="nav-link text-dark">
                   Sobre
-                </a>
-              </li>
-              <li>
-                <a href="#ModalForm" class="nav-link text-dark" data-bs-toggle="modal" data-bs-target="#ModalForm">
-                  Login
-                </a>
-              </li>
-            </ul>
-          </div>
+              </a>
+          </li>
+          <li>
+              {% if user.is_authenticated %}
+                  <a href="{% url 'logout' %}" class="nav-link text-dark">
+                      Logout
+                  </a>
+              {% else %}
+                  <a href="#ModalForm" class="nav-link text-dark" data-bs-toggle="modal" data-bs-target="#ModalForm">
+                      Login
+                  </a>
+              {% endif %}
+          </li>
+      </ul>
+  </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="modal fade" id="ModalForm" tabindex="-1" aria-labelledby="ModalFormLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-body">
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close" style="padding-right: 50px; padding-top: 20px;"></button>
+        <div class="myform bg-dark">
+          <h1 class="text-center">Login</h1>
+          <ul class="nav justify-content-center border-bottom pb-3 mb-3;"></ul>
+          <form style="text-align: left;" method="post" action="{% url 'login' %}">
+            {% csrf_token %}
+            {% for field in form.visible_fields %}
+              <div class="mb-3 mt-4">
+                <label for="{{ field.id_for_label }}" class="form-label">{{field.label}}</label>
+                {{field}}
+              </div>
+            {% endfor %}
+            <button type="submit" class="btn btn-light mt-3">LOGIN</button>
+          </form>
         </div>
       </div>
+    </div>
   </div>
-  
-  
-
-  
+</div>
