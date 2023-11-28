@@ -1,20 +1,23 @@
+{% load static %}
 <footer class="bg-dark text-white p-2">
   <div class="container">
     <div class="row">
-      <div class="col-md-3">
+      <div class="col-md-3 text-center">
         <h5>High Fashion</h5>
         <ul class="list-unstyled">
-          <li><a href="#">Dicas</a></li>
-          <li><a href="#">Sobre</a></li>
+          <li><a href="#" class="text-white">Dicas</a></li>
+          <li><a href="#" class="text-white">Sobre</a></li>
         </ul>
       </div>
 
-      <div class="col-md-3">
+      <div class="col-md-3 text-center">
         <h5>Localização</h5>
-        <!-- Inserir mapa de localização aqui -->
+        <a href="https://www.google.com.br/maps/place/R.+Cel.+Jos%C3%A9+Dutra,+128+-+S%C3%A3o+Jo%C3%A3o+Nepomuceno,+MG,+36680-000/@-21.5366019,-43.0108939,17z/data=!3m1!4b1!4m5!3m4!1s0xa292651e675261:0xb2c91a1a843ec83e!8m2!3d-21.5366069!4d-43.008319?entry=ttu" target="_blank">
+          <img src="{% static 'assets/img/mapa.png' %}" alt="" style="height: 150px; width: 150px;">
+        </a>
       </div>
 
-      <div class="col-md-3">
+      <div class="col-md-3 text-center">
         <h5>Redes Sociais</h5>
         <a href="#" class="text-white mx-2">
           <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="27" height="27" viewBox="0,0,256,256"
@@ -60,7 +63,7 @@
         </a>
       </div>
 
-      <div class="col-md-3">
+      <div class="col-md-3 text-center">
         <h5>Fale Conosco</h5>
         <form>
           <div class="form-group">

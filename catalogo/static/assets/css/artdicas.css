@@ -1,3 +1,7 @@
+body{
+    margin: 0;
+}
+
 #Titulo h1{
     font-family: 'Sacramento', cursive;
     font-size: 60px;
@@ -8,14 +12,17 @@
     margin-bottom: 3%;
     width: 100%;
 }
-.artdicas{
-    background-color: #CBD0D5;
+.artdicas2{
+    background-color: #CEAB9A;
     padding-top: 2%;
     padding-bottom: 2%;
+    width: 1080px;
 }
+
 p{
     text-align: justify;
     padding-top: 2px;
+    color: black;
 }
 h3{
     font-family: 'Cardo', serif;
@@ -23,8 +30,13 @@ h3{
 .artdicas img{
     height: 800px;
     width: 533px;
+    padding-left: 0%;
 }
 .artdicas2 img{
     height: 750px;
     width: 533px;
+}
+
+.artdicas3 img{
+    padding: 0%;
 }
