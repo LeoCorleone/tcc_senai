@@ -1,0 +1,21 @@
+#Titulo h1{
+    font-family: 'Sacramento', cursive;
+    font-size: 60px;
+    padding: 2%;
+}
+.artdicas, .artdicas2{
+    width: 100%;
+    margin-bottom: 2%;
+}
+p{
+    text-align: justify;
+}
+
+.artdicas img{
+    height: 800px;
+    width: 533px;
+}
+.artdicas2 img{
+    height: 750px;
+    width: 533px;
+}
