@@ -1,4 +1,3 @@
-![bitmap](https://github.com/LeoCorleone/tcc_senai/assets/99774912/cd647d8f-a667-4d7a-b3fe-b6ae0324d85b)
 
 
 <p align="center">
@@ -7,8 +6,7 @@
 
 # Índice 
 * [Descrição do Projeto](#-Descrição-do-projeto)
-* [Funcionalidades] (#Estrutura-do-projeto)
-* [Acesso ao Projeto](#acesso-ao-projeto)
+* [Estrutura do Projeto](#Estrutura-do-projeto)
 * [Tecnologias utilizadas](#tecnologias-utilizadas)
 * [Pessoas Contribuidoras](#pessoas-contribuidoras)
 * [Pessoas Desenvolvedoras do Projeto](#pessoas-desenvolvedoras)
@@ -23,6 +21,7 @@ O projeto tem como objetivo desenvolver um site que funcionará como catálogo o
 Breve história da empresa:A High Fashion Confecções Ltda, foi fundada em São João Nepomuceno, em 25 de fevereiro de 1972, pelos visionários Gianni Givenchy e Yves Dior. Desde o início, a empresa tem se dedicado à criação de moda adulta feminina, com um compromisso inabalável de combinar praticidade, conforto e beleza cotidiana em cada peça.
 
 # Estrutura do projeto
+
 
 
 
