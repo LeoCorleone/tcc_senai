@@ -6,7 +6,7 @@
 
 # Índice 
 * [Descrição do Projeto](#-Descrição-do-projeto)
-* [Funcionalidades] (#Estruttura-do-projeto)
+* [Funcionalidades] (#Estrutura-do-projeto)
 * [Acesso ao Projeto](#acesso-ao-projeto)
 * [Tecnologias utilizadas](#tecnologias-utilizadas)
 * [Pessoas Contribuidoras](#pessoas-contribuidoras)
