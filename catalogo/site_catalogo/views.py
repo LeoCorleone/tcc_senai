@@ -47,10 +47,12 @@ def index(request):
     return render(request, 'index.html', {'postagem': postagem, 'formcomentario': formcomentario, 'filtro_form': filtro_form, 'form': form})
 
 def artdicas(request):
-    return render(request, 'artdicas.html')
+    form = LoginForms()
+    return render(request, 'artdicas.html', {'form': form })
 
 def sobre(request):
-    return render(request, 'sobre.html')
+    form = LoginForms()
+    return render(request, 'sobre.html', {'form': form})
 
 def login(request):
     if request.method == 'POST':
