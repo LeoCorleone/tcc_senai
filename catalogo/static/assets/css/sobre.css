@@ -38,3 +38,22 @@ body{
     font-family: 'Quicksand', sans-serif;
     margin-top: 2px;
 }
+
+.missao{
+    width: 100%;
+    background-color: black;
+    color: white;
+}
+.missao h1{
+    font-family: 'Ms Madi', cursive;
+    font-size: 85px;
+    padding: 15%;
+}
+.mvv img{
+    padding-bottom: 3%;
+    margin-right: 4%;
+}
+
+.mvv{
+    padding: 0;
+}
