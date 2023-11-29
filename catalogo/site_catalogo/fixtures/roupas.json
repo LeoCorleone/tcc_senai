@@ -1,233 +1,242 @@
 [
     {
-        "model": "site_catalogo.Marca",
-        "pk" : 19,
+        "model": "site_catalogo.Ano",
+        "pk" : 1,
         "fields":{
-            "nome_marca" : "Aprender Kids"
+            "valor" : 2021
+        }
+    },
+    
+    {
+        "model": "site_catalogo.Ano",
+        "pk" : 2,
+        "fields":{
+            "valor" : 2022
         }
     },
 
     {
-        "model": "site_catalogo.Marca",
-        "pk" : 20,
+        "model": "site_catalogo.Ano",
+        "pk" : 3,
         "fields":{
-            "nome_marca" : "Jacarezinho"
+            "valor" : 2023
         }
     },
 
     {
-        "model": "site_catalogo.Marca",
-        "pk" : 21,
+        "model": "site_catalogo.Colecao",
+        "pk" : 1,
         "fields":{
-            "nome_marca" : "Abc Kids"
+            "nome" : "Primavera"
+        }
+    },
+    
+    {
+        "model": "site_catalogo.Colecao",
+        "pk" : 2,
+        "fields":{
+            "nome" : "Verão"
+        }
+    },
+    
+    {
+        "model": "site_catalogo.Colecao",
+        "pk" : 3,
+        "fields":{
+            "nome" : "Outono"
+        }
+    },
+    
+    {
+        "model": "site_catalogo.Colecao",
+        "pk" : 4,
+        "fields":{
+            "nome" : "Inverno"
+        }
+    },
+
+
+    {
+        "model": "site_catalogo.Tipo",
+        "pk" : 1,
+        "fields":{
+            "nome" : "Blusa"
+        }
+    },
+    
+    {
+        "model": "site_catalogo.Tipo",
+        "pk" : 2,
+        "fields":{
+            "nome" : "Camiseta"
+        }
+    },
+    
+    {
+        "model": "site_catalogo.Tipo",
+        "pk" : 3,
+        "fields":{
+            "nome" : "Calça"
+        }
+    },
+    
+    {
+        "model": "site_catalogo.Tipo",
+        "pk" : 4,
+        "fields":{
+            "nome" : "Saia"
+        }
+    },
+    
+    {
+        "model": "site_catalogo.Tipo",
+        "pk" : 5,
+        "fields":{
+            "nome" : "Acessórios"
+        }
+    },
+    
+    {
+        "model": "site_catalogo.Produto",
+        "pk" : 1,
+        "fields":{
+            "titulo_produto" : "Teste",
+            "descricao_produto" : "Teste",
+            "composicao_produto": "Teste",
+            "imagem_produto" : "uploads/4.jpg",
+            "ano" : 1,
+            "colecao" : 1,
+            "tipo" : 1,
+            "numero_comentarios" : 0,
+            "likes" : 0
         }
     },
 
     {
-        "model": "site_catalogo.Modelo",
-        "pk" : 17,
+        "model": "site_catalogo.Produto",
+        "pk" : 2,
         "fields":{
-            "nome_modelo" : "Vestido"
-            
+            "titulo_produto" : "Teste",
+            "descricao_produto" : "Teste",
+            "composicao_produto": "Teste",
+            "imagem_produto" : "uploads/4.jpg",
+            "ano" : 1,
+            "colecao" : 1,
+            "tipo" : 1,
+            "numero_comentarios" : 0,
+            "likes" : 0
         }
     },
 
     {
-        "model": "site_catalogo.Modelo",
-        "pk" : 19,
+        "model": "site_catalogo.Produto",
+        "pk" : 3,
         "fields":{
-            "nome_modelo" : "Calça"
-            
+            "titulo_produto" : "Teste",
+            "descricao_produto" : "Teste",
+            "composicao_produto": "Teste",
+            "imagem_produto" : "uploads/4.jpg",
+            "ano" : 1,
+            "colecao" : 1,
+            "tipo" : 1,
+            "numero_comentarios" : 0,
+            "likes" : 0
         }
     },
 
     {
-        "model": "site_catalogo.Modelo",
-        "pk" : 20,
+        "model": "site_catalogo.Produto",
+        "pk" : 4,
         "fields":{
-            "nome_modelo" : "Camisa"
-            
+            "titulo_produto" : "Teste",
+            "descricao_produto" : "Teste",
+            "composicao_produto": "Teste",
+            "imagem_produto" : "uploads/4.jpg",
+            "ano" : 1,
+            "colecao" : 1,
+            "tipo" : 1,
+            "numero_comentarios" : 0,
+            "likes" : 0
         }
     },
 
     {
-        "model": "site_catalogo.Modelo",
-        "pk" : 21,
+        "model": "site_catalogo.Produto",
+        "pk" : 5,
         "fields":{
-            "nome_modelo" : "Short"
-            
+            "titulo_produto" : "Teste",
+            "descricao_produto" : "Teste",
+            "composicao_produto": "Teste",
+            "imagem_produto" : "uploads/4.jpg",
+            "ano" : 1,
+            "colecao" : 1,
+            "tipo" : 1,
+            "numero_comentarios" : 0,
+            "likes" : 0
         }
     },
 
     {
-        "model": "site_catalogo.Modelo",
-        "pk" : 22,
+        "model": "site_catalogo.Produto",
+        "pk" : 6,
         "fields":{
-            "nome_modelo" : "Moletom"
-            
+            "titulo_produto" : "Teste",
+            "descricao_produto" : "Teste",
+            "composicao_produto": "Teste",
+            "imagem_produto" : "uploads/4.jpg",
+            "ano" : 1,
+            "colecao" : 1,
+            "tipo" : 1,
+            "numero_comentarios" : 0,
+            "likes" : 0
         }
     },
 
     {
-        "model": "site_catalogo.Modelo",
-        "pk" : 23,
+        "model": "site_catalogo.Produto",
+        "pk" : 28,
         "fields":{
-            "nome_modelo" : "Macacão"
-            
+            "titulo_produto" : "Teste",
+            "descricao_produto" : "Teste",
+            "composicao_produto": "Teste",
+            "imagem_produto" : "uploads/4.jpg",
+            "ano" : 1,
+            "colecao" : 1,
+            "tipo" : 1,
+            "numero_comentarios" : 0,
+            "likes" : 0
         }
     },
 
     {
-        "model": "site_catalogo.Modelo",
-        "pk" : 24,
+        "model": "site_catalogo.Produto",
+        "pk" : 7,
         "fields":{
-            "nome_modelo" : "Jaqueta"
-            
+            "titulo_produto" : "Teste",
+            "descricao_produto" : "Teste",
+            "composicao_produto": "Teste",
+            "imagem_produto" : "uploads/4.jpg",
+            "ano" : 1,
+            "colecao" : 1,
+            "tipo" : 1,
+            "numero_comentarios" : 0,
+            "likes" : 0
         }
     },
 
     {
-        "model": "site_catalogo.Modelo",
-        "pk" : 25,
+        "model": "site_catalogo.Produto",
+        "pk" : 8,
         "fields":{
-            "nome_modelo" : "Pijama"
-            
-        }
-    },
-
-    {
-        "model": "site_catalogo.Roupa",
-        "pk": 20,
-        "fields":{
-            "titulo_roupa": "Pijama Infantil",
-            "descricao_roupa" : "Lindo Pijama Infantil",
-            "composicao_roupa" : "Algodão",
-            "imagem_roupa" : "uploads/4.jpg",
-            "marca" : 19,
-            "modelo" : 25,
-            "likes" : 34
-
-        }
-    },
-
-    {
-        "model": "site_catalogo.Roupa",
-        "pk": 21,
-        "fields":{
-            "titulo_roupa": "Jaqueta Infantil",
-            "descricao_roupa" : "Jaqueta Infantil super estilosa",
-            "composicao_roupa" : "Jeans",
-            "imagem_roupa" : "uploads/jaqueta.jpg",
-            "marca" : 21,
-            "modelo" : 24,
-            "likes" : 55
-
-        }
-    },
-
-    {
-        "model": "site_catalogo.Roupa",
-        "pk": 22,
-        "fields":{
-            "titulo_roupa": "Vestido Infantil",
-            "descricao_roupa" : "Vestido Infantil super confortável",
-            "composicao_roupa" : "Jeans",
-            "imagem_roupa" : "uploads/1.jpg",
-            "marca" : 20,
-            "modelo" : 17,
-            "likes" : 55
-
-        }
-    },
-
-    {
-        "model": "site_catalogo.Roupa",
-        "pk": 23,
-        "fields":{
-            "titulo_roupa": "Calça Infantil",
-            "descricao_roupa" : "Calça Infantil super confortável",
-            "composicao_roupa" : "Jeans",
-            "imagem_roupa" : "uploads/calça.jpg",
-            "marca" : 20,
-            "modelo" : 19,
-            "likes" : 40
-
-        }
-    },
-
-    {
-        "model": "site_catalogo.Roupa",
-        "pk": 24,
-        "fields":{
-            "titulo_roupa": "Camisa Infantil",
-            "descricao_roupa" : "Camisa Infantil super confortável",
-            "composicao_roupa" : "Algodão",
-            "imagem_roupa" : "uploads/2.jpg",
-            "marca" : 19,
-            "modelo" : 20,
-            "likes" : 47
-
-        }
-    },
-
-    {
-        "model": "site_catalogo.Roupa",
-        "pk": 25,
-        "fields":{
-            "titulo_roupa": "Moletom Infantil",
-            "descricao_roupa" : "Moletom Infantil super confortável",
-            "composicao_roupa" : "Algodão",
-            "imagem_roupa" : "uploads/moletom.jpg",
-            "marca" : 20,
-            "modelo" : 22,
-            "likes" : 60
-
-        }
-    },
-
-    {
-        "model": "site_catalogo.Roupa",
-        "pk": 26,
-        "fields":{
-            "titulo_roupa": "Macacão Infantil",
-            "descricao_roupa" : "Macacão Infantil super estiloso",
-            "composicao_roupa" : "Algodão",
-            "imagem_roupa" : "uploads/macacao.jpg",
-            "marca" : 20,
-            "modelo" : 23,
-            "likes" : 40
-
-        }
-    },
-
-    {
-        "model": "site_catalogo.Roupa",
-        "pk": 27,
-        "fields":{
-            "titulo_roupa": "Vestido Infantil",
-            "descricao_roupa" : "Vestido Infantil super confortável",
-            "composicao_roupa" : "Jeans",
-            "imagem_roupa" : "uploads/3.jpg",
-            "marca" : 19,
-            "modelo" : 17,
-            "likes" : 70
-
-        }
-    },
-
-    {
-        "model": "site_catalogo.Roupa",
-        "pk": 28,
-        "fields":{
-            "titulo_roupa": "Vestido Infantil",
-            "descricao_roupa" : "Vestido Infantil super confortável",
-            "composicao_roupa" : "Jeans",
-            "imagem_roupa" : "uploads/vestido3.jpg",
-            "marca" : 19,
-            "modelo" : 17,
-            "likes" : 79
-
+            "titulo_produto" : "Teste",
+            "descricao_produto" : "Teste",
+            "composicao_produto": "Teste",
+            "imagem_produto" : "uploads/4.jpg",
+            "ano" : 1,
+            "colecao" : 1,
+            "tipo" : 1,
+            "numero_comentarios" : 0,
+            "likes" : 0
         }
     }
-      
 ]

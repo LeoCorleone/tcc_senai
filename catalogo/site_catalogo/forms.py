@@ -2,10 +2,10 @@ from django import forms
 from .models import *
 from django.contrib.auth.forms import UserCreationForm
 
-class PostagemForms(forms.ModelForm):
+class ProdutoForm(forms.ModelForm):
     class Meta:
-        model = Roupa
-        fields = ['titulo_roupa', 'descricao_roupa', 'composicao_roupa', 'imagem_roupa', 'marca', 'modelo']
+        model = Produto
+        fields = ['titulo_produto', 'descricao_produto', 'composicao_produto', 'ano', 'colecao', 'tipo', 'imagem_produto']
 
 
 class ComentarioForm(forms.Form):
