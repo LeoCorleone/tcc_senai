@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -6,15 +7,15 @@
     <meta name="description" content="hive dev portfolio site">
     <meta name="author" content="Hive Dev">
     <title>Hive Dev</title>
-    <link rel="stylesheet" href="assets/vendors/themify-icons/css/themify-icons.css">
-	<link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href='{% static "assets/vendors/themify-icons/css/themify-icons.css" %}'>
+	<link rel="stylesheet" href='{% static "assets/css/styles.css" %}'>
 </head>
 <body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
 
     <!-- nav bar -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" data-spy="affix" data-offset-top="0">
         <div class="container">
-            <a class="navbar-brand" href="#"><img src="assets/imgs/abelhas.png" alt=""></a>
+            <a class="navbar-brand" href="#"><img src= '{% static "assets/imgs/abelhas.png" %}' alt=""></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -58,7 +59,7 @@
                 </div>
             </div>              
             <div class="img-holder">
-                <img src="assets/imgs/abelhas (2).png" alt="">
+                <img src='{% static "assets/imgs/abelhas (2).png" %}' alt="">
             </div>      
         </div>  
     </header>
@@ -71,7 +72,7 @@
         <div class="container mt-5">
             <div class="row text-center text-md-left">
                 <div class="col-md-3">
-                    <img src="assets/imgs/homem.png" alt="" class="img-thumbnail mb-4">
+                    <img src='{% static "assets/imgs/homem.png" %}' alt="" class="img-thumbnail mb-4">
                 </div>
                 <div class="pl-md-4 col-md-9">
                     <h6 class="title">Sobre Nós</h6>
@@ -133,7 +134,7 @@
         <div class="container mt-5">
             <div class="row text-center text-md-left">
                 <div class="col-md-3">
-                    <img src="assets/imgs/homem.png" alt="" class="img-thumbnail mb-4">
+                    <img src='{% static "assets/imgs/homem.png" %}' alt="" class="img-thumbnail mb-4">
                 </div>
                 <div class="pl-md-4 col-md-9">
                     <h6 class="title">Rebeca</h6>
@@ -151,7 +152,7 @@
         <div class="container mt-5">
             <div class="row text-center text-md-left">
                 <div class="col-md-3">
-                    <img src="assets/imgs/homem.png" alt="" class="img-thumbnail mb-4">
+                    <img src='{% static "assets/imgs/homem.png" %}' alt="" class="img-thumbnail mb-4">
                 </div>
                 <div class="pl-md-4 col-md-9">
                     <h6 class="title">Leonardo</h6>
@@ -169,7 +170,7 @@
         <div class="container mt-5">
             <div class="row text-center text-md-left">
                 <div class="col-md-3">
-                    <img src="assets/imgs/homem.png" alt="" class="img-thumbnail mb-4">
+                    <img src='{% static "assets/imgs/homem.png" %}' alt="" class="img-thumbnail mb-4">
                 </div>
                 <div class="pl-md-4 col-md-9">
                     <h6 class="title">Daniel</h6>
@@ -187,7 +188,7 @@
         <div class="container mt-5">
             <div class="row text-center text-md-left">
                 <div class="col-md-3">
-                    <img src="assets/imgs/homem.png" alt="" class="img-thumbnail mb-4">
+                    <img src='{% static "assets/imgs/homem.png" %}' alt="" class="img-thumbnail mb-4">
                 </div>
                 <div class="pl-md-4 col-md-9">
                     <h6 class="title">Kauã</h6>
@@ -205,7 +206,7 @@
         <div class="container mt-5">
             <div class="row text-center text-md-left">
                 <div class="col-md-3">
-                    <img src="assets/imgs/homem.png" alt="" class="img-thumbnail mb-4">
+                    <img src='{% static "assets/imgs/homem.png" %}' alt="" class="img-thumbnail mb-4">
                 </div>
                 <div class="pl-md-4 col-md-9">
                     <h6 class="title">Alice</h6>
@@ -223,7 +224,7 @@
         <div class="container mt-5">
             <div class="row text-center text-md-left">
                 <div class="col-md-3">
-                    <img src="assets/imgs/homem.png" alt="" class="img-thumbnail mb-4">
+                    <img src='{% static "assets/imgs/homem.png" %}' alt="" class="img-thumbnail mb-4">
                 </div>
                 <div class="pl-md-4 col-md-9">
                     <h6 class="title">Guilherme</h6>
@@ -304,10 +305,10 @@
     </footer> 
     <!-- end footer -->
 	
-    <script src="assets/vendors/jquery/jquery-3.4.1.js"></script>
-    <script src="assets/vendors/bootstrap/bootstrap.bundle.js"></script>
-	<script src="assets/vendors/bootstrap/bootstrap.affix.js"></script>
-    <script src="assets/js/hive.js"></script>
+    <script src='{% static "assets/vendors/jquery/jquery-3.4.1.js" %}'></script>
+    <script src='{% static "assets/vendors/bootstrap/bootstrap.bundle.js" %}'></script>
+	<script src='{% static "assets/vendors/bootstrap/bootstrap.affix.js" %}'></script>
+    <script src='{% static "assets/js/hive.js" %}'></script>
 
 </body>
 </html>
