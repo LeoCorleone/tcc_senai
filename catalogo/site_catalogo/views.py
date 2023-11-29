@@ -10,6 +10,7 @@ from django.contrib import messages
 from django.contrib.auth.decorators import user_passes_test
 
 
+
 def is_superuser(user):
     return user.is_authenticated and user.is_superuser
 
@@ -47,33 +48,44 @@ def index(request):
     return render(request, 'index.html', {'postagem': postagem, 'formcomentario': formcomentario, 'filtro_form': filtro_form, 'form': form})
 
 def artdicas(request):
-    return render(request, 'artdicas.html')
+    form = LoginForms()
+    return render(request, 'artdicas.html', {'form': form })
 
 def sobre(request):
-    return render(request, 'sobre.html')
+    form = LoginForms()
+    return render(request, 'sobre.html', {'form': form})
+
+
 
 def login(request):
     if request.method == 'POST':
         form = LoginForms(request.POST)
 
         if form.is_valid():
-            email = form['email'].value()
-            password = form['senha'].value()
-        user_temp = User.objects.get(email= email)
+            email = form.cleaned_data['email']
+            password = form.cleaned_data['senha']
 
-        user = auth.authenticate(
-            request,
-            username=user_temp,
-            password=password
-        )
+            try:
+                user = auth.authenticate(
+                    request,
+                    username=User.objects.get(email=email).username,
+                    password=password
+                )
 
-        if user is not None:
-            auth.login(request, user)
-            messages.success(request, f'Foi logado com sucesso!')
-            return redirect('adm')
-        else:
-            messages.error(request, 'Erro ao efetuar login')
-            return redirect('index')
+                if user is not None:
+                    auth.login(request, user)
+                    messages.success(request, 'Foi logado com sucesso!')
+                    return redirect('adm')
+                else:
+                    raise auth.AuthenticationFailed('Credenciais inválidas')
+
+            except User.DoesNotExist:
+                messages.error(request, 'E-mail não encontrado')
+            except auth.AuthenticationFailed:
+                messages.error(request, 'Credenciais inválidas')
+
+    return redirect('index')
+
         
 @login_required
 def curtir_postagem(request, postagem_id):
