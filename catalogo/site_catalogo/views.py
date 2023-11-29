@@ -33,6 +33,8 @@ def index(request):
 def artdicas(request):
     return render(request, 'artdicas.html')
 
+def sobre(request):
+    return render(request, 'sobre.html')
 
 def login(request):
     if request.method == 'POST':

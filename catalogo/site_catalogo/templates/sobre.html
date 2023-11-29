@@ -1,0 +1,57 @@
+{% extends 'layouts/layout.html' %}
+{% load static %}
+{% block content %}
+{% include 'partials/navbar.html' %}
+{% include 'partials/alerts.html' %}
+
+<div class="container-fluid">
+    <div class="container text-center" id="Sobre">     
+        <h1>Sobre Nós</h1>
+    </div>
+    <div class="container" id="quemsomos">
+        <div class="container row align-items-start">
+            <img src="{% static 'assets/img/manequin.jpg' %}" alt="Foto-Manequin">
+            <div class="row" id="compromisso" >
+                <div class="row" >
+                    <div class="col">
+                        <h3>Quem Somos</h3>
+                        <p>A High Fashion Confecções Ltda. Ltda. foi fundada em São João Nepomuceno, em 25 de fevereiro de 1972, 
+                            pelos visionários Gianni Givenchy e Yves Dior. Desde o início, a empresa tem se dedicado à criação de 
+                            moda adulta feminina, com um compromisso inabalável de combinar praticidade, conforto e beleza cotidiana em cada peça.</p>
+                    </div>
+                    <div class="col" style="margin-top: 6.8%;">
+                        <p>A High Fashion Confecções Ltda. Ltda. foi fundada em São João Nepomuceno, em 25 de fevereiro de 1972, 
+                            pelos visionários Gianni Givenchy e Yves Dior. Desde o início, a empresa tem se dedicado à criação de 
+                            moda adulta feminina, com um compromisso inabalável de combinar praticidade, conforto e beleza cotidiana em cada peça.</p>
+                    </div>
+                </div>
+                <h3>Nossa História</h3>
+                <div class="col">
+                    <p>
+                        Iniciamos nossa jornada com poucas máquinas, mas com uma abundância de ideias e criatividade. O sucesso não demorou a chegar, e, como resultado, expandimos nosso parque fabril, incorporando máquinas de última geração, automação de processos e a implementação de softwares avançados de design, criação e desenvolvimento.
+                        Em 1994, Christian Vuitton e Gabrielle Courrège, genro e nora de Gianni e Yves, juntaram-se à sociedade, trazendo uma nova energia e compromisso com o crescimento da empresa.
+                        </p>
+                        <p>No ano 2000, demos um passo ousado ao investir em lojas próprias, apresentando uma coleção exclusiva direcionada à venda direta. 
+                            Em 2002, esse segmento já respondia por 35% do nosso faturamento.
+                            Em 2009, uma nova oportunidade surgiu no horizonte da marca, levando-nos 
+                            a expandir ainda mais nossos horizontes através de franquias, conquistando novos 
+                            mercados e fortalecendo nossa presença global.</p>
+                            <h3>Nosso Compromisso</h3>
+                            <p>Somos uma empresa comprometida com a qualidade, inovação e satisfação do cliente. 
+                                Cada peça que produzimos reflete não apenas as últimas tendências da moda, mas também 
+                                a nossa paixão por criar roupas que fazem as mulheres se sentirem confiantes e elegantes em seu dia a dia.</p>
+                                <div class="container text-end">
+                                    <h2>High Fashion Confecções Ltda.</h2>
+                                    <h6>Moda com Elegância e <br>Inovação desde 1972</h6>
+                                </div>
+                </div>
+                <div class="col" >
+                    <img src="{% static 'assets/img/modelo4.jpg' %}" alt="Modelo">
+                </div> 
+            </div>      
+        </div>
+   </div>
+</div>
+
+{% include 'partials/footer.html' %}
+{% endblock%}

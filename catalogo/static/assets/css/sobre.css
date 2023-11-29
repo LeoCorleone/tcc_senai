@@ -1,0 +1,18 @@
+body{
+    margin: 0;
+}
+
+#Sobre h1{
+    font-family: 'Sacramento', cursive;
+    font-size: 60px;
+}
+
+p{
+    text-align: justify;
+}
+
+#compromisso img{
+    width: 400px;
+    height: 600px; 
+    margin-bottom: 3%;
+}

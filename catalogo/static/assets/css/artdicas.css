@@ -3,7 +3,7 @@ body{
 }
 
 #Titulo h1{
-    font-family: 'Ms Madi', cursive;
+    font-family: 'Sacramento', cursive;
     font-size: 60px;
     padding: 2%;
 }
@@ -19,17 +19,13 @@ body{
     width: 1080px;
 }
 
-#mainartdicas p{
+p{
     text-align: justify;
     padding-top: 2px;
-    margin-bottom: 2%;
     color: black;
 }
-#mainartdicas h3{
+h3{
     font-family: 'Cardo', serif;
-    font-size: 35px;
-    margin-top: 2%;
-    color: black;
 }
 .artdicas img{
     height: 800px;
