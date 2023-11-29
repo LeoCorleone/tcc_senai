@@ -1,6 +1,5 @@
 from django import forms
 from .models import *
-from django.contrib.auth.forms import UserCreationForm
 
 class ProdutoForm(forms.ModelForm):
     class Meta:
@@ -86,3 +85,14 @@ class ComentarioForm(forms.ModelForm):
         widgets = {
             'texto': forms.TextInput(attrs={'placeholder': 'Digite seu comentário...'}),
         }
+
+class FiltroForm(forms.Form):
+    ano = forms.ModelChoiceField(queryset=Ano.objects.all(), empty_label="Selecione o Ano", required=False, label="Ano")
+    colecao = forms.ModelChoiceField(queryset=Colecao.objects.all(), empty_label="Selecione a Coleção", required=False, label="Coleção")
+    tipo = forms.ModelChoiceField(queryset=Tipo.objects.all(), empty_label="Selecione o Tipo", required=False, label="Tipo")
+
+    def __init__(self, *args, **kwargs):
+        super(FiltroForm, self).__init__(*args, **kwargs)
+        self.fields['ano'].choices = [('', 'Selecione')] + list(Ano.objects.values_list('valor', 'valor'))
+        self.fields['colecao'].choices = [('', 'Selecione')] + list(Colecao.objects.values_list('nome', 'nome'))
+        self.fields['tipo'].choices = [('', 'Selecione')] + list(Tipo.objects.values_list('nome', 'nome'))

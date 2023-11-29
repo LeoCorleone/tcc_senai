@@ -1,38 +1,12 @@
 <div class="container mt-3">
-    <div class="d-flex justify-content-end mb-3">
-      <div class="dropdown me-3">
-        <button class="btn btn-light dropdown-toggle" type="button" id="tipoDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-          Tipo
-        </button>
-        <ul class="dropdown-menu" aria-labelledby="tipoDropdown">
-          <li><a class="dropdown-item" href="#">Opção 1</a></li>
-          <li><a class="dropdown-item" href="#">Opção 2</a></li>
-          <li><a class="dropdown-item" href="#">Opção 3</a></li>
-        </ul>
-      </div>
+  <form method="get" action="{% url 'index' %}">
+      {% csrf_token %}
       
-      <div class="dropdown me-3">
-        <button class="btn btn-light dropdown-toggle" type="button" id="colecaoDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-          Coleção
-        </button>
-        <ul class="dropdown-menu" aria-labelledby="colecaoDropdown">
-          <li><a class="dropdown-item" href="#">Opção 1</a></li>
-          <li><a class="dropdown-item" href="#">Opção 2</a></li>
-          <li><a class="dropdown-item" href="#">Opção 3</a></li>
-        </ul>
+      <div class="d-flex justify-content-end mb-3">
+          {{ filtro_form.ano }}
+          {{ filtro_form.colecao }}
+          {{ filtro_form.tipo }}
+          <button type="submit" class="btn btn-dark">Filtrar</button>
       </div>
-      
-      <div class="dropdown me-3">
-        <button class="btn btn-light dropdown-toggle" type="button" id="anoDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-          Ano
-        </button>
-        <ul class="dropdown-menu" aria-labelledby="anoDropdown">
-          <li><a class="dropdown-item" href="#">Opção 1</a></li>
-          <li><a class="dropdown-item" href="#">Opção 2</a></li>
-          <li><a class="dropdown-item" href="#">Opção 3</a></li>
-        </ul>
-      </div>
-      
-      <button type="button" class="btn btn-dark">Filtrar</button>
-    </div>
-  </div>
+  </form>
+</div>

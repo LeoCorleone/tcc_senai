@@ -14,11 +14,26 @@ def is_superuser(user):
     return user.is_authenticated and user.is_superuser
 
 def index(request):
-    form = LoginForms()
-    postagem = Produto.objects.all()
-    paginator = Paginator(postagem, 6) 
     formcomentario = ComentarioForm()
-    
+    filtro_form = FiltroForm(request.GET)
+    form = LoginForms()
+
+    postagem = Produto.objects.all()
+
+    if filtro_form.is_valid():
+        ano = filtro_form.cleaned_data.get('ano')
+        colecao = filtro_form.cleaned_data.get('colecao')
+        tipo = filtro_form.cleaned_data.get('tipo')
+
+        if ano:
+            postagem = postagem.filter(ano=ano)
+        if colecao:
+            postagem = postagem.filter(colecao=colecao)
+        if tipo:
+            postagem = postagem.filter(tipo=tipo)
+
+    paginator = Paginator(postagem, 6)
+
     try:
         page = int(request.GET.get('page', '1'))
     except ValueError:
@@ -28,7 +43,8 @@ def index(request):
         postagem = paginator.page(page)
     except (EmptyPage, InvalidPage):
         postagem = paginator.page(paginator.num_pages)
-    return render(request, 'index.html', {'postagem': postagem, 'formcomentario': formcomentario, 'form':form})
+
+    return render(request, 'index.html', {'postagem': postagem, 'formcomentario': formcomentario, 'filtro_form': filtro_form, 'form': form})
 
 def artdicas(request):
     return render(request, 'artdicas.html')
