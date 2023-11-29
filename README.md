@@ -1,3 +1,4 @@
+![bitmap](https://github.com/LeoCorleone/tcc_senai/assets/99774912/cd647d8f-a667-4d7a-b3fe-b6ae0324d85b)
 
 
 <p align="center">
