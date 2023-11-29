@@ -29,7 +29,7 @@ urlpatterns = [
     path('inativar/<int:id>', inative, name="inative_user"),
     path('ativar/<int:id>', active, name="active_user"),
     path('curtir/<int:postagem_id>/', curtir_postagem, name='curtir_postagem'),
-    path('index/<int:roupa_id>/adicionar_comentario/', adicionar_comentario, name='adicionar_comentario'),
+    path('index/<int:produto_id>/adicionar_comentario/', adicionar_comentario, name='adicionar_comentario'),
     # path('index/<int:roupa_id>/exibir', exibir_comentario, name='exibir_comentario'),
 
 ]

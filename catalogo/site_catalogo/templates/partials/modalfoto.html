@@ -56,7 +56,7 @@
                 <div class="row d-flex">
                     <!-- <div class="col-md-6"> -->
                         <!-- Imagem ampliada à esquerda -->
-                        <img src="{{x.imagem_roupa.url}}" alt="{{x.titulo_roupa}}" class="img-fluid">
+                        <img src="{{x.imagem_produto.url}}" alt="{{x.titulo_roupa}}" class="img-fluid">
                     <!-- </div> -->
                     <div id="description">
                         <!-- Informações sobre a roupa alinhadas à esquerda -->
@@ -76,7 +76,7 @@
                             </div>
                             {% endfor %}
                         </div>
-                        <form method="post" id="formulario" action="{% url 'adicionar_comentario' roupa_id=x.id %}">
+                        <form method="post" id="formulario" action="{% url 'adicionar_comentario' produto_id=x.id %}">
                             {% csrf_token %}
                             {{ formcomentario.as_p }}
                             <button type="submit" class="btn btn-dark btn-lg">Comentar</button>

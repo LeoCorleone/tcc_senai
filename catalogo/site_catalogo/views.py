@@ -32,7 +32,7 @@ def index(request):
         if tipo:
             postagem = postagem.filter(tipo=tipo)
 
-    paginator = Paginator(postagem, 6)
+    paginator = Paginator(postagem, 12)
 
     try:
         page = int(request.GET.get('page', '1'))
@@ -92,16 +92,20 @@ def curtir_postagem(request, postagem_id):
 
 @login_required
 def adicionar_comentario(request, produto_id):
-    produto = get_object_or_404(Produto, pk=produto)
+    produto = get_object_or_404(Produto, pk=produto_id)
 
     if request.method == 'POST':
         form = ComentarioForm(request.POST)
         if form.is_valid():
             comentario = form.save(commit=False)
             comentario.usuario = request.user
-            comentario.produto = produto
+            comentario.product = produto  # Alterado de 'produto' para 'product'
             comentario.save()
-            return redirect('index') 
+
+            produto.numero_comentarios += 1
+            produto.save()
+
+            return redirect('index')
 
 @login_required
 def logout(request):

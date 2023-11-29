@@ -7,8 +7,7 @@ class ProdutoForm(forms.ModelForm):
         fields = ['titulo_produto', 'descricao_produto', 'composicao_produto', 'ano', 'colecao', 'tipo', 'imagem_produto']
 
 
-class ComentarioForm(forms.Form):
-    comentario_roupa = forms.CharField(widget=forms.Textarea)
+
 
 class LoginForms(forms.Form):
     email = forms.EmailField(
