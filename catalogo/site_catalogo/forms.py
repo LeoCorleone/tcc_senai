@@ -93,6 +93,6 @@ class FiltroForm(forms.Form):
 
     def __init__(self, *args, **kwargs):
         super(FiltroForm, self).__init__(*args, **kwargs)
-        self.fields['ano'].choices = [('', 'Selecione')] + list(Ano.objects.values_list('valor', 'valor'))
-        self.fields['colecao'].choices = [('', 'Selecione')] + list(Colecao.objects.values_list('nome', 'nome'))
-        self.fields['tipo'].choices = [('', 'Selecione')] + list(Tipo.objects.values_list('nome', 'nome'))
+        self.fields['ano'].choices = [('', 'Ano')] + list(Ano.objects.values_list('valor', 'valor'))
+        self.fields['colecao'].choices = [('', 'Coleção')] + list(Colecao.objects.values_list('nome', 'nome'))
+        self.fields['tipo'].choices = [('', 'Tipo')] + list(Tipo.objects.values_list('nome', 'nome'))
