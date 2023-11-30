@@ -2,26 +2,28 @@
 {% load static %}
 {% block content %}
 
-
 {% include 'partials/adm/navbar.html' %}
 {% include 'partials/alerts.html' %}
 
 <div class="container-fluid text-center" style="padding: 18%;">
 
-  <table class="table table-dark table-striped">
+  <table class="table table-dark table-striped mx-auto">
       <thead>
           <tr>
               <th scope="col" colspan="4">
                   <form method="GET" action="{% url 'listar_usuario' %}" class="form-inline">
+                      <!-- Seu formulário aqui -->
                   </form>
               </th>
           </tr>
           <tr>
-              <th scope="col">Id</th>
-              <th scope="col">Nome</th>
-              <th scope="col">E-Mail</th>
-              <th></th>
-              <th scope="col">
+              <th class="align-middle border text-center" scope="col">Id</th>
+              <th class="align-middle border text-center" scope="col">Nome</th>
+              <th class="align-middle border text-center" scope="col">E-Mail</th>
+              <th class="align-middle border text-center" scope="col">Status</th>
+              <th class="align-middle border text-center" scope="col">Cargo</th>
+              <th class="align-middle border text-center" scope="col">Ativar/Desativar</th>
+              <th class="align-middle border text-center" scope="col">
                   <a href="{% url 'adicionar_usuario' %}">
                       <button type="button" class="btn">
                           <img src="{% static 'assets/img/adicionar.png' %}" alt="" style="height: 40px; width: 40px;">
@@ -33,41 +35,53 @@
       <tbody>
           {% for x in usuarios %}
           <tr>
-              <th scope="row">{{x.id}}</th>
-              <td>{{x.username}}</td>
-              <td>{{x.email}}</td>
-              <td>
-                <div class="row">
-                    <div class="col-3">
-                        {%if x.is_active%}
+              <th class="align-middle border" scope="row">{{x.id}}</th>
+              <td class="align-middle border">{{x.username}}</td>
+              <td class="align-middle border">{{x.email}}</td>
+              <td class="align-middle border">
+                <!-- Status -->
+                <div class="row justify-content-center">
+                    <div class="col-12 text-center">
+                        {% if x.is_active %}
                             Ativo
                         {% else %} 
                             Inativo
                         {% endif %}
                     </div>
-                    <div class="col-3">
-                        {%if x.is_superuser%}
+                </div>
+              </td>
+              <td class="align-middle border">
+                <!-- Cargo -->
+                <div class="row justify-content-center">
+                    <div class="col-12 text-center">
+                        {% if x.is_superuser %}
                             Admin
                         {% else %} 
                             User
                         {% endif %}
                     </div>
+                </div>
+              </td>
+              <td class="align-middle border">
+                <!-- Ativar/Desativar -->
+                <div class="row justify-content-center">
                     <div class="col-3">
                         <a href="{% url 'active_user' x.id %}" style="text-decoration:none;color:green">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
                                 <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
-                              </svg>
+                            </svg>
                         </a>
+                    </div>
+                    <div class="col-3">
                         <a href="{% url 'inative_user' x.id %}" style="text-decoration:none;color:red">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-dash-circle-fill" viewBox="0 0 16 16">
                                 <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM4.5 7.5a.5.5 0 0 0 0 1h7a.5.5 0 0 0 0-1h-7z"/>
-                              </svg>
+                            </svg>
                         </a>
-                        
                     </div>
                 </div>
               </td>
-              <td>
+              <td class="align-middle border">
                 <a href="{% url 'update_usuario' x.id %}">
                     <button type="button" class="btn">
                         <img src="{% static 'assets/img/editar.png' %}" alt="botaoeditar">
@@ -78,7 +92,7 @@
                         <img src="{% static 'assets/img/lixeira.png' %}" alt="botao-excluir">
                     </button>
                 </a>
-            </td>
+              </td>
           </tr>
           {% endfor %}
       </tbody>
