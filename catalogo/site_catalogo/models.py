@@ -5,11 +5,20 @@ import datetime
 class Ano(models.Model):
     valor = models.IntegerField()
 
+    def __str__(self):
+        return str(self.valor)
+
 class Colecao(models.Model):
-    nome = models.CharField(max_length=255)
+    nome = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.nome
 
 class Tipo(models.Model):
-    nome = models.CharField(max_length=255)
+    nome = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.nome
 
 class Produto(models.Model):
     titulo_produto = models.CharField(max_length=50)

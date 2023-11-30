@@ -1,54 +1,36 @@
-# tcc_senai
 
-<h1 align ="center">TCC Trilhas02 - 2023</h1>
 
 <p align="center">
 <img loading="lazy" src="http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=GREEN&style=for-the-badge"/>
 </p>
 
- # :dart: Objetivos do Projeto
+# Índice 
 
-- `Objetivo`: Criação de um catalálogo virtual focado no nicho de roupas e calçados infantis. Dando total liberdade ao usuário para interagir (curtir/descurtir e comentar/exluir comentário) com as imagens publicadas pelas empresas. Assim como em redes sociais já conhecidas como: Instagram e Pinterest. 
+* 
+* [Badges](#badges)
+* [Índice](#índice)
+* [Descrição do Projeto](#descrição-do-projeto)
+* [Status do Projeto](#status-do-Projeto)
+* [Funcionalidades e Demonstração da Aplicação](#funcionalidades-e-demonstração-da-aplicação)
+* [Acesso ao Projeto](#acesso-ao-projeto)
+* [Tecnologias utilizadas](#tecnologias-utilizadas)
+* [Pessoas Contribuidoras](#pessoas-contribuidoras)
+* [Pessoas Desenvolvedoras do Projeto](#pessoas-desenvolvedoras)
+* [Licença](#licença)
+* [Conclusão](#conclusão)
+<h1 align="center"> Hight Fashion </h1>
 
-# 📁 Acesso ao Projeto
-
-**Indique como é possível baixar ou acessar o código fonte do projeto, seja projeto inicial ou final**
-
-# 🛠️ Abrir e rodar o projeto
-
-Instale o VScode;
-Instale o Python;
-Instale o Django;
-Instale o MYSQL;
-
-
-# Clone este repositório
-$ git clone https://github.com/LeoCorleone/tcc_senai.git
-
-
-
-# Instale as dependências
-
-python3 manage.py migrate
-python3 manage.py createsuperuser
+# Descrição do projeto
+O presente projeto tem como objetivo desenvolver um site que funcionará como catálogo online de peças para a empresa Sãojoanense de vestuário High Fashion.O Catálogo contará com administradores para reposição, manutenção e moderação das imagens a serem armazenadas e atualizadas, assim como a moderação em cada comentário sobre as peças à disposição.
 
 
-Para semearmos dados já pre definidos vamos usar o seed: Primeiro vamos fazer a execução da nossa fixture
+Breve história da empresa:A High Fashion Confecções Ltda, foi fundada em São João Nepomuceno, em 25 de fevereiro de 1972, pelos visionários Gianni Givenchy e Yves Dior. Desde o início, a empresa tem se dedicado à criação de moda adulta feminina, com um compromisso inabalável de combinar praticidade, conforto e beleza cotidiana em cada peça.
 
-    Vamos na pasta do nosso projeto para executarmos o manage.py
-    Depois passe o caminho completo do fixture igual iremos mostrar a seguir.
 
-python3 .\manage.py loaddata .\catalogo\fixtures\roupas.json
+ 
 
-# Execute a aplicação em modo de desenvolvimento
-python manage.py runserver 
 
-# :wrench: Ferramentas Utilizadas
-- `Python` 
-- `HTML`   
-- `CSS`    
-- `MYSQL`  
-- `Django` 
+
 
 
 

@@ -1,23 +1,23 @@
 <div class="container mt-3">
-  <form method="get" action="{% url 'index' %}">
-      {% csrf_token %}
-      
-      <div class="d-flex justify-content-end mb-3 align-items-center">
-          <div class="custom-dropdown mr-4">
-              {{ filtro_form.ano }}
-          </div>
+    <form method="get" action="{% url 'index' %}">
+        {% csrf_token %}
+        
+        <div class="d-flex justify-content-end mb-3 align-items-center">
+            <div class="custom-dropdown mr-4">
+                {{ filtro_form.ano }}
+            </div>
 
-          <div class="custom-dropdown mr-4">
-              {{ filtro_form.colecao }}
-          </div>
-          
-          <div class="custom-dropdown mr-4">
-              {{ filtro_form.tipo }}
-          </div>
+            <div class="custom-dropdown mr-4">
+                {{ filtro_form.colecao }}
+            </div>
+            
+            <div class="custom-dropdown mr-4">
+                {{ filtro_form.tipo }}
+            </div>
 
-          <div class="custom-dropdown">
-              <button type="submit" class="btn btn-dark" style="min-width: 20px;">Filtrar</button>
-          </div>
-      </div>
-  </form>
+            <div class="custom-dropdown">
+                <button type="submit" class="btn btn-dark" style="min-width: 20px;">Filtrar</button>
+            </div>
+        </div>
+    </form>
 </div>
