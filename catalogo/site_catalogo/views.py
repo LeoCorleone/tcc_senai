@@ -183,7 +183,7 @@ def delete(request, id):
 def edit_roupa(request, id):
     produto = Produto.objects.get(pk=id)
     form = ProdutoForm(instance=produto)
-    return render(request, "adm/updateroupa.html",{"form":form, "roupa":produto})
+    return render(request, "adm/updateroupa.html",{"form":form, "produto":produto})
 
 @user_passes_test(is_superuser)
 def update_roupa(request, id):

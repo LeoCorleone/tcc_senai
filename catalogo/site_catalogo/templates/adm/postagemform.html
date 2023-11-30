@@ -2,27 +2,36 @@
 {% load static %}
 {% block content %}
 
+{% include 'partials/adm/navbar.html' %}
 
- {% include 'partials/adm/navbar.html' %}
-    <div class="container-sm text-center"  style="padding: 10%;">
-        <div class="shadow" id="info">
-            <div class="header" style="padding: 2%;">
-                <h1 class="log">Adicionar Roupa</h1>
-            </div>
-            <form method = "post" enctype="multipart/form-data" style="padding: 2%;">
-                {% csrf_token %}
-                <!-- {{ form.as_p }}
-                <button type="submit">Upload</button> -->
+<div class="container-sm text-center my-5">
+    <div class="shadow p-4" id="info">
+        <h1 class="log">Adicionar Produto</h1>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="row">
                 {% for field in form.visible_fields %}
-                  <div class="mb-3">
-                      <label for="{{field.id_for_label}}" class="form-label">{{field.label}}</label>
-                      {{field}}
-                  </div>
-                    {% endfor %}
-                  <button class="btn btn-success" type="submit">Postar</button>
-            </form>
-        </div>
-      </div>    
+                    <div class="col-md-6 mb-3 d-flex align-items-center justify-content-end">
+                        <label for="{{ field.id_for_label }}" class="form-label">{{ field.label }}</label>
+                    </div>
+                    <div class="col-md-6 mb-3 d-flex align-items-center justify-content-start">
+                        {{ field }}
+                    </div>
+                {% endfor %}
+            </div>
+            <button class="btn btn-success" type="submit">Postar</button>
+        </form>
+    </div>
+</div>
+
+<style>
+  .custom-file-upload {
+      border: 1px solid #ccc;
+      display: inline-block;
+      padding: 6px 12px;
+      cursor: pointer;
+  }
+</style>
+
 {% include 'partials/footer.html' %}
-{% endblock%}
-    
+{% endblock %}

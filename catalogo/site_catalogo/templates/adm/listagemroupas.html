@@ -19,12 +19,15 @@
         <div class="row">
             <div class="card" style="width: 18rem;">
                 <img src="{{x.imagem_produto.url}}" style="width: 100%; height: 250px;" class="card-img-top" alt="{{x.titulo_roupa}}">
-                <div class="card-body">
-                  <h5 class="card-title">{{x.titulo_produto}}</h5>
-                  <p class="card-text">{{x.descricao_produto}}</p>
-                  <a href="{% url 'delete' x.id %}">
+                <div class="card-body" style="line-height: 1;">
+                  <h5 class="card-title">Título: {{ x.titulo_produto }}</h5>
+                  <p class="card-text" style="margin-bottom: 0;">Descrição: {{ x.descricao_produto }}</p>
+                  <p class="card-text" style="margin-bottom: 0;">Composição: {{ x.composicao_produto }}</p>
+                  <p class="card-text" style="margin-bottom: 0;">Coleção: {{ x.colecao.nome }}</p>
+                  <p class="card-text" style="margin-bottom: 0;">Tipo: {{ x.tipo.nome }}</p>
+                  <p class="card-text" style="margin-bottom: 0;">Ano: {{ x.ano.valor }}</p>
                    <button type="button" class="btn">
-                      <img src="{% static 'assets/img/lixeira.png' %}" alt="botao-excluir">
+                    <img src="{% static 'assets/img/lixeira.png' %}" alt="botao-excluir">
                     </button>
                   </a>
                   <a href="{% url 'edit_roupa' x.id %}">
