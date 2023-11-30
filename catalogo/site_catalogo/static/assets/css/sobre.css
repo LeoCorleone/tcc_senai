@@ -65,6 +65,7 @@ body{
     padding-top: 2px;
     margin-bottom: 2%;
     color: black;
+    list-style: square;
 }
 .endereco h1{
     font-family: 'Ms Madi', cursive;
