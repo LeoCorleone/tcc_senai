@@ -11,8 +11,6 @@
 * [Desenvolvedores](#desenvolvedores-octocat)
 * [Licença](#licença)
 
-<h1 align="center"> Hight Fashion </h1>
-
 # Descrição do projeto
 O projeto tem como objetivo desenvolver um site que funcionará como catálogo online de peças para a empresa Sãojoanense de vestuário High Fashion.O Catálogo contará com administradores para reposição, manutenção e moderação das imagens a serem armazenadas e atualizadas, assim como a moderação em cada comentário sobre as peças à disposição.
 
