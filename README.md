@@ -10,7 +10,6 @@
 # Índice 
 * [Descrição do Projeto](#-Descrição-do-projeto)
 * [Estrutura do Projeto](#Estrutura-do-projeto)
-* [Desenvolvedores](#desenvolvedores-do-site)
 
 <h1 align="center"> Hight Fashion </h1>
 
