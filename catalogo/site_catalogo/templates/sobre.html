@@ -5,12 +5,12 @@
 {% include 'partials/alerts.html' %}
 
 <div class="container-fluid">
-    <div class="container text-center" id="Sobre">     
+    <div class="imagem2 text-center">     
         <h1>Sobre Nós</h1>
     </div>
     <div class="container quemsomos">
         <div class="container row align-items-start">
-            <img src="{% static 'assets/img/manequin.jpg' %}" alt="Foto-Manequin">
+            <!-- <img  src="{% static 'assets/img/manequin.jpg' %}" alt="Foto-Manequin"> -->
             <div class="row" id="compromisso" >
                 <div class="row" >
                     <div class="col">
@@ -53,6 +53,9 @@
             </div>      
         </div>
    </div>
+        <div class="imagem1 text-center">
+            <h1>Missão, Visão e Valores</h1>
+        </div>
         <div class="container text-center mvv">
             <!-- <div id="carouselExampleFade" class="carousel slide carousel-fade">
                 <div class="carousel-inner">
@@ -79,12 +82,15 @@
             <img src="{% static 'assets/img/visao.png' %}" alt="Visão">
             <img src="{% static 'assets/img/valores.png' %}" alt="Valores">
         </div>
+        <div class="imagem3 text-center">
+            <h1>Venha Nos Encontrar!</h1>
+        </div>
         <div class="container text-center endereco" >
             <div class="container text-center">
                 <h1>Nossas Lojas</h1>
                 <img src="{% static 'assets/img/local.gif' %}" alt="icone-endereço">
             </div>
-            <div class="row text-center">
+            <div class="row text-center ">
                 <div class="col">
                     <ol>Minas Gerais</ol>
                     <li>Av. Cel. Souza, 521 - Bicas - CEP:36600-000-Telefone: (32)3271-1723; Av. Savassy, 1258 Loja 108 - CEP: 34256-754 - Telefone: (31)4325-6547.</li>
@@ -112,6 +118,12 @@
     sr.reveal('.mvv img', { duration: 2000});
 
     sr.reveal('.quemsomos img', { duration: 2000});
+
+    sr.reveal('.imagem1 h1', { duration: 2000});
+
+    sr.reveal('.imagem2 h1', { duration: 2000});
+
+    sr.reveal('.imagem3 h1', { duration: 2000});
 
 </script>
 

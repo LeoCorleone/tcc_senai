@@ -10,6 +10,7 @@ body{
 .quemsomos img{
     padding-bottom: 3%;
     visibility: hidden;
+
 } 
 
 #compromisso img{
@@ -17,7 +18,7 @@ body{
     height: 500px;
 }
    
-#quemsomos h3{
+.quemsomos h3{
     font-family: 'Cardo', serif;
     font-size: 35px;
     margin-top: 4%;
@@ -83,3 +84,67 @@ body{
     font-size: 60px;
     padding: 2%;
 }
+
+.imagem1, .imagem2, .imagem3{
+    margin-bottom: 2%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 80vh !important;
+    width: 100%;
+    position: relative;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-backgroundsize: cover;
+
+}
+
+.imagem1{
+    background-image: url(https://img.freepik.com/fotos-gratis/retrato-minimo-preto-e-branco_23-2149152635.jpg?w=1380&t=st=1701365490~exp=1701366090~hmac=f7205eb59ec842e5fc9b18d918c0e889f0614e6a53737e53604b5d44b24e7cd9);
+}
+
+.imagem2{
+    background-image: url(https://img.freepik.com/fotos-gratis/proprietario-de-boutique-elegante-mede-vestido-em-estudio-preto-e-branco-gerado-por-ia_188544-11428.jpg?w=1380&t=st=1701364493~exp=1701365093~hmac=9c22e8421cd2e9b5fb6c0089254d68ff46238410979ba9375a1b68d80878c116);
+}
+
+.imagem3{
+    background-image: url(https://img.freepik.com/fotos-gratis/mulher-atraente-com-um-chapeu-posando-em-fundo-preto_7502-7664.jpg?w=1380&t=st=1701364774~exp=1701365374~hmac=eeb352a70bf1ad993af8c41164dcab3bad75211e48f2c4fd1fcabf080a526f76);
+}
+
+.imagem1:after{
+    content: '';
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: 8;
+    background: linear-gradient(to bottom, rgba(0,0,0,0) 0, rgba(0,0,0,0) 40%, #000 100%);
+}
+.imagem2:after{
+    content: '';
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: 8;
+    background: linear-gradient(to bottom, rgba(0,0,0,0) 0, rgba(0,0,0,0) 40%, #000 100%);
+}
+.imagem3:after{
+    content: '';
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: 8;
+    background: linear-gradient(to bottom, rgba(0,0,0,0) 0, rgba(0,0,0,0) 40%, #000 100%);
+}
+
+
+.imagem1 h1, .imagem2 h1, .imagem3 h1{
+    color: white;
+    font-family: 'Ms Madi', cursive;
+    font-size: 120px;
+    visibility: hidden;
+}
+
