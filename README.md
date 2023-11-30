@@ -27,7 +27,9 @@ Após baixar o sistema em sua máquina, execute:
 
 Na pasta "catálogo" instale o Django
 
-```pip install django```
+```python 
+pip install django
+```
 
 instale o mysql
 pip install mysql-connector-python
