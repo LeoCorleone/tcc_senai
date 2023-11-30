@@ -1,7 +1,14 @@
 
+<<<<<<< HEAD
 <p align="center">
 <img>![HIVE DEV png (2)](https://github.com/LeoCorleone/tcc_senai/assets/99774912/36b88e29-ba1d-40ea-a3fc-9452dda55e0c)
 </p>
+=======
+
+![HIVE DEV png (2)](https://github.com/LeoCorleone/tcc_senai/assets/99774912/46e9dce4-f7c3-4c53-8f85-e61d8d478096)
+
+
+>>>>>>> 2f6b451d12419c32c70fcd9e9ee4344b99ba7dfd
 
 <p align="center">
 <img loading="lazy" src="http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=GREEN&style=for-the-badge"/>
