@@ -2,26 +2,39 @@
 {% load static %}
 {% block content %}
 
- {% include 'partials/adm/background2.html' %}
- {% include 'partials/adm/navbar.html' %}
-    <div class="container text-center" style="padding: 5%;">
-        <div class="row shadow" id="info">
-            <h1>Editar Postagem</h1>
-        <div class="col" id="foto">
-            {%if roupa.imagem_roupa%}
-                <img class="shadow" src="{{roupa.imagem_roupa.url}}" alt="roupa.titulo_roupa" width="200px" height="200px">
-            {%endif%}
-        </div>
-        <div class="col">
-            <form action="{% url 'update_roupa' roupa.id %}" method="post" enctype="multipart/form-data">
+{% include 'partials/adm/navbar.html' %}
+
+<div class="container text-center" style="padding: 5%;">
+    <div class="row shadow" id="info">
+        <h1 class="col-12">Editar Postagem</h1>
+        <div class="col-md-6">
+            <form action="{% url 'update_roupa' produto.id %}" method="post" enctype="multipart/form-data">
                 {% csrf_token %}
-                {{form.as_p}}
-                <button type="submit" class= "btn btn-primary">Salvar</div>
+                {% for field in form.visible_fields %}
+                    <div class="row mb-3">
+                        <div class="col-md-6 text-right">
+                            <label for="{{ field.id_for_label }}" class="form-label">{{ field.label }}</label>
+                        </div>
+                        <div class="col-md-6 text-left">
+                            {{ field }}
+                        </div>
+                    </div>
+                {% endfor %}
+                <div class="row mt-3">
+                    <div class="col-md-6 offset-md-3">
+                        <button type="submit" class="btn btn-primary">Salvar</button>
+                    </div>
+                </div>
             </form>
         </div>
+        <div class="col-md-6" id="foto">
+            {% if produto.imagem_produto %}
+                <img class="shadow" src="{{ produto.imagem_produto.url }}" alt="{{ produto.titulo_produto }}" width="200px" height="200px">
+            {% endif %}
         </div>
-    </div> 
-  {% include 'partials/footer.html' %}
-    
-  {% endblock%}
+    </div>
+</div> 
+{% include 'partials/footer.html' %}
+
+{% endblock %}
 

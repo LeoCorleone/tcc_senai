@@ -2,27 +2,53 @@
 {% load static %}
 {% block content %}
 
-{% include 'partials/adm/background.html' %}
- {% include 'partials/adm/navbar.html' %}
-    <div class="container-sm text-center"  style="padding: 10%;">
-        <div class="shadow" id="info">
-            <div class="header" style="padding: 2%;">
-                <h1 class="log">Adicionar Roupa</h1>
-            </div>
-            <form method = "post" enctype="multipart/form-data" style="padding: 2%;">
+{% include 'partials/adm/navbar.html' %}
+
+<div class="container text-center" style="padding: 5%;">
+    <div class="row shadow" id="info">
+        <h1 class="col-12">Adicionar Produto</h1>
+        <div class="col-md-6">
+            <form method="post" enctype="multipart/form-data" id="productForm">
                 {% csrf_token %}
-                <!-- {{ form.as_p }}
-                <button type="submit">Upload</button> -->
                 {% for field in form.visible_fields %}
-                  <div class="mb-3">
-                      <label for="{{field.id_for_label}}" class="form-label">{{field.label}}</label>
-                      {{field}}
-                  </div>
-                    {% endfor %}
-                  <button class="btn btn-success" type="submit">Postar</button>
+                    <div class="row mb-3">
+                        <div class="col-md-6 text-right">
+                            <label for="{{ field.id_for_label }}" class="form-label">{{ field.label }}</label>
+                        </div>
+                        <div class="col-md-6 text-left">
+                            {{ field }}
+                        </div>
+                    </div>
+                {% endfor %}
+                <div class="row mt-3">
+                    <div class="col-md-12 text-center">
+                        <button class="btn btn-success" type="submit">Postar</button>
+                    </div>
+                </div>
             </form>
         </div>
-      </div>    
+        <div class="col-md-6" id="foto">
+            <img id="imagePreview" style="max-width: 100%; max-height: 200px; margin-top: 10px;">
+        </div>
+    </div>
+</div>
+
+<script>
+    function previewImage(input) {
+        var preview = document.getElementById('imagePreview');
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                preview.src = e.target.result;
+            };
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+
+    document.getElementById('id_imagem_produto').addEventListener('change', function (event) {
+        previewImage(this);
+    });
+</script>
+
 {% include 'partials/footer.html' %}
-{% endblock%}
-    
+{% endblock %}

@@ -1,14 +1,30 @@
 {% load static %}
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
-    <div class="container-fluid">
-      <a href="{% url 'index' %}">
-        <img src="{% static 'assets/img/logo1.png' %}" style="height: 40px; height: 40px;" alt="logo-marca">
+<div class="px-3 py-2 text-white border-bottom" style="background-color: #ADE0DB;">
+  <div class="container">
+    <div class="d-flex flex-wrap align-items-center justify-content-between">
+      <a href="/" class="d-flex align-items-center my-2 my-lg-0 text-dark text-decoration-none">
+        <img src="{% static 'assets/img/high.png' %}" alt="" style="height: 50px; width: 100px;">
       </a>
-      <a class="nav-link active" aria-current="page" href="{% url 'listar_roupas' %}">Roupas</a>
-      <a class="nav-link active" aria-current="page" href="{% url 'listar_usuario' %}">Usuários</a>
-      <a href="{% url 'logout' %}">
-        <button class="btn btn-outline-danger" type="submit" style="margin-right: 5px;">Logout</button>
-      </a>
+
+      <div class="text-end">
+        <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
+          <li>
+            <a href="{% url 'listar_roupas' %}" class="nav-link text-dark underline-link">
+              Produtos
+            </a>
+          </li>
+          <li>
+            <a href="{% url 'listar_usuario' %}" class="nav-link text-dark underline-link">
+              Usuários
+            </a>
+          </li>
+          <li>
+            <a href="{% url 'logout' %}" class="nav-link text-dark underline-link">
+              Logout
+            </a>
+          </li>
+        </ul>
       </div>
     </div>
-</nav>
+  </div>
+</div>

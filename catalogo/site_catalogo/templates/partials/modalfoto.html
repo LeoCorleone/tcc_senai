@@ -56,14 +56,15 @@
                 <div class="row d-flex">
                     <!-- <div class="col-md-6"> -->
                         <!-- Imagem ampliada à esquerda -->
-                        <img src="{{x.imagem_roupa.url}}" alt="{{x.titulo_roupa}}" class="img-fluid">
+                        <img src="{{x.imagem_produto.url}}" alt="{{x.titulo_roupa}}" class="img-fluid">
                     <!-- </div> -->
                     <div id="description">
                         <!-- Informações sobre a roupa alinhadas à esquerda -->
-                        <p><b>Descrição:</b> {{x.descricao_roupa}}.</p>
-                        <p><b>Composição: </b>{{x.composicao_roupa}}.</p>
-                        <p><b>Marca: </b>{{x.marca}}.</p>                       
-                        <p><b>Modelo: </b>{{x.modelo}}.</p>                
+                        <p><b>Descrição:</b> {{x.descricao_produto}}.</p>
+                        <p><b>Composição: </b>{{x.composicao_produto}}.</p>
+                        <p><b>Coleção: </b>{{x.colecao}}.</p>                       
+                        <p><b>Tipo: </b>{{x.tipo}}.</p>
+                        <p><b>Ano: </b>{{x.ano}}.</p>                   
                     </div>
                 </div>
                     <div class="container-fluid text-center" id="coments" style="padding: 3%;">
@@ -76,7 +77,7 @@
                             </div>
                             {% endfor %}
                         </div>
-                        <form method="post" id="formulario" action="{% url 'adicionar_comentario' roupa_id=x.id %}">
+                        <form method="post" id="formulario" action="{% url 'adicionar_comentario' produto_id=x.id %}">
                             {% csrf_token %}
                             {{ formcomentario.as_p }}
                             <button type="submit" class="btn btn-dark btn-lg">Comentar</button>

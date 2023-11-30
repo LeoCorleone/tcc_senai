@@ -1,6 +1,5 @@
-from django.http import HttpResponse
 from django.shortcuts import render, redirect, get_object_or_404
-from .models import Roupa
+from .models import Produto
 from django.core.paginator import Paginator, InvalidPage, EmptyPage
 from .forms import *
 from django.contrib import auth
@@ -10,15 +9,30 @@ from django.contrib import messages
 from django.contrib.auth.decorators import user_passes_test
 
 
+
 def is_superuser(user):
     return user.is_authenticated and user.is_superuser
 
 def index(request):
-    form = LoginForms()
-    postagem = Roupa.objects.all()
-    paginator = Paginator(postagem, 6) 
     formcomentario = ComentarioForm()
-    
+    filtro_form = FiltroForm(request.GET)
+    form = LoginForms()
+    postagem = Produto.objects.all()
+
+    if filtro_form.is_valid():
+        ano = filtro_form.cleaned_data.get('ano')
+        colecao = filtro_form.cleaned_data.get('colecao')
+        tipo = filtro_form.cleaned_data.get('tipo')
+
+        if ano:
+            postagem = postagem.filter(ano=ano)
+        if colecao:
+            postagem = postagem.filter(colecao=colecao)
+        if tipo:
+            postagem = postagem.filter(tipo=tipo)
+
+    paginator = Paginator(postagem, 12)
+
     try:
         page = int(request.GET.get('page', '1'))
     except ValueError:
@@ -28,26 +42,36 @@ def index(request):
         postagem = paginator.page(page)
     except (EmptyPage, InvalidPage):
         postagem = paginator.page(paginator.num_pages)
-    return render(request, 'index.html', {'postagem': postagem, 'formcomentario': formcomentario, 'form':form})
+
+    return render(request, 'index.html', {'postagem': postagem, 'formcomentario': formcomentario, 'filtro_form': filtro_form, 'form': form})
 
 def artdicas(request):
-    return render(request, 'artdicas.html')
+    form = LoginForms()
+    return render(request, 'artdicas.html', {'form': form })
 
 def sobre(request):
-    return render(request, 'sobre.html')
+    form = LoginForms()
+    return render(request, 'sobre.html', {'form': form})
+
 
 def login(request):
+    form = LoginForms()
     if request.method == 'POST':
+        
         form = LoginForms(request.POST)
 
         if form.is_valid():
             email = form['email'].value()
             password = form['senha'].value()
-        user_temp = User.objects.get(email= email)
+
+        try:
+            user_temp = User.objects.get(email=email)
+        except:
+            return redirect('index')
 
         user = auth.authenticate(
             request,
-            username=user_temp,
+            username=user_temp.username,
             password=password
         )
 
@@ -58,10 +82,11 @@ def login(request):
         else:
             messages.error(request, 'Erro ao efetuar login')
             return redirect('index')
+
         
 @login_required
 def curtir_postagem(request, postagem_id):
-    postagem = get_object_or_404(Roupa, id=postagem_id)
+    postagem = get_object_or_404(Produto, id=postagem_id)
     user = request.user
     
     if user in postagem.liked_by.all():
@@ -75,17 +100,21 @@ def curtir_postagem(request, postagem_id):
     return redirect('index')
 
 @login_required
-def adicionar_comentario(request, roupa_id):
-    roupa = get_object_or_404(Roupa, pk=roupa_id)
+def adicionar_comentario(request, produto_id):
+    produto = get_object_or_404(Produto, pk=produto_id)
 
     if request.method == 'POST':
         form = ComentarioForm(request.POST)
         if form.is_valid():
             comentario = form.save(commit=False)
             comentario.usuario = request.user
-            comentario.roupa = roupa
+            comentario.product = produto  # Alterado de 'produto' para 'product'
             comentario.save()
-            return redirect('index') 
+
+            produto.numero_comentarios += 1
+            produto.save()
+
+            return redirect('index')
 
 @login_required
 def logout(request):
@@ -101,20 +130,36 @@ def adm(request):
 def postagem(request):
   
     if request.method == 'POST':
-        form = PostagemForms(request.POST, request.FILES)
+        form = ProdutoForm(request.POST, request.FILES)
   
         if form.is_valid():
             form.save()
             messages.success(request, f'Postagem criada com sucesso!')
             return redirect('listar_roupas')
     else:
-        form = PostagemForms()
+        form = ProdutoForm()
     return render(request, 'adm/postagemform.html', {'form' : form})
 
 @user_passes_test(is_superuser)
 def listar_roupas(request):
-    postagem = Roupa.objects.all()
+    postagem = Produto.objects.all()
     paginator = Paginator(postagem, 6) 
+    filtro_form = FiltroForm(request.GET)
+
+    if filtro_form.is_valid():
+        ano = filtro_form.cleaned_data.get('ano')
+        colecao = filtro_form.cleaned_data.get('colecao')
+        tipo = filtro_form.cleaned_data.get('tipo')
+
+        if ano:
+            postagem = postagem.filter(ano=ano)
+        if colecao:
+            postagem = postagem.filter(colecao=colecao)
+        if tipo:
+            postagem = postagem.filter(tipo=tipo)
+
+    paginator = Paginator(postagem, 6)
+
     try:
         page = int(request.GET.get('page', '1'))
     except ValueError:
@@ -124,27 +169,28 @@ def listar_roupas(request):
         postagem = paginator.page(page)
     except (EmptyPage, InvalidPage):
         postagem = paginator.page(paginator.num_pages)
-    return render(request, 'adm/listagemroupas.html', {'postagem': postagem})
+
+    return render(request, 'adm/listagemroupas.html', {'postagem': postagem, 'filtro_form': filtro_form})
 
 @user_passes_test(is_superuser)
 def delete(request, id):
-    roupa = Roupa.objects.get(pk=id)
-    roupa.delete()
+    produto = Produto.objects.get(pk=id)
+    produto.delete()
     messages.success(request, f'Postagem deletada com sucesso!')
     return redirect('listar_roupas')
 
 @user_passes_test(is_superuser)
 def edit_roupa(request, id):
-    roupa = Roupa.objects.get(pk=id)
-    form = PostagemForms(instance=roupa)
-    return render(request, "adm/updateroupa.html",{"form":form, "roupa":roupa})
+    produto = Produto.objects.get(pk=id)
+    form = ProdutoForm(instance=produto)
+    return render(request, "adm/updateroupa.html",{"form":form, "produto":produto})
 
 @user_passes_test(is_superuser)
 def update_roupa(request, id):
     try:
         if request.method == "POST":
-            photo = Roupa.objects.get(pk=id)
-            form = PostagemForms(request.POST, request.FILES, instance=photo)
+            photo = Produto.objects.get(pk=id)
+            form = ProdutoForm(request.POST, request.FILES, instance=photo)
             
             if form.is_valid():
                 form.save()

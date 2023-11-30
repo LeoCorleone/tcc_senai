@@ -3,6 +3,7 @@ body{
 }
 
 #Sobre h1{
+<<<<<<< HEAD
     font-family: 'Sacramento', cursive;
     font-size: 60px;
     padding: 2%;
@@ -15,3 +16,74 @@ body{
     width: 500px;
     height: 500px;
 }
+=======
+    font-family: 'Ms Madi', cursive;
+    font-size: 65px;
+    padding: 2%;
+}
+#quemsomos h3{
+    font-family: 'Cardo', serif;
+    font-size: 35px;
+    margin-top: 4%;
+}
+#quemsomos p{
+    text-align: justify;
+    padding-top: 2px;
+    margin-bottom: 0;
+    color: black;
+}
+#quemsomos{
+    margin-bottom: 4%;
+}
+
+#compromisso img{
+    width: 550px;
+    height: 750px; 
+    margin-bottom: 3%;
+    margin-left: 9%;
+}
+
+#compromisso h2{
+    font-family: 'Ms Madi', cursive;
+    font-size: 35px;
+    margin-bottom: 0;
+}
+#compromisso h6{
+    font-family: 'Quicksand', sans-serif;
+    margin-top: 2px;
+}
+
+.mvv img{
+    padding-bottom: 3%;
+    margin-right: 4%;
+}
+
+.mvv{
+    padding: 0;
+}
+
+.endereco{
+    padding: 3%;
+    margin-bottom: 3%;
+    padding-top: 0;
+}
+.endereco ol{
+    font-family: 'Cardo', serif;
+    font-size: 25px;
+    margin-top: 2%;
+    color: black;
+}
+
+.endereco li{
+    text-align: justify;
+    padding-top: 2px;
+    margin-bottom: 2%;
+    color: black;
+    list-style: square;
+}
+.endereco h1{
+    font-family: 'Ms Madi', cursive;
+    font-size: 60px;
+    padding: 2%;
+}
+>>>>>>> 3fec6ba19ba0105e2d4e65767cae55e2e70e4bb9
