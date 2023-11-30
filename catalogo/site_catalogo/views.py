@@ -232,21 +232,20 @@ def listar_usuario(request):
     })
 
 @user_passes_test(is_superuser)
-def delete_usuario(request, id):
-    usuarios = User.objects.get(pk=id)
-    usuarios.delete()
-    messages.success(request, f'Usuario deletado com sucesso!')
-    return redirect('listar_usuario')
-
-@user_passes_test(is_superuser)
 def update_usuario(request, id):
     usuario = User.objects.get(pk=id)
+    
     if request.method == 'POST':
         usuario.username = request.POST['nome']
         usuario.set_password(request.POST['senha'])
         usuario.email = request.POST['email']
+        
+        is_admin = request.POST.get('is_admin', False)
+        usuario.is_superuser = bool(is_admin)
+        
         usuario.save()
         return redirect('listar_usuario')
+    
     return render(request, 'adm/editaruser.html', {'usuario': usuario})
 
 @user_passes_test(is_superuser)

@@ -2,7 +2,6 @@
 {% load static %}
 {% block content %}
 
-
 {% include 'partials/adm/navbar.html' %}
 <style>
   input, button{
@@ -20,6 +19,11 @@
           <input type="text" name="nome" value="{{usuario.username}}"><br>
           <input type="password" name="senha"  value="{{usuario.password}}"><br>
           <input type="text" name="email" value="{{usuario.email}}"><br>
+          
+          <!-- Adicionando o checkbox para definir se é admin -->
+          <label for="admin_checkbox">Administrador:</label>
+          <input type="checkbox" id="admin_checkbox" name="is_admin" {% if usuario.is_superuser %}checked{% endif %}><br>
+          
           <button class="btn btn-success" type="submit">Salvar</button>
           <div class="container text-center" style="padding: 2%;">
           </div>
@@ -29,4 +33,3 @@
 
 {% include 'partials/footer.html' %}
 {% endblock%}
-    

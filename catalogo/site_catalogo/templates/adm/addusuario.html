@@ -3,38 +3,33 @@
 {% block content %}
 
 {% include 'partials/adm/navbar.html' %}
+<style>
+  input, button{
+    margin: 2%;
+  }
+</style>
 
-<!-- navbar fim -->
-<div class="d-flex justify-content-center">
-    <div class="container" id="info" style="margin: 5%; width: 30%;">
-        <div class="col">
-            <div class="card-header">
-                <h1 class="log">Adicionar Usuário</h1>
-            </div>
-            <form action="{% url 'adicionar_usuario' %}" method="POST">
-                {% csrf_token %}
-                {% for field in form.visible_fields %}
-                    <div class="mb-3 {% if field.name == 'is_admin' %}form-check{% endif %}" style="width: 100%;">
-                        <label for="{{ field.id_for_label }}" class="{% if field.name == 'is_admin' %}form-check-label{% else %}form-label{% endif %}">
-                            {{ field.label_tag }}
-                        </label>
-                        <div class="{% if field.name != 'is_admin' %}form-group{% endif %}">
-                            {{ field }}
-                        </div>
-                        {% if field.name == 'is_admin' %}
-                            <div style="margin-top: 40px;"></div>
-                        {% endif %}
-                    </div>
-                {% endfor %}
-                <button class="btn btn-success" type="submit">Adicionar</button>
-                <div class="container text-center" style="padding: 2%;">
-                </div>
-            </form>
-        </div>
-    </div>
+<div class="container text-center" id="info" style="margin-top: 2%; width: 35%;">
+  <div class="form">
+      <div class="card-header">
+          <h1>Adicionar User</h1>
+      </div>
+      <form action="{% url 'adicionar_usuario' %}" method="POST">
+        {% csrf_token %}
+          <input type="text" name="nome" placeholder="Nome do usuário"><br>
+          <input type="password" name="senha" placeholder="Senha"><br>
+          <input type="text" name="email" placeholder="E-mail"><br>
+          
+          <!-- Adicionando o checkbox para definir se é admin -->
+          <label for="admin_checkbox">Administrador:</label>
+          <input type="checkbox" id="admin_checkbox" name="is_admin"><br>
+          
+          <button class="btn btn-success" type="submit">Adicionar</button>
+          <div class="container text-center" style="padding: 2%;">
+          </div>
+      </form>
+  </div>
 </div>
-    
-    </div>
-{% include 'partials/footer.html' %}
-{% endblock %}
 
+{% include 'partials/footer.html' %}
+{% endblock%}
