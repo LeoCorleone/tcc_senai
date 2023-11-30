@@ -1,3 +1,4 @@
+![HIVE DEV png (2)](https://github.com/LeoCorleone/tcc_senai/assets/99774912/e65fa50a-9f12-4233-a304-3194e4441ae8)
 
 
 <p align="center">
