@@ -1,3 +1,4 @@
+![HIVE-DEV-png-_2_](https://github.com/LeoCorleone/tcc_senai/assets/99774912/f92b984b-87bc-4413-98e6-9284189ce4f1)
 
 ![HIVE DEV png (2)](https://github.com/LeoCorleone/tcc_senai/assets/99774912/36b88e29-ba1d-40ea-a3fc-9452dda55e0c)
 
