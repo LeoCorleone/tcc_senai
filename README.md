@@ -65,12 +65,12 @@ Aproveite o Sistema!
 
 # Desenvolvedores do projeto
 
-Alice Fritz
-Daniel Magalhães
-Guilherme Assis
-Kauã Souza
-Leonardo Cunha
-Rebeca Velasco
+Alice Fritz <br>
+Daniel Magalhães <br>
+Guilherme Assis <br>
+Kauã Souza <br>
+Leonardo Cunha <br>
+Rebeca Velasco <br>
 
 # Licença
 [Educational Community v2.0 ECL-2.0]()
