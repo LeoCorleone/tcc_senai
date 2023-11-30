@@ -1192,6 +1192,7 @@ pre code {
     max-width: 66.66667%;
   }
   .col-md-9 {
+    margin-top: 33px;
     -webkit-box-flex: 0;
     -webkit-flex: 0 0 75%;
         -ms-flex: 0 0 75%;
@@ -10961,7 +10962,7 @@ p {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  margin-bottom: 5px;
+  margin-bottom: 10px;
 }
 
 .title {
