@@ -1,4 +1,7 @@
-![bitmap](https://github.com/LeoCorleone/tcc_senai/assets/99774912/101e14e8-aaf5-4ed3-9ab3-481dba8f08a5)
+![HIVE DEV png (2)](https://github.com/LeoCorleone/tcc_senai/assets/99774912/750e0128-64f0-40c8-8085-ae8b7a135c8e)
+
+
+
 
 
 <p align="center">
@@ -8,7 +11,7 @@
 # Índice 
 * [Descrição do Projeto](#-Descrição-do-projeto)
 * [Estrutura do Projeto](#Estrutura-do-projeto)
-* [Desenvolvedores](#desenvolvedores-octocat)
+* [Desenvolvedores do Projeto](#Desenvolvedores-do-projeto)
 * [Licença](#licença)
 
 # Descrição do projeto
@@ -52,13 +55,27 @@ python manage.py loaddata roupas.json
 python manage.py migrate
 ```
 
+5. Inicie o projeto:
+
+```python
+python manage.py runserver
+```
+
 Aproveite o Sistema!
 
-# Desenvolvedores :octocat:
+# Desenvolvedores do projeto
 
+Alice Fritz <br>
+Daniel Magalhães <br>
+Guilherme Assis <br>
+Kauã Souza <br>
+Leonardo Cunha <br>
+Rebeca Velasco <br>
 
 # Licença
 [Educational Community v2.0 ECL-2.0]()
+
+Copyright :copyright: 2023 
 
 
 

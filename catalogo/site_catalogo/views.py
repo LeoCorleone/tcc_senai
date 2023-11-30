@@ -1,4 +1,3 @@
-from django.http import HttpResponse
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Produto
 from django.core.paginator import Paginator, InvalidPage, EmptyPage
@@ -56,35 +55,34 @@ def sobre(request):
     return render(request, 'sobre.html', {'form': form})
 
 
-
 def login(request):
+    form = LoginForms()
     if request.method == 'POST':
+        
         form = LoginForms(request.POST)
 
         if form.is_valid():
-            email = form.cleaned_data['email']
-            password = form.cleaned_data['senha']
+            email = form['email'].value()
+            password = form['senha'].value()
 
-            try:
-                user = auth.authenticate(
-                    request,
-                    username=User.objects.get(email=email).username,
-                    password=password
-                )
+        try:
+            user_temp = User.objects.get(email=email)
+        except:
+            return redirect('index')
 
-                if user is not None:
-                    auth.login(request, user)
-                    messages.success(request, 'Foi logado com sucesso!')
-                    return redirect('adm')
-                else:
-                    raise auth.AuthenticationFailed('Credenciais inválidas')
+        user = auth.authenticate(
+            request,
+            username=user_temp.username,
+            password=password
+        )
 
-            except User.DoesNotExist:
-                messages.error(request, 'E-mail não encontrado')
-            except auth.AuthenticationFailed:
-                messages.error(request, 'Credenciais inválidas')
-
-    return redirect('index')
+        if user is not None:
+            auth.login(request, user)
+            messages.success(request, f'Foi logado com sucesso!')
+            return redirect('adm')
+        else:
+            messages.error(request, 'Erro ao efetuar login')
+            return redirect('index')
 
         
 @login_required
