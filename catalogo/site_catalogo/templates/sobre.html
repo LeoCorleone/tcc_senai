@@ -15,14 +15,16 @@
                 <div class="row" >
                     <div class="col">
                         <h3>Quem Somos</h3>
-                        <p>A High Fashion Confecções Ltda. Ltda. foi fundada em São João Nepomuceno, em 25 de fevereiro de 1972, 
+                        <p>A High Fashion Confecções Ltda. foi fundada em São João Nepomuceno, em 25 de fevereiro de 1972, 
                             pelos visionários Gianni Givenchy e Yves Dior. Desde o início, a empresa tem se dedicado à criação de 
-                            moda adulta feminina, com um compromisso inabalável de combinar praticidade, conforto e beleza cotidiana em cada peça.</p>
+                            moda adulta feminina, com um compromisso inabalável de combinar praticidade, conforto e beleza cotidiana em cada peça. A visão de Gianni Givenchy e Yves Dior ao estabelecer a High Fashion Confecções Ltda.</p>
                     </div>
                     <div class="col" style="margin-top: 6.8%;">
-                        <p>A High Fashion Confecções Ltda. Ltda. foi fundada em São João Nepomuceno, em 25 de fevereiro de 1972, 
-                            pelos visionários Gianni Givenchy e Yves Dior. Desde o início, a empresa tem se dedicado à criação de 
-                            moda adulta feminina, com um compromisso inabalável de combinar praticidade, conforto e beleza cotidiana em cada peça.</p>
+                        <p>
+                            não era apenas criar 
+                            peças de vestuário, mas sim, proporcionar uma experiência única e transformadora para as mulheres. Ao longo 
+                            dos anos, essa visão foi impulsionada por um compromisso inabalável em cada costura, em cada detalhe, para 
+                            oferecer não apenas moda, mas uma expressão autêntica de individualidade.</p>
                     </div>
                 </div>
                 <h3>Nossa História</h3>
@@ -51,6 +53,56 @@
             </div>      
         </div>
    </div>
+        <div class="container text-center mvv">
+            <div id="carouselExampleFade" class="carousel slide carousel-fade">
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img src="{% static 'assets/img/missao.png' %}" class="d-block w-150" alt="Missão">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="{% static 'assets/img/visao.png' %}" class="d-block w-150" alt="Visão">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="{% static 'assets/img/valores.png' %}" class="d-block w-150" alt="Valores">
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+            <!-- <img src="{% static 'assets/img/missao.png' %}" alt="Missão">
+            <img src="{% static 'assets/img/visao.png' %}" alt="Visão">
+            <img src="{% static 'assets/img/valores.png' %}" alt="Valores"> -->
+        </div>
+        <div class="container endereco" >
+            <div class="container text-center">
+                <h1>Nossas Lojas</h1>
+                <img src="{% static 'assets/img/local.gif' %}" alt="icone-endereço">
+            </div>
+            <div class="row text-center">
+                <div class="col">
+                    <ol>Minas Gerais</ol>
+                    <li>Av. Cel. Souza, 521 - Bicas - CEP:36600-000-Telefone: (32)3271-1723; Av. Savassy, 1258 Loja 108 - CEP: 34256-754 - Telefone: (31)4325-6547.</li>
+                    <li> R. Cel. José Dutra, 128-S. J. Nepomuceno - CEP: 36680-000 - Telefone: (32)3261-9874.</li>
+                </div>
+                <div class="col">
+                    <ol>Rio de Janeiro</ol>
+                    <li>Av. Atlântica, 2546 Rio de Janeiro - CEP: 21258-456 Telefone: (21)2123-2321.</li>
+                    <li>Rua do Catete, 123 - Rio de Janeiro - CEP: 21123-321- Telefone: (21)6932-7563.</li>
+                    <li>Av. Nossa Senha de Copacabana, 1874 - Rio de Janeiro CEP: 22587-632- Telefone: (21)3265-9632.</li>
+                </div>
+                <div class="col">
+                    <ol>São Paulo</ol>
+                    <li>Rua da Graça, 456/202 - São Paulo - CEP: 11587-756-Telefone: (11)1236-7410.</li>
+                    <li>Rua do Oriente, 857/104 - São Paulo - CEP: 12321-852-Telefone: (11) 4256-9632.</li>
+                </div>
+            </div>
+        </div>
 </div>
 
 {% include 'partials/footer.html' %}
