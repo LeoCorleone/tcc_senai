@@ -28,7 +28,7 @@ class Produto(models.Model):
     ano = models.ForeignKey(Ano, on_delete=models.CASCADE)
     colecao = models.ForeignKey(Colecao, on_delete=models.CASCADE)
     tipo = models.ForeignKey(Tipo, on_delete=models.CASCADE)
-    numero_comentarios = models.PositiveIntegerField(default=0)  # Renomeado o campo
+    numero_comentarios = models.PositiveIntegerField(default=0)
     likes = models.PositiveIntegerField(default=0)
     liked_by = models.ManyToManyField(User, blank=True, related_name='produtos_liked')
 
