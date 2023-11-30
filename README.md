@@ -1,6 +1,8 @@
-<div text-align>
-![HIVE DEV png (2)](https://github.com/LeoCorleone/tcc_senai/assets/99774912/750e0128-64f0-40c8-8085-ae8b7a135c8e)
-</div>
+<div text-align> 
+ 
+ <img src="https://github.com/LeoCorleone/tcc_senai/assets/99774912/750e0128-64f0-40c8-8085-ae8b7a135c8e " alt="![HIVE DEV png (2)]">
+ 
+ </div>
 
 
 <p align="center">
