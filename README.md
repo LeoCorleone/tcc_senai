@@ -9,10 +9,6 @@
 # Índice 
 * [Descrição do Projeto](#-Descrição-do-projeto)
 * [Estrutura do Projeto](#Estrutura-do-projeto)
-* [Tecnologias utilizadas](#tecnologias-utilizadas)
-* [Pessoas Contribuidoras](#pessoas-contribuidoras)
-* [Pessoas Desenvolvedoras do Projeto](#pessoas-desenvolvedoras)
-* [Licença](#licença)
 
 <h1 align="center"> Hight Fashion </h1>
 
@@ -25,24 +21,37 @@ Breve história da empresa:A High Fashion Confecções Ltda, foi fundada em São
 # Estrutura do projeto
 Após baixar o sistema em sua máquina, execute:
 
-Na pasta "catálogo" instale o Django
+1.1 Na pasta "catálogo" instale o Django
 
 ```python 
 pip install django
 ```
+1.2 Ainda na pasta "catálogo" instale o MYSQL
 
-instale o mysql
+```python
 pip install mysql-connector-python
+```
+
+```python
 pip install mysqlclient
+```
+2. Após a execução dos comandos a cima, é hora de subir a estrutura para o Banco de Dados. Para isso execute:
 
-Suba o banco de dados
+```python
 python manage.py makemigrations
+```
 
-Importe os arquivos para o Banco de Dados
+3. Agora imposte os arquivos para o Banco de Dados:
+
+```python
 python manage.py loaddata roupas.json
+```
 
-Crie as tabelas
+4. Crie as tabelas a serem utilizadas através do comando:
+
+```python
 python manage.py migrate
+```
 
 Aproveite o Sistema!
 
