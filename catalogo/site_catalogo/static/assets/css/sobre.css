@@ -12,7 +12,6 @@ body{
     font-size: 35px;
     margin-top: 4%;
 }
-
 #quemsomos p{
     text-align: justify;
     padding-top: 2px;
@@ -24,9 +23,10 @@ body{
 }
 
 #compromisso img{
-    width: 500px;
-    height: 700px; 
+    width: 550px;
+    height: 750px; 
     margin-bottom: 3%;
+    margin-left: 9%;
 }
 
 #compromisso h2{
