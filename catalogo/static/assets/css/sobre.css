@@ -1,0 +1,17 @@
+body{
+    margin: 0;
+}
+
+#Sobre h1{
+    font-family: 'Sacramento', cursive;
+    font-size: 60px;
+    padding: 2%;
+}
+#quemsomos img{
+    padding-bottom: 3%;
+} 
+
+#compromisso img{
+    width: 500px;
+    height: 500px;
+}
