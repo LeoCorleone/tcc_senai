@@ -10,6 +10,7 @@
 # Índice 
 * [Descrição do Projeto](#-Descrição-do-projeto)
 * [Estrutura do Projeto](#Estrutura-do-projeto)
+* [Desenvolvedores do Projeto](#Desenvolvedores-do-projeto)
 * [Licença](#licença)
 
 # Descrição do projeto
@@ -53,7 +54,22 @@ python manage.py loaddata roupas.json
 python manage.py migrate
 ```
 
+5. Inicie o projeto:
+
+```python
+python manage.py runserver
+```
+
 Aproveite o Sistema!
+
+# Desenvolvedores do projeto
+
+Alice Fritz
+Daniel Magalhães
+Guilherme Assis
+Kauã Souza
+Leonardo Cunha
+Rebeca Velasco
 
 # Licença
 [Educational Community v2.0 ECL-2.0]()
