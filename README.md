@@ -57,7 +57,6 @@ python manage.py migrate
 
 Aproveite o Sistema!
 
-# Desenvolvedores do site
 
 
 
