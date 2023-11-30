@@ -60,7 +60,7 @@ Aproveite o Sistema!
 
 
 # Licença
-[Educational Community v2.0] ECL-2.0
+[Educational Community v2.0]() ECL-2.0
 
 
 
