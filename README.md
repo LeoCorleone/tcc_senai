@@ -21,6 +21,26 @@ O projeto tem como objetivo desenvolver um site que funcionará como catálogo o
 Breve história da empresa:A High Fashion Confecções Ltda, foi fundada em São João Nepomuceno, em 25 de fevereiro de 1972, pelos visionários Gianni Givenchy e Yves Dior. Desde o início, a empresa tem se dedicado à criação de moda adulta feminina, com um compromisso inabalável de combinar praticidade, conforto e beleza cotidiana em cada peça.
 
 # Estrutura do projeto
+Após baixar o sistema em sua máquina, execute:
+
+Na pasta "catálogo" instale o Django
+
+```pip install django```
+
+instale o mysql
+pip install mysql-connector-python
+pip install mysqlclient
+
+Suba o banco de dados
+python manage.py makemigrations
+
+Importe os arquivos para o Banco de Dados
+python manage.py loaddata roupas.json
+
+Crie as tabelas
+python manage.py migrate
+
+Aproveite o Sistema!
 
 
 
