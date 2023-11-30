@@ -1,4 +1,4 @@
-![q](https://github.com/LeoCorleone/tcc_senai/assets/99774912/04f0be28-525b-425c-8c58-ce9776ae3ed1)
+![q](https://github.com/LeoCorleone/tcc_senai/assets/99774912/52509360-3e94-4dcc-ba5a-3f0c40ac3945)
 
 
 
