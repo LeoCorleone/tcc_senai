@@ -1,4 +1,5 @@
-![q](https://github.com/LeoCorleone/tcc_senai/assets/99774912/52509360-3e94-4dcc-ba5a-3f0c40ac3945)
+![bitmap](https://github.com/LeoCorleone/tcc_senai/assets/99774912/1e558b7d-37fa-4350-8973-081ee66d436e)
+
 
 
 
