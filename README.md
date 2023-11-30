@@ -10,7 +10,6 @@
 # Índice 
 * [Descrição do Projeto](#-Descrição-do-projeto)
 * [Estrutura do Projeto](#Estrutura-do-projeto)
-* [Desenvolvedores](#desenvolvedores-octocat)
 * [Licença](#licença)
 
 # Descrição do projeto
@@ -55,9 +54,6 @@ python manage.py migrate
 ```
 
 Aproveite o Sistema!
-
-# Desenvolvedores :octocat:
-<img scr = "https://avatars.githubusercontent.com/u/112645202?v=4"width=115><br><sub>Rebeca</sub>
 
 # Licença
 [Educational Community v2.0 ECL-2.0]()
