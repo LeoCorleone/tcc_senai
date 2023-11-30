@@ -1,7 +1,6 @@
+<div text-align>
 ![HIVE DEV png (2)](https://github.com/LeoCorleone/tcc_senai/assets/99774912/750e0128-64f0-40c8-8085-ae8b7a135c8e)
-
-
-
+</div>
 
 
 <p align="center">
@@ -23,36 +22,28 @@ O projeto tem como objetivo desenvolver um site que funcionará como catálogo o
 # Estrutura do projeto
 Após baixar o sistema em sua máquina, execute:
 
-1.1 Na pasta "catálogo" instale o Django
-
-```python 
-pip install django
-```
-1.2 Ainda na pasta "catálogo" instale o MYSQL
-
-```python
-pip install mysql-connector-python
-```
+1. Na pasta "catálogo" instale o MYSQL
 
 ```python
 pip install mysqlclient
 ```
+
 2. Após a execução dos comandos a cima, é hora de subir a estrutura para o Banco de Dados. Para isso execute:
 
 ```python
 python manage.py makemigrations
 ```
 
-3. Agora imposte os arquivos para o Banco de Dados:
-
-```python
-python manage.py loaddata roupas.json
-```
-
-4. Crie as tabelas a serem utilizadas através do comando:
+3. Crie as tabelas a serem utilizadas através do comando:
 
 ```python
 python manage.py migrate
+```
+
+4. Agora imposte os arquivos para o Banco de Dados:
+
+```python
+python manage.py loaddata roupas.json
 ```
 
 5. Inicie o projeto:
