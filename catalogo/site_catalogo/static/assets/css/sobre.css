@@ -3,9 +3,8 @@ body{
 }
 
 #Sobre h1{
-<<<<<<< HEAD
-    font-family: 'Sacramento', cursive;
-    font-size: 60px;
+    font-family: 'Ms Madi', cursive;
+    font-size: 65px;
     padding: 2%;
 }
 #quemsomos img{
@@ -16,11 +15,7 @@ body{
     width: 500px;
     height: 500px;
 }
-=======
-    font-family: 'Ms Madi', cursive;
-    font-size: 65px;
-    padding: 2%;
-}
+
 #quemsomos h3{
     font-family: 'Cardo', serif;
     font-size: 35px;
@@ -56,6 +51,7 @@ body{
 .mvv img{
     padding-bottom: 3%;
     margin-right: 4%;
+    visibility: hidden;
 }
 
 .mvv{
@@ -86,4 +82,3 @@ body{
     font-size: 60px;
     padding: 2%;
 }
->>>>>>> 3fec6ba19ba0105e2d4e65767cae55e2e70e4bb9

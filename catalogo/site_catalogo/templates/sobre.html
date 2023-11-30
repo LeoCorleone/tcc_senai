@@ -8,7 +8,7 @@
     <div class="container text-center" id="Sobre">     
         <h1>Sobre Nós</h1>
     </div>
-    <div class="container" id="quemsomos">
+    <div class="container quemsomos">
         <div class="container row align-items-start">
             <img src="{% static 'assets/img/manequin.jpg' %}" alt="Foto-Manequin">
             <div class="row" id="compromisso" >
@@ -106,6 +106,14 @@
             <img src="{% static 'assets/img/linha.png' %}" alt="linha-decorativa" style="margin-top: 2%;">
         </div>
 </div>
+<script>
+    window.sr = ScrollReveal({ reset: true});
+
+    sr.reveal('.mvv img', { duration: 2000});
+
+    sr.reveal('.quemsomos img', { duration: 2000});
+
+</script>
 
 {% include 'partials/footer.html' %}
 {% endblock%}
