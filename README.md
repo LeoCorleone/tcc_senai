@@ -1,6 +1,7 @@
 
 
-![HIVE DEV png (2)](https://github.com/LeoCorleone/tcc_senai/assets/99774912/36b88e29-ba1d-40ea-a3fc-9452dda55e0c)
+![HIVE DEV png (2)](https://github.com/LeoCorleone/tcc_senai/assets/99774912/46e9dce4-f7c3-4c53-8f85-e61d8d478096)
+
 
 
 <p align="center">
