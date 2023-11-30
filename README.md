@@ -7,6 +7,8 @@
 # Índice 
 * [Descrição do Projeto](#-Descrição-do-projeto)
 * [Estrutura do Projeto](#Estrutura-do-projeto)
+* [Desenvolvedores](#desenvolvedores-octocat)
+* [Licença](#licença)
 
 <h1 align="center"> Hight Fashion </h1>
 
@@ -52,6 +54,9 @@ python manage.py migrate
 ```
 
 Aproveite o Sistema!
+
+# Desenvolvedores :octocat:
+
 
 # Licença
 Licença Educational Community v2.0 ECL-2.0
