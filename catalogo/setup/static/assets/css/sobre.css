@@ -1,3 +1,4 @@
+{% load static %}
 body{
     margin: 0;
 }
@@ -107,9 +108,6 @@ body{
     background-image: url(https://img.freepik.com/fotos-gratis/retrato-minimo-preto-e-branco_23-2149152635.jpg?w=1380&t=st=1701365490~exp=1701366090~hmac=f7205eb59ec842e5fc9b18d918c0e889f0614e6a53737e53604b5d44b24e7cd9);
 }
 
-.imagem2{
-    background-image: url(https://img.freepik.com/fotos-gratis/proprietario-de-boutique-elegante-mede-vestido-em-estudio-preto-e-branco-gerado-por-ia_188544-11428.jpg?w=1380&t=st=1701364493~exp=1701365093~hmac=9c22e8421cd2e9b5fb6c0089254d68ff46238410979ba9375a1b68d80878c116);
-}
 
 .imagem3{
     background-image: url(https://img.freepik.com/fotos-gratis/mulher-atraente-com-um-chapeu-posando-em-fundo-preto_7502-7664.jpg?w=1380&t=st=1701364774~exp=1701365374~hmac=eeb352a70bf1ad993af8c41164dcab3bad75211e48f2c4fd1fcabf080a526f76);
