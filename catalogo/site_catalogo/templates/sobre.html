@@ -78,9 +78,39 @@
                   <span class="visually-hidden">Next</span>
                 </button>
             </div> -->
-            <img src="{% static 'assets/img/missao.png' %}" alt="Missão">
+            <div class="container row align-items-start">
+                <div class="col">
+                    <h3>Missão</h3>
+                    <p>Na High Fashion Confecções Ltda., nossa missão é criar moda 
+                    adulta feminina que transcende o tempo, combinando elegância e 
+                    inovação desde 1972. Comprometemo-nos a proporcionar peças que
+                    não apenas sigam as últimas tendências da moda, mas também incorporem
+                    a paixão por praticidade, conforto e beleza cotidiana. Buscamos constantemente
+                    a excelência, dedicando-nos a satisfazer nossos clientes e inspirar confiança 
+                    e elegância em cada mulher.</p>
+                </div>
+                <div class="col">
+                    <h3>Visão</h3>
+                    <p>Vislumbramos um futuro onde a High Fashion Confecções Ltda., é reconhecida globalmente 
+                    como uma marca líder em moda feminina, associada à elegância atemporal e inovação contínua. 
+                    Visualizamos um universo onde nossas criações transcendem fronteiras físicas, alcançando mulheres 
+                    em todo o mundo por meio do nosso compromisso com a qualidade, criatividade e satisfação do cliente. 
+                    Buscamos moldar a indústria da moda, inspirando confiança e oferecendo uma experiência única e enriquecedora.</p>
+                </div>
+                <div class="col">
+                    <h3>Valores</h3>
+                    <p>Na High Fashion Confecções Ltda. Ltda., nossa essência reside na busca incansável pela perfeição e excelência.
+                    Guiados pela inovação constante, combinamos tendências modernas com uma elegância que transcende o tempo, proporcionando
+                    satisfação total aos nossos clientes. Mantemos uma tradição respeitada, atualizada com uma abordagem contemporânea, 
+                    fortalecendo nosso sucesso por meio de parcerias sólidas. Nosso compromisso ético é inegociável, refletindo em ações 
+                    responsáveis tanto social quanto ambientalmente.</p>
+                </div>
+
+            </div>
+            <img src="{% static 'assets/img/linha.png' %}" alt="linha-decorativa" style="margin-top: 2%;">
+            <!-- <img src="{% static 'assets/img/missao.png' %}" alt="Missão">
             <img src="{% static 'assets/img/visao.png' %}" alt="Visão">
-            <img src="{% static 'assets/img/valores.png' %}" alt="Valores">
+            <img src="{% static 'assets/img/valores.png' %}" alt="Valores"> -->
         </div>
         <div class="imagem3 text-center" style="background-image: url({% static 'assets/img/chapeu.jpg' %});">
             <h1>Venha Nos Encontrar!</h1>
@@ -124,6 +154,8 @@
     sr.reveal('.imagem2 h1', { duration: 2000});
 
     sr.reveal('.imagem3 h1', { duration: 2000});
+
+    sr.reveal('.endereco img', { duration: 2000});
 
 </script>
 
