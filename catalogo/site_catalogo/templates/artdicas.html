@@ -4,7 +4,7 @@
 {% include 'partials/navbar.html' %}
 {% include 'partials/alerts.html' %}
 
-    <div class="container text-center" id="Titulo">
+    <div class="imagem1 text-center" style="background-image: url({% static 'assets/img/modelosorriso.jpg' %});">
         <h1>Artigos e Dicas</h1>
     </div>
     <div class="container text-center" id="mainartdicas">
@@ -76,11 +76,14 @@
                 </div>
             </div>
         </div>
+        <img src="{% static 'assets/img/linha.png' %}" alt="linha-decorativa" style="margin-top: 2%; margin-bottom: 2%;">
     </div>
 
     <script>
         window.sr = ScrollReveal({ reset: true});
     
+        sr.reveal('.imagem1 h1', { duration: 2000});
+
         sr.reveal('.artdicas img', { duration: 2000});
     
         sr.reveal('.artdicas2 img', { duration: 2000});

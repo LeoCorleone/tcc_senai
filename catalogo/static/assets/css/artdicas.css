@@ -2,11 +2,6 @@ body{
     margin: 0;
 }
 
-#Titulo h1{
-    font-family: 'Ms Madi', cursive;
-    font-size: 60px;
-    padding: 2%;
-}
 .artdicas, .artdicas2, .artdicas3{
     width: 100%;
     margin-bottom: 3%;
