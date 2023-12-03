@@ -17,7 +17,7 @@ def index(request):
     formcomentario = ComentarioForm()
     filtro_form = FiltroForm(request.GET)
     form = LoginForms()
-    postagem = Produto.objects.all()
+    postagem = Produto.objects.all().order_by('-id')
 
     if filtro_form.is_valid():
         ano = filtro_form.cleaned_data.get('ano')
@@ -108,7 +108,7 @@ def adicionar_comentario(request, produto_id):
         if form.is_valid():
             comentario = form.save(commit=False)
             comentario.usuario = request.user
-            comentario.product = produto  # Alterado de 'produto' para 'product'
+            comentario.product = produto 
             comentario.save()
 
             produto.numero_comentarios += 1
@@ -142,7 +142,7 @@ def postagem(request):
 
 @user_passes_test(is_superuser)
 def listar_roupas(request):
-    postagem = Produto.objects.all()
+    postagem = Produto.objects.all().order_by('-id')
     paginator = Paginator(postagem, 6) 
     filtro_form = FiltroForm(request.GET)
 
