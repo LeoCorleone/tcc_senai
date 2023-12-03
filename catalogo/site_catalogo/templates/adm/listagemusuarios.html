@@ -12,7 +12,6 @@
           <tr>
               <th scope="col" colspan="4">
                   <form method="GET" action="{% url 'listar_usuario' %}" class="form-inline">
-                      <!-- Seu formulário aqui -->
                   </form>
               </th>
           </tr>
@@ -39,7 +38,6 @@
               <td class="align-middle border">{{x.username}}</td>
               <td class="align-middle border">{{x.email}}</td>
               <td class="align-middle border">
-                <!-- Status -->
                 <div class="row justify-content-center">
                     <div class="col-12 text-center">
                         {% if x.is_active %}
@@ -51,7 +49,6 @@
                 </div>
               </td>
               <td class="align-middle border">
-                <!-- Cargo -->
                 <div class="row justify-content-center">
                     <div class="col-12 text-center">
                         {% if x.is_superuser %}
@@ -63,7 +60,6 @@
                 </div>
               </td>
               <td class="align-middle border">
-                <!-- Ativar/Desativar -->
                 <div class="row justify-content-center">
                     <div class="col-3">
                         <a href="{% url 'active_user' x.id %}" style="text-decoration:none;color:green">
