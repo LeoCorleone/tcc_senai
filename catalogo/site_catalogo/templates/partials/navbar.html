@@ -47,7 +47,6 @@
           <img src="{% static 'assets/img/highbranco.png' %}" alt="Logo da Empresa" class="img-fluid" style="width: 150px; height: 75px;">
         </div>
         <div class="myform bg-dark">
-          <!-- Adicionando a imagem de login acima do título "Login" -->
           <div class="text-center mb-3">
             <img src="{% static 'assets/img/user.svg' %}" alt="Imagem de Login" class="img-fluid" style="width: 75px; height: 75px;">
           </div>
@@ -55,7 +54,6 @@
           <ul class="nav justify-content-center border-bottom pb-3 mb-3;"></ul>
           <form style="text-align: left;" method="post" action="{% url 'login' %}">
             {% csrf_token %}
-            <!-- Restante do formulário -->
             {% for field in form.visible_fields %}
               <div class="mb-3 mt-4">
                 <label for="{{ field.id_for_label }}" class="form-label">{{field.label}}</label>
