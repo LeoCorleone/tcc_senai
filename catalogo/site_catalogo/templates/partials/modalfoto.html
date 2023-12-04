@@ -54,12 +54,8 @@
             </div>
             <div class="modal-body">
                 <div class="row d-flex">
-                    <!-- <div class="col-md-6"> -->
-                        <!-- Imagem ampliada à esquerda -->
                         <img src="{{x.imagem_produto.url}}" alt="{{x.titulo_roupa}}" class="img-fluid">
-                    <!-- </div> -->
                     <div id="description">
-                        <!-- Informações sobre a roupa alinhadas à esquerda -->
                         <p><b>Descrição:</b> {{x.descricao_produto}}.</p>
                         <p><b>Composição: </b>{{x.composicao_produto}}.</p>
                         <p><b>Coleção: </b>{{x.colecao}}.</p>                       
@@ -68,7 +64,6 @@
                     </div>
                 </div>
                     <div class="container-fluid text-center" id="coments" style="padding: 3%;">
-                        <!-- Área de comentários -->
                         <h4>Comentários</h4>
                         <div class="container-sm shadow" style="height: 180px; overflow-y: scroll;">
                             {% for comentario in x.comentarios.all %}

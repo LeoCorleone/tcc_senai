@@ -9,7 +9,6 @@ from django.contrib import messages
 from django.contrib.auth.decorators import user_passes_test
 
 
-
 def is_superuser(user):
     return user.is_authenticated and user.is_superuser
 
@@ -17,8 +16,7 @@ def index(request):
     formcomentario = ComentarioForm()
     filtro_form = FiltroForm(request.GET)
     form = LoginForms()
-
-    postagem = Produto.objects.all()
+    postagem = Produto.objects.all().order_by('-id')
 
     if filtro_form.is_valid():
         ano = filtro_form.cleaned_data.get('ano')
@@ -109,7 +107,7 @@ def adicionar_comentario(request, produto_id):
         if form.is_valid():
             comentario = form.save(commit=False)
             comentario.usuario = request.user
-            comentario.product = produto  # Alterado de 'produto' para 'product'
+            comentario.product = produto 
             comentario.save()
 
             produto.numero_comentarios += 1
@@ -143,8 +141,24 @@ def postagem(request):
 
 @user_passes_test(is_superuser)
 def listar_roupas(request):
-    postagem = Produto.objects.all()
+    postagem = Produto.objects.all().order_by('-id')
     paginator = Paginator(postagem, 6) 
+    filtro_form = FiltroForm(request.GET)
+
+    if filtro_form.is_valid():
+        ano = filtro_form.cleaned_data.get('ano')
+        colecao = filtro_form.cleaned_data.get('colecao')
+        tipo = filtro_form.cleaned_data.get('tipo')
+
+        if ano:
+            postagem = postagem.filter(ano=ano)
+        if colecao:
+            postagem = postagem.filter(colecao=colecao)
+        if tipo:
+            postagem = postagem.filter(tipo=tipo)
+
+    paginator = Paginator(postagem, 6)
+
     try:
         page = int(request.GET.get('page', '1'))
     except ValueError:
@@ -154,7 +168,8 @@ def listar_roupas(request):
         postagem = paginator.page(page)
     except (EmptyPage, InvalidPage):
         postagem = paginator.page(paginator.num_pages)
-    return render(request, 'adm/listagemroupas.html', {'postagem': postagem})
+
+    return render(request, 'adm/listagemroupas.html', {'postagem': postagem, 'filtro_form': filtro_form})
 
 @user_passes_test(is_superuser)
 def delete(request, id):
@@ -167,7 +182,7 @@ def delete(request, id):
 def edit_roupa(request, id):
     produto = Produto.objects.get(pk=id)
     form = ProdutoForm(instance=produto)
-    return render(request, "adm/updateroupa.html",{"form":form, "roupa":produto})
+    return render(request, "adm/updateroupa.html",{"form":form, "produto":produto})
 
 @user_passes_test(is_superuser)
 def update_roupa(request, id):
@@ -216,21 +231,20 @@ def listar_usuario(request):
     })
 
 @user_passes_test(is_superuser)
-def delete_usuario(request, id):
-    usuarios = User.objects.get(pk=id)
-    usuarios.delete()
-    messages.success(request, f'Usuario deletado com sucesso!')
-    return redirect('listar_usuario')
-
-@user_passes_test(is_superuser)
 def update_usuario(request, id):
     usuario = User.objects.get(pk=id)
+    
     if request.method == 'POST':
         usuario.username = request.POST['nome']
         usuario.set_password(request.POST['senha'])
         usuario.email = request.POST['email']
+        
+        is_admin = request.POST.get('is_admin', False)
+        usuario.is_superuser = bool(is_admin)
+        
         usuario.save()
         return redirect('listar_usuario')
+    
     return render(request, 'adm/editaruser.html', {'usuario': usuario})
 
 @user_passes_test(is_superuser)

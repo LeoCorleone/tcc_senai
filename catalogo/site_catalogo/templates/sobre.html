@@ -5,12 +5,12 @@
 {% include 'partials/alerts.html' %}
 
 <div class="container-fluid">
-    <div class="container text-center" id="Sobre">     
+    <div class="imagem2 text-center" style="background-image: url({% static 'assets/img/manequinM.jpg' %});">     
         <h1>Sobre Nós</h1>
     </div>
-    <div class="container" id="quemsomos">
+    <div class="container quemsomos">
         <div class="container row align-items-start">
-            <img src="{% static 'assets/img/manequin.jpg' %}" alt="Foto-Manequin">
+            <!-- <img  src="{% static 'assets/img/manequin.jpg' %}" alt="Foto-Manequin"> -->
             <div class="row" id="compromisso" >
                 <div class="row" >
                     <div class="col">
@@ -53,6 +53,9 @@
             </div>      
         </div>
    </div>
+        <div class="imagem1 text-center" style="background-image: url({% static 'assets/img/modelobw.jpg' %});">
+            <h1>Missão, Visão e Valores</h1>
+        </div>
         <div class="container text-center mvv">
             <!-- <div id="carouselExampleFade" class="carousel slide carousel-fade">
                 <div class="carousel-inner">
@@ -75,16 +78,49 @@
                   <span class="visually-hidden">Next</span>
                 </button>
             </div> -->
-            <img src="{% static 'assets/img/missao.png' %}" alt="Missão">
+            <div class="container row align-items-start">
+                <div class="col">
+                    <h3>Missão</h3>
+                    <p>Na High Fashion Confecções Ltda., nossa missão é criar moda 
+                    adulta feminina que transcende o tempo, combinando elegância e 
+                    inovação desde 1972. Comprometemo-nos a proporcionar peças que
+                    não apenas sigam as últimas tendências da moda, mas também incorporem
+                    a paixão por praticidade, conforto e beleza cotidiana. Buscamos constantemente
+                    a excelência, dedicando-nos a satisfazer nossos clientes e inspirar confiança 
+                    e elegância em cada mulher.</p>
+                </div>
+                <div class="col">
+                    <h3>Visão</h3>
+                    <p>Vislumbramos um futuro onde a High Fashion Confecções Ltda., é reconhecida globalmente 
+                    como uma marca líder em moda feminina, associada à elegância atemporal e inovação contínua. 
+                    Visualizamos um universo onde nossas criações transcendem fronteiras físicas, alcançando mulheres 
+                    em todo o mundo por meio do nosso compromisso com a qualidade, criatividade e satisfação do cliente. 
+                    Buscamos moldar a indústria da moda, inspirando confiança e oferecendo uma experiência única e enriquecedora.</p>
+                </div>
+                <div class="col">
+                    <h3>Valores</h3>
+                    <p>Na High Fashion Confecções Ltda. Ltda., nossa essência reside na busca incansável pela perfeição e excelência.
+                    Guiados pela inovação constante, combinamos tendências modernas com uma elegância que transcende o tempo, proporcionando
+                    satisfação total aos nossos clientes. Mantemos uma tradição respeitada, atualizada com uma abordagem contemporânea, 
+                    fortalecendo nosso sucesso por meio de parcerias sólidas. Nosso compromisso ético é inegociável, refletindo em ações 
+                    responsáveis tanto social quanto ambientalmente.</p>
+                </div>
+
+            </div>
+            <img src="{% static 'assets/img/linha.png' %}" alt="linha-decorativa" style="margin-top: 2%;">
+            <!-- <img src="{% static 'assets/img/missao.png' %}" alt="Missão">
             <img src="{% static 'assets/img/visao.png' %}" alt="Visão">
-            <img src="{% static 'assets/img/valores.png' %}" alt="Valores">
+            <img src="{% static 'assets/img/valores.png' %}" alt="Valores"> -->
+        </div>
+        <div class="imagem3 text-center" style="background-image: url({% static 'assets/img/chapeu.jpg' %});">
+            <h1>Venha Nos Encontrar!</h1>
         </div>
         <div class="container text-center endereco" >
             <div class="container text-center">
                 <h1>Nossas Lojas</h1>
                 <img src="{% static 'assets/img/local.gif' %}" alt="icone-endereço">
             </div>
-            <div class="row text-center">
+            <div class="row text-center ">
                 <div class="col">
                     <ol>Minas Gerais</ol>
                     <li>Av. Cel. Souza, 521 - Bicas - CEP:36600-000-Telefone: (32)3271-1723; Av. Savassy, 1258 Loja 108 - CEP: 34256-754 - Telefone: (31)4325-6547.</li>
@@ -106,6 +142,22 @@
             <img src="{% static 'assets/img/linha.png' %}" alt="linha-decorativa" style="margin-top: 2%;">
         </div>
 </div>
+<script>
+    window.sr = ScrollReveal({ reset: true});
+
+    sr.reveal('.mvv img', { duration: 2000});
+
+    sr.reveal('.quemsomos img', { duration: 2000});
+
+    sr.reveal('.imagem1 h1', { duration: 2000});
+
+    sr.reveal('.imagem2 h1', { duration: 2000});
+
+    sr.reveal('.imagem3 h1', { duration: 2000});
+
+    sr.reveal('.endereco img', { duration: 2000});
+
+</script>
 
 {% include 'partials/footer.html' %}
 {% endblock%}

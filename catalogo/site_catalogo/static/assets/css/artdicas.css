@@ -2,15 +2,9 @@ body{
     margin: 0;
 }
 
-#Titulo h1{
-    font-family: 'Ms Madi', cursive;
-    font-size: 60px;
-    padding: 2%;
-}
 .artdicas, .artdicas2, .artdicas3{
     width: 100%;
     margin-bottom: 3%;
-    width: 100%;
 }
 .artdicas2{
     background-color: #CEAB9A;
@@ -41,3 +35,39 @@ body{
     width: 533px;
 }
 
+@media only screen and (max-device-width: 932px) {
+    body {
+        margin: 0;
+    }
+    
+    .artdicas, .artdicas2, .artdicas3 {
+        width: 100%;
+        margin-bottom: 3%;
+    }
+    
+    .artdicas2 {
+        background-color: white;
+        padding-top: 2%;
+        padding-bottom: 2%;
+        max-width: 1080px; 
+        margin-left: auto; 
+        margin-right: auto; 
+    }
+    
+    
+    .artdicas img {
+        max-width: 100%; 
+        height: auto; 
+        display: block; 
+        margin-left: auto; 
+        margin-right: auto;
+    }
+    
+    .artdicas2 img {
+        max-width: 100%; 
+        height: auto; 
+        display: block; 
+        margin-left: auto; 
+        margin-right: auto; 
+    }
+    }

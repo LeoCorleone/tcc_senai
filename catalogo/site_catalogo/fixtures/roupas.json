@@ -1,4 +1,5 @@
 [
+
     {
         "model": "site_catalogo.Ano",
         "pk" : 1,
@@ -100,13 +101,13 @@
         "model": "site_catalogo.Produto",
         "pk" : 1,
         "fields":{
-            "titulo_produto" : "Teste",
-            "descricao_produto" : "Teste",
-            "composicao_produto": "Teste",
-            "imagem_produto" : "uploads/4.jpg",
+            "titulo_produto" : "Bolsa",
+            "descricao_produto" : "Linda Bolsa",
+            "composicao_produto": "Couro",
+            "imagem_produto" : "uploads/acessorio01.jpg",
             "ano" : 1,
-            "colecao" : 1,
-            "tipo" : 1,
+            "colecao" : 3,
+            "tipo" : 5,
             "numero_comentarios" : 0,
             "likes" : 0
         }
@@ -116,11 +117,11 @@
         "model": "site_catalogo.Produto",
         "pk" : 2,
         "fields":{
-            "titulo_produto" : "Teste",
-            "descricao_produto" : "Teste",
-            "composicao_produto": "Teste",
-            "imagem_produto" : "uploads/4.jpg",
-            "ano" : 1,
+            "titulo_produto" : "Blusa Zebra",
+            "descricao_produto" : "Blusa muito confortável",
+            "composicao_produto": "Seda",
+            "imagem_produto" : "uploads/blusa-primavera.jpg",
+            "ano" : 2,
             "colecao" : 2,
             "tipo" : 1,
             "numero_comentarios" : 0,
@@ -132,13 +133,13 @@
         "model": "site_catalogo.Produto",
         "pk" : 3,
         "fields":{
-            "titulo_produto" : "Teste",
-            "descricao_produto" : "Teste",
-            "composicao_produto": "Teste",
-            "imagem_produto" : "uploads/4.jpg",
-            "ano" : 2,
-            "colecao" : 3,
-            "tipo" : 1,
+            "titulo_produto" : "Calça",
+            "descricao_produto" : "Calça Muito Confortável",
+            "composicao_produto": "Couro Sintético",
+            "imagem_produto" : "uploads/calca01.jpg",
+            "ano" : 3,
+            "colecao" : 4,
+            "tipo" : 3,
             "numero_comentarios" : 0,
             "likes" : 0
         }
@@ -148,12 +149,12 @@
         "model": "site_catalogo.Produto",
         "pk" : 4,
         "fields":{
-            "titulo_produto" : "Teste",
-            "descricao_produto" : "Teste",
-            "composicao_produto": "Teste",
-            "imagem_produto" : "uploads/4.jpg",
+            "titulo_produto" : "Camiseta",
+            "descricao_produto" : "Camiseta Leve",
+            "composicao_produto": "Malha",
+            "imagem_produto" : "uploads/camiseta01.jpg",
             "ano" : 1,
-            "colecao" : 1,
+            "colecao" : 2,
             "tipo" : 2,
             "numero_comentarios" : 0,
             "likes" : 0
@@ -164,13 +165,13 @@
         "model": "site_catalogo.Produto",
         "pk" : 5,
         "fields":{
-            "titulo_produto" : "Teste",
-            "descricao_produto" : "Teste",
+            "titulo_produto" : "Saia Laranja",
+            "descricao_produto" : "Saia Muito Confortável",
             "composicao_produto": "Teste",
-            "imagem_produto" : "uploads/4.jpg",
-            "ano" : 1,
+            "imagem_produto" : "uploads/saia01.jpg",
+            "ano" : 2,
             "colecao" : 1,
-            "tipo" : 1,
+            "tipo" : 4,
             "numero_comentarios" : 0,
             "likes" : 0
         }
@@ -180,29 +181,13 @@
         "model": "site_catalogo.Produto",
         "pk" : 6,
         "fields":{
-            "titulo_produto" : "Teste",
-            "descricao_produto" : "Teste",
-            "composicao_produto": "Teste",
-            "imagem_produto" : "uploads/4.jpg",
-            "ano" : 1,
-            "colecao" : 1,
-            "tipo" : 1,
-            "numero_comentarios" : 0,
-            "likes" : 0
-        }
-    },
-
-    {
-        "model": "site_catalogo.Produto",
-        "pk" : 28,
-        "fields":{
-            "titulo_produto" : "Teste",
-            "descricao_produto" : "Teste",
-            "composicao_produto": "Teste",
-            "imagem_produto" : "uploads/4.jpg",
-            "ano" : 1,
-            "colecao" : 1,
-            "tipo" : 1,
+            "titulo_produto" : "Brinco",
+            "descricao_produto" : "Brinco Maravilhoso",
+            "composicao_produto": "Metal",
+            "imagem_produto" : "uploads/acessorio02.jpg",
+            "ano" : 3,
+            "colecao" : 4,
+            "tipo" : 5,
             "numero_comentarios" : 0,
             "likes" : 0
         }
@@ -212,13 +197,13 @@
         "model": "site_catalogo.Produto",
         "pk" : 7,
         "fields":{
-            "titulo_produto" : "Teste",
-            "descricao_produto" : "Teste",
-            "composicao_produto": "Teste",
-            "imagem_produto" : "uploads/4.jpg",
-            "ano" : 1,
-            "colecao" : 1,
-            "tipo" : 1,
+            "titulo_produto" : "Calça Rasgada",
+            "descricao_produto" : "Muito Confortável",
+            "composicao_produto": "Jeans",
+            "imagem_produto" : "uploads/calca03.jpg",
+            "ano" : 2,
+            "colecao" : 3,
+            "tipo" : 3,
             "numero_comentarios" : 0,
             "likes" : 0
         }
@@ -228,13 +213,29 @@
         "model": "site_catalogo.Produto",
         "pk" : 8,
         "fields":{
-            "titulo_produto" : "Teste",
+            "titulo_produto" : "Camiseta",
+            "descricao_produto" : "Camiseta de Abacaxi",
+            "composicao_produto": "Algodão",
+            "imagem_produto" : "uploads/camiseta03.jpg",
+            "ano" : 3,
+            "colecao" : 1,
+            "tipo" : 2,
+            "numero_comentarios" : 0,
+            "likes" : 0
+        }
+    },
+
+    {
+        "model": "site_catalogo.Produto",
+        "pk" : 9,
+        "fields":{
+            "titulo_produto" : "Anel",
             "descricao_produto" : "Teste",
             "composicao_produto": "Teste",
-            "imagem_produto" : "uploads/4.jpg",
+            "imagem_produto" : "uploads/acessorio04.jpg",
             "ano" : 1,
-            "colecao" : 1,
-            "tipo" : 1,
+            "colecao" : 3,
+            "tipo" : 5,
             "numero_comentarios" : 0,
             "likes" : 0
         }

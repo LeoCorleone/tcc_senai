@@ -23,7 +23,6 @@ urlpatterns = [
     path('imagem/update/<int:id>', update_roupa, name="update_roupa"),
     path('listarusuario', listar_usuario, name='listar_usuario'),
     path('adicionarusuario', adicionar_usuario, name='adicionar_usuario'),
-    path('deleteusuario/<int:id>', delete_usuario, name='delete_usuario'),
     path('editarusuario/<int:id>', update_usuario, name='editar_usuario'),
     path('updateusuario/<int:id>', update_usuario, name='update_usuario'),
     path('inativar/<int:id>', inative, name="inative_user"),

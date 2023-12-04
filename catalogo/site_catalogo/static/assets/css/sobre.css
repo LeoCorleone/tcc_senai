@@ -7,6 +7,15 @@ body{
     font-size: 65px;
     padding: 2%;
 }
+#quemsomos img{
+    padding-bottom: 3%;
+} 
+
+#compromisso img{
+    width: 500px;
+    height: 500px;
+}
+
 #quemsomos h3{
     font-family: 'Cardo', serif;
     font-size: 35px;
@@ -42,6 +51,7 @@ body{
 .mvv img{
     padding-bottom: 3%;
     margin-right: 4%;
+    visibility: hidden;
 }
 
 .mvv{
