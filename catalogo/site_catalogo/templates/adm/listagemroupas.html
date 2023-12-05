@@ -7,9 +7,17 @@
 {% include 'partials/adm/pesquisaadm.html' %}
 
 <style>
-  .card-text, .card-title{
+  .col-4{
+    margin-bottom: 2%;
+  }
+  .card-text{
     padding: 2% 0;
     text-align: left;
+  }
+  .card-title{
+    text-align: left;
+    font-size: 30px;
+    font-family: 'Ms Madi', cursive;
   }
 </style>
 
@@ -22,29 +30,31 @@
         </button>
       </a> 
         {% for x in postagem %}
-      <div class="col-4" style="padding: 3%;">
+      <div class="col-4">
         <div class="row">
-            <div class="card" style="width: 20rem;">
-                <img src="{{x.imagem_produto.url}}" style="width: 100%; height: auto;" class="card-img-top" alt="{{x.titulo_roupa}}">
-                <div class="card-body" style="line-height: 1;">
-                  <h5 class="card-title">{{ x.titulo_produto }}</h5>
-                  <p class="card-text" style="margin-bottom: 0;"><b>Descrição:</b>{{ x.descricao_produto }}</p>
-                  <p class="card-text" style="margin-bottom: 0;"><b>Composição:</b>{{ x.composicao_produto }}</p>
-                  <p class="card-text" style="margin-bottom: 0;"><b>Coleção:</b>{{ x.colecao.nome }}</p>
-                  <p class="card-text" style="margin-bottom: 0;"><b>Tipo:</b>{{ x.tipo.nome }}</p>
-                  <p class="card-text" style="margin-bottom: 0;"><b>Ano:</b>{{ x.ano.valor }}</p>
-                  <a href="{% url 'delete' x.id %}">
-                    <button type="button" class="btn">
-                       <img src="{% static 'assets/img/lixeira.png' %}" alt="botao-excluir">
-                    </button>
+          <div class="container-fluid">
+            <div class="card" style="width: 18rem;">
+              <img src="{{x.imagem_produto.url}}" style="width: 100%; height: auto;" class="card-img-top" alt="{{x.titulo_roupa}}">
+              <div class="card-body" style="line-height: 1;">
+                <h5 class="card-title">{{ x.titulo_produto }}</h5>
+                <p class="card-text" style="margin-bottom: 0;"><b>Descrição:</b>{{ x.descricao_produto }}</p>
+                <p class="card-text" style="margin-bottom: 0;"><b>Composição:</b>{{ x.composicao_produto }}</p>
+                <p class="card-text" style="margin-bottom: 0;"><b>Coleção:</b>{{ x.colecao.nome }}</p>
+                <p class="card-text" style="margin-bottom: 0;"><b>Tipo:</b>{{ x.tipo.nome }}</p>
+                <p class="card-text" style="margin-bottom: 0;"><b>Ano:</b>{{ x.ano.valor }}</p>
+                <a href="{% url 'delete' x.id %}">
+                  <button type="button" class="btn">
+                     <img src="{% static 'assets/img/lixeira.png' %}" alt="botao-excluir">
+                  </button>
+               </a>
+                <a href="{% url 'edit_roupa' x.id %}">
+                  <button type="button" class="btn">
+                     <img src="{% static 'assets/img/editar.png' %}" alt="botao-editar">
+                   </button>
                  </a>
-                  <a href="{% url 'edit_roupa' x.id %}">
-                    <button type="button" class="btn">
-                       <img src="{% static 'assets/img/editar.png' %}" alt="botao-editar">
-                     </button>
-                   </a>
-                </div>
-            </div>
+              </div>
+          </div>
+          </div>
         </div>
       </div>
       {% endfor %}
