@@ -7,9 +7,22 @@
 {% include 'partials/alerts.html' %}
 {% include 'partials/pesquisa.html'%}
 
-
+<style>
+    .imagem1 {
+    transition: background-image 0.9s ease-in-out;
+    }
+    .imagem1 h1{
+        margin: 0;
+    }
+    h6{
+    color: white;
+    font-family: 'Quicksand', sans-serif;
+    margin-top: 2px;
+    font-size: 25px;
+}
+</style>
 <!-- início carrossel -->
-<div id="carouselExample" class="carousel slide" style="margin-top: 7%;">
+<!-- <div id="carouselExample" class="carousel slide" style="margin-top: 7%;">
     <div class="carousel-inner">
       <div class="carousel-item active">
         <img src="{% static 'assets/img/car1.jpg' %}" class="d-block w-100" style="height: 600px;" alt="...">
@@ -29,8 +42,11 @@
       <span class="carousel-control-next-icon" aria-hidden="true"></span>
       <span class="visually-hidden">Próximo</span>
     </button>
-  </div>
+  </div> -->
   <!-- fim carrossel -->
+  <div class="imagem1 text-center" style="margin-top: 7%;  background-image: url({% static 'assets/img/modelorosa.jpg' %});">
+    <h1>High Fashion <br> <h6>Moda com Elegância e <br> Inovação desde 1972</h6></h1>
+</div>
 
 <!-- inicio body  -->
 <div class="container-md">
@@ -103,6 +119,32 @@
         </ul>
     </nav>
 </div>
+<script> 
+    window.sr = ScrollReveal({ reset: true});
+    sr.reveal('.imagem1 h1', { duration: 2000});
+</script>
+<!-- mudança de imagem  -->
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        var imageContainer = document.querySelector('.imagem1');
+        var images = [
+            "{% static 'assets/img/modelorosa2.jpg' %}",
+            "{% static 'assets/img/modelosofa.jpg' %}",
+            "{% static 'assets/img/modelorosa.jpg' %}",
+            "{% static 'assets/img/modelosofa2.jpg' %}",
+        ];
+        var currentImageIndex = 0;
+
+        function changeImage() {
+            imageContainer.style.backgroundImage = "url(" + images[currentImageIndex] + ")";
+            currentImageIndex = (currentImageIndex + 1) % images.length;
+        }
+
+        var interval = 4000; 
+
+        setInterval(changeImage, interval);
+    });
+</script>
 <!-- fim do body -->
 
 
