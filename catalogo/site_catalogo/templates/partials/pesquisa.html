@@ -1,7 +1,21 @@
-<div class="container mt-3">
+<style>
+    .filtro{
+        position: fixed;
+        top: 5%;
+        width: 100%;
+        background-color: #ffffff; 
+        z-index: 1000;
+        padding-top: 1%; 
+    }
+    @media only screen and (max-device-width: 932px) {
+    select, button{
+        width: 100%;
+    }
+}
+</style>
+<div class="container-fluid mt-3 filtro">
     <form method="get" action="{% url 'index' %}">
-        {% csrf_token %}
-        
+        {% csrf_token %} 
         <div class="d-flex justify-content-end mb-3 align-items-center">
             <div class="custom-dropdown mr-4">
                 {{ filtro_form.ano }}
