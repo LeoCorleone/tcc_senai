@@ -7,6 +7,12 @@
         z-index: 1000;
         padding-top: 1%; 
     }
+    select{
+        color: black;
+        padding: 1%;
+        border-radius: 30px;
+        font-family: Arial, Helvetica, sans-serif;
+    }
     @media only screen and (max-device-width: 932px) {
     select, button{
         width: 100%;
@@ -16,7 +22,7 @@
 <div class="container-fluid mt-3 filtro">
     <form method="get" action="{% url 'index' %}">
         {% csrf_token %} 
-        <div class="d-flex justify-content-end mb-3 align-items-center">
+        <div class="d-flex justify-content-center mb-3 align-items-center">
             <div class="custom-dropdown mr-4">
                 {{ filtro_form.ano }}
             </div>
