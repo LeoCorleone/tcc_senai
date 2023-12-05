@@ -30,7 +30,7 @@ def index(request):
         if tipo:
             postagem = postagem.filter(tipo=tipo)
 
-    paginator = Paginator(postagem, 12)
+    paginator = Paginator(postagem, 9)
 
     try:
         page = int(request.GET.get('page', '1'))
@@ -142,7 +142,7 @@ def postagem(request):
 @user_passes_test(is_superuser)
 def listar_roupas(request):
     postagem = Produto.objects.all().order_by('-id')
-    paginator = Paginator(postagem, 6) 
+    paginator = Paginator(postagem, 9) 
     filtro_form = FiltroForm(request.GET)
 
     if filtro_form.is_valid():
@@ -157,7 +157,7 @@ def listar_roupas(request):
         if tipo:
             postagem = postagem.filter(tipo=tipo)
 
-    paginator = Paginator(postagem, 6)
+    paginator = Paginator(postagem, 9)
 
     try:
         page = int(request.GET.get('page', '1'))

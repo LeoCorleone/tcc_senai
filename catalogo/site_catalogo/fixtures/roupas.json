@@ -89,11 +89,34 @@
         }
     },
     
+    
     {
         "model": "site_catalogo.Tipo",
         "pk" : 5,
         "fields":{
             "nome" : "Acessórios"
+        }
+    },
+
+    {
+        "model": "site_catalogo.Tipo",
+        "pk" : 6,
+        "fields":{
+            "nome" : "Blazer"
+        }
+    },
+    {
+        "model": "site_catalogo.Tipo",
+        "pk" : 7,
+        "fields":{
+            "nome" : "Vestido"
+        }
+    },
+    {
+        "model": "site_catalogo.Tipo",
+        "pk" : 8,
+        "fields":{
+            "nome" : "Conjunto"
         }
     },
     
@@ -104,7 +127,7 @@
             "titulo_produto" : "Bolsa",
             "descricao_produto" : "Linda Bolsa",
             "composicao_produto": "Couro",
-            "imagem_produto" : "uploads/acessorio01.jpg",
+            "imagem_produto" : "uploads/bolsacouro.jpg",
             "ano" : 1,
             "colecao" : 3,
             "tipo" : 5,
@@ -117,12 +140,12 @@
         "model": "site_catalogo.Produto",
         "pk" : 2,
         "fields":{
-            "titulo_produto" : "Blusa Zebra",
+            "titulo_produto" : "Blusa Outono",
             "descricao_produto" : "Blusa muito confortável",
             "composicao_produto": "Seda",
-            "imagem_produto" : "uploads/blusa-primavera.jpg",
+            "imagem_produto" : "uploads/camisetaoutono.jpg",
             "ano" : 2,
-            "colecao" : 2,
+            "colecao" : 3,
             "tipo" : 1,
             "numero_comentarios" : 0,
             "likes" : 0
@@ -133,13 +156,13 @@
         "model": "site_catalogo.Produto",
         "pk" : 3,
         "fields":{
-            "titulo_produto" : "Calça",
-            "descricao_produto" : "Calça Muito Confortável",
-            "composicao_produto": "Couro Sintético",
-            "imagem_produto" : "uploads/calca01.jpg",
+            "titulo_produto" : "Conjunto Listrado",
+            "descricao_produto" : "Conjunto Listrado para o verão",
+            "composicao_produto": "Linho",
+            "imagem_produto" : "uploads/conjuntolistra.jpg",
             "ano" : 3,
-            "colecao" : 4,
-            "tipo" : 3,
+            "colecao" : 2,
+            "tipo" : 7,
             "numero_comentarios" : 0,
             "likes" : 0
         }
@@ -149,13 +172,13 @@
         "model": "site_catalogo.Produto",
         "pk" : 4,
         "fields":{
-            "titulo_produto" : "Camiseta",
-            "descricao_produto" : "Camiseta Leve",
+            "titulo_produto" : "Blazer Rosa",
+            "descricao_produto" : "Blazer rosa para o outono",
             "composicao_produto": "Malha",
-            "imagem_produto" : "uploads/camiseta01.jpg",
+            "imagem_produto" : "uploads/jaquetarosa.jpg",
             "ano" : 1,
-            "colecao" : 2,
-            "tipo" : 2,
+            "colecao" : 3,
+            "tipo" : 6,
             "numero_comentarios" : 0,
             "likes" : 0
         }
@@ -165,12 +188,12 @@
         "model": "site_catalogo.Produto",
         "pk" : 5,
         "fields":{
-            "titulo_produto" : "Saia Laranja",
+            "titulo_produto" : "Saia Xadrez",
             "descricao_produto" : "Saia Muito Confortável",
             "composicao_produto": "Teste",
-            "imagem_produto" : "uploads/saia01.jpg",
+            "imagem_produto" : "uploads/saiaxadrez.jpg",
             "ano" : 2,
-            "colecao" : 1,
+            "colecao" : 3,
             "tipo" : 4,
             "numero_comentarios" : 0,
             "likes" : 0
@@ -181,10 +204,10 @@
         "model": "site_catalogo.Produto",
         "pk" : 6,
         "fields":{
-            "titulo_produto" : "Brinco",
-            "descricao_produto" : "Brinco Maravilhoso",
-            "composicao_produto": "Metal",
-            "imagem_produto" : "uploads/acessorio02.jpg",
+            "titulo_produto" : "Bolsa Branca",
+            "descricao_produto" : "Linda bolsa branca",
+            "composicao_produto": "Corino",
+            "imagem_produto" : "uploads/bolsabranca.jpg",
             "ano" : 3,
             "colecao" : 4,
             "tipo" : 5,
@@ -197,13 +220,13 @@
         "model": "site_catalogo.Produto",
         "pk" : 7,
         "fields":{
-            "titulo_produto" : "Calça Rasgada",
-            "descricao_produto" : "Muito Confortável",
-            "composicao_produto": "Jeans",
-            "imagem_produto" : "uploads/calca03.jpg",
+            "titulo_produto" : "Vestido Estampado",
+            "descricao_produto" : "Vestido muito confortável",
+            "composicao_produto": "Linho",
+            "imagem_produto" : "uploads/vestidoprimavera.jpg",
             "ano" : 2,
-            "colecao" : 3,
-            "tipo" : 3,
+            "colecao" : 1,
+            "tipo" : 7,
             "numero_comentarios" : 0,
             "likes" : 0
         }
@@ -213,13 +236,13 @@
         "model": "site_catalogo.Produto",
         "pk" : 8,
         "fields":{
-            "titulo_produto" : "Camiseta",
-            "descricao_produto" : "Camiseta de Abacaxi",
+            "titulo_produto" : "Vestido Amarelo",
+            "descricao_produto" : "Vestido amarelo para festas",
             "composicao_produto": "Algodão",
-            "imagem_produto" : "uploads/camiseta03.jpg",
+            "imagem_produto" : "uploads/vestidoamarelo.jpg",
             "ano" : 3,
-            "colecao" : 1,
-            "tipo" : 2,
+            "colecao" : 2,
+            "tipo" : 7,
             "numero_comentarios" : 0,
             "likes" : 0
         }
@@ -229,13 +252,60 @@
         "model": "site_catalogo.Produto",
         "pk" : 9,
         "fields":{
-            "titulo_produto" : "Anel",
-            "descricao_produto" : "Teste",
-            "composicao_produto": "Teste",
-            "imagem_produto" : "uploads/acessorio04.jpg",
+            "titulo_produto" : "Bolsa Palha",
+            "descricao_produto" : "Bolsa de palha para praia",
+            "composicao_produto": "Palha",
+            "imagem_produto" : "uploads/bolsapalha.jpg",
+            "ano" : 1,
+            "colecao" : 2,
+            "tipo" : 5,
+            "numero_comentarios" : 0,
+            "likes" : 0
+        }
+    },
+
+    {
+        "model": "site_catalogo.Produto",
+        "pk" : 10,
+        "fields":{
+            "titulo_produto" : "Conjunto Rosa e Branco",
+            "descricao_produto" : "Lindo conjunto fofo",
+            "composicao_produto": "Algodão",
+            "imagem_produto" : "uploads/conjuntofofo.jpg",
             "ano" : 1,
             "colecao" : 3,
-            "tipo" : 5,
+            "tipo" : 8,
+            "numero_comentarios" : 0,
+            "likes" : 0
+        }
+    },
+
+    {
+        "model": "site_catalogo.Produto",
+        "pk" : 11,
+        "fields":{
+            "titulo_produto" : "Calça Azul Pastel",
+            "descricao_produto" : "Linda calça para a primavera",
+            "composicao_produto": "Malha",
+            "imagem_produto" : "uploads/calçamalha.jpg",
+            "ano" : 1,
+            "colecao" : 1,
+            "tipo" : 3,
+            "numero_comentarios" : 0,
+            "likes" : 0
+        }
+    },
+    {
+        "model": "site_catalogo.Produto",
+        "pk" : 12,
+        "fields":{
+            "titulo_produto" : "Blazer Azul",
+            "descricao_produto" : "Blazer azul nova tendência",
+            "composicao_produto": "Linho",
+            "imagem_produto" : "uploads/blazerazul.jpg",
+            "ano" : 1,
+            "colecao" : 3,
+            "tipo" : 6,
             "numero_comentarios" : 0,
             "likes" : 0
         }
