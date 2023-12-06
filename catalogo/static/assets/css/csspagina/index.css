@@ -1,13 +1,31 @@
+{% load static %}
 .imagem1 {
     transition: background-image 0.9s ease-in-out;
     }
-    .imagem1 h1{
+.imagem1 h1{
         margin: 0;
     }
-    h6{
+
+h6{
     color: white;
     font-family: 'Quicksand', sans-serif;
     margin-top: 2px;
     font-size: 25px;
 
+    }
+
+.icon {
+        margin-right: 8px;
+        font-weight: bold;
+    }
+
+.curtcoment p{
+        padding: 0;
+        text-align: start;
+        margin: 0;
+        margin-left: 3%;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 300;
+        font-size: 15px;
+        color: black;
     }
