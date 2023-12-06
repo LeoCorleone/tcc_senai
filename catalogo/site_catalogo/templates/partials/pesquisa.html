@@ -13,11 +13,55 @@
         border-radius: 30px;
         font-family: Arial, Helvetica, sans-serif;
     }
-    @media only screen and (max-device-width: 932px) {
-    select, button{
-        width: 100%;
+    @media only screen and (max-device-width: 700px) {
+        .filtro{
+            padding-top: 2%;
+        }
     }
-}
+    @media only screen and (max-device-width: 400px) {
+        .filtro{
+            top: 9.5%;
+        }
+    }
+    @media only screen and (max-device-width: 600px) {
+        select, button{
+            width: 90%;
+        }
+        .filtro{
+            top: 9.5%;
+        }
+    }
+    @media only screen and (device-width: 414px) {
+        .filtro{
+            top: 6%;
+        }
+    }
+    @media only screen and (device-width: 430px) {
+        .filtro{
+            top: 6%;
+        }
+    }
+    @media only screen and (device-width: 412px) {
+        .filtro{
+            top: 7%;
+        }
+    }
+    @media only screen and (device-width: 390px) {
+        .filtro{
+            top: 7%;
+        }
+    }
+    @media only screen and (device-width: 360px) {
+        .filtro{
+            top: 8%;
+        }
+    }
+    @media only screen and (device-width: 1024px) {
+        .filtro{
+            top: 8.5%;
+        }
+    }
+    
 </style>
 <div class="container-fluid mt-3 filtro">
     <form method="get" action="{% url 'index' %}">

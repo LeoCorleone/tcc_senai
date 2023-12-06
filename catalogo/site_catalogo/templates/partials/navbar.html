@@ -6,6 +6,16 @@
     top: 0;
     z-index: 1000;
   }
+  @media only screen and (max-device-width: 400px) {
+        .navtext{
+          justify-content: end;
+          position: fixed;
+          width: 95%;
+          top: 0;
+          z-index: 1000;
+          margin-top: 6%;
+        }
+    }
 </style>
 <div class="px-3 py-2 text-white border-bottom navmain" style="background-color: #ADE0DB;">
   <div class="container">
@@ -14,8 +24,8 @@
         <img src="{% static 'assets/img/high.png' %}" alt="" style="height: 50px; width: 100px;">
       </a>
 
-      <div class="text-end">
-        <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
+      <div class="text-end navtext">
+        <ul class="nav col-12 col-lg-auto my-2 justify-content-end my-md-0 text-small">
             <li>
                 <a href="{% url 'artdicas' %}" class="nav-link text-dark underline-link">
                   Dicas
