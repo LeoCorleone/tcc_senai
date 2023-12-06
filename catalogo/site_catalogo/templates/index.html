@@ -3,14 +3,15 @@
 {% block content %}
 
 <link rel="stylesheet" href="{% static 'assets/css/csspagina/index.css' %}">
+{% include 'partials/loading.html'%}
 {% include 'partials/navbar.html' %}
 {% include 'partials/alerts.html' %}
 {% include 'partials/pesquisa.html'%}
 
+
 <div class="imagem1 text-center" style="margin-top: 5%;  background-image: url({% static 'assets/img/modelorosa.jpg' %});">
     <h1>High Fashion <br> <h6>Moda com Elegância e <br> Inovação desde 1972</h6></h1>
 </div>
-
 <!-- inicio body  -->
 <div class="container-md">
     <div class="container-fluid">

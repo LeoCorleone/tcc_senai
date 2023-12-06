@@ -1,4 +1,3 @@
-{% load static %}
 .imagem1 {
     transition: background-image 0.9s ease-in-out;
     }
