@@ -57,6 +57,11 @@ select{
 }
 @media only screen and (device-width: 1024px) {
     .filtro{
-        top: 8.5%;
-    }
+        top: 3.5%;
+}
+}
+@media only screen and (-webkit-device-width: 1024px) {
+    .filtro{
+        top: 7%;
+}
 }
