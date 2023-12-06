@@ -2,26 +2,10 @@
 {% load static %}
 {% block content %}
 
-
+<link rel="stylesheet" href="{% static 'assets/css/csspagina/index.css' %}">
 {% include 'partials/navbar.html' %}
 {% include 'partials/alerts.html' %}
 {% include 'partials/pesquisa.html'%}
-
-<style>
-    .imagem1 {
-    transition: background-image 0.9s ease-in-out;
-    }
-    .imagem1 h1{
-        margin: 0;
-    }
-    h6{
-    color: white;
-    font-family: 'Quicksand', sans-serif;
-    margin-top: 2px;
-    font-size: 25px;
-
-    }
-</style>
 
   <div class="imagem1 text-center" style="margin-top: 5%;  background-image: url({% static 'assets/img/modelorosa.jpg' %});">
     <h1>High Fashion <br> <h6>Moda com Elegância e <br> Inovação desde 1972</h6></h1>

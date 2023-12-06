@@ -1,55 +1,5 @@
 {% load static %}
-<style>
-*{
-    padding: 0%;
-}
-#coments h4{
-    margin: 0px;
-    margin-bottom: 2%;
-    font-size: 25px;
-}
-#coment p{
-    padding-bottom: 2px;
-    padding-top: 1%;
-    color: black;
-    padding: 3px;
-    text-align: left;
-}
-#description{
-    padding: 2%;
-    opacity: 85%;
-}
-#description p{
-    padding-top: 1%;
-    text-align: left;
-    font-size: 15px;   
-    color: black;
-    margin-bottom:1px;
-}
-#formulario p{
-    text-align: center;
-    color: black;
-    font-size: 20px;
-    margin-bottom: 3%;
-}
-#formulario label{
-    font-size: 25px;
-}
-
-#formulario input{
-    border: 1px solid gray;
-    padding: 1%;
-    border-radius: 10px;
-}
-
-.modal-title{
-    text-align: left;
-    font-size: 50px;
-    font-family: 'Ms Madi', cursive;
-  }
-}
-
-</style>
+<link rel="stylesheet" href="{% static 'assets/css/csspagina/modalfoto.css' %}">
 <div class="modal fade" id="modalFoto{{x.id}}" tabindex="-1" role="dialog" aria-labelledby="modalFotoLabel"aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">

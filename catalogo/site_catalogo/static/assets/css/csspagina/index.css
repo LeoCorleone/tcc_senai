@@ -1,0 +1,13 @@
+.imagem1 {
+    transition: background-image 0.9s ease-in-out;
+    }
+    .imagem1 h1{
+        margin: 0;
+    }
+    h6{
+    color: white;
+    font-family: 'Quicksand', sans-serif;
+    margin-top: 2px;
+    font-size: 25px;
+
+    }

@@ -1,22 +1,6 @@
 {% load static %}
-<style>
-  .navmain{
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-  }
-  @media only screen and (max-device-width: 400px) {
-        .navtext{
-          justify-content: end;
-          position: fixed;
-          width: 95%;
-          top: 0;
-          z-index: 1000;
-          margin-top: 6%;
-        }
-    }
-</style>
+<link rel="stylesheet" href="{% static 'assets/css/csspagina/navbar.css' %}">
+
 <div class="px-3 py-2 text-white border-bottom navmain" style="background-color: #ADE0DB;">
   <div class="container">
     <div class="d-flex flex-wrap align-items-center justify-content-between">
@@ -47,14 +31,11 @@
                   </a>
                 {% endif %}
               </li>
-      </ul>
-  </div>
+          </ul>
       </div>
     </div>
   </div>
 </div>
-
-
 
 <div class="modal fade" id="ModalForm" tabindex="-1" aria-labelledby="ModalFormLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
