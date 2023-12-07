@@ -3,8 +3,46 @@
 {% block content %}
 
 {% include 'partials/adm/navbaradm.html' %}
-{% include 'partials/loading.html'%}
+{% include 'partials/loading.html' %}
 
+<style>
+    .mensagem-card {
+        max-width: 400px;
+        margin: 0 auto;
+    }
+
+    .mensagem-text {
+        margin-top: 0; /* Remover a margem superior padrão do parágrafo */
+        text-align: left; /* Alinhar o texto à direita */
+    }
+</style>
+
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-12">
+            <h2 class="text-center mb-4" style="margin-top: 30px;">Mensagens do Fale Conosco</h2>
+        </div>
+    </div>
+
+    <div class="row">
+        {% for mensagem in mensagens_fale_conosco %}
+            <div class="col-md-6">
+                <div class="card mb-3 mensagem-card">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ mensagem.email }}</h5>
+                        <p class="card-text mensagem-text">{{ mensagem.mensagem }}</p>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+
+        {% if not mensagens_fale_conosco %}
+            <p class="text-center">Nenhuma mensagem encontrada.</p>
+        {% endif %}
+    </div>
+</div>
 
 {% include 'partials/footer.html' %}
-{% endblock%}
+{% endblock %}
+

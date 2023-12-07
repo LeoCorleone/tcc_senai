@@ -59,6 +59,10 @@ def fale_conosco(request):
 
     return render(request, 'index.html')
 
+def fale(request):
+    mensagens_fale_conosco = FaleConosco.objects.all()
+    return render(request, 'adm/faleconosco.html', {'mensagens_fale_conosco': mensagens_fale_conosco})
+
 
 def artdicas(request):
     form = LoginForms()
