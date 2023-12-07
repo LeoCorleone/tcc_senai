@@ -65,17 +65,20 @@
 
       <div class="col-md-3 text-center">
         <h5>Fale Conosco</h5>
-        <form>
+        <form method="post" action="{% url 'fale_conosco' %}">
+          {% csrf_token %}
+          <input type="hidden" name="redirecionar_para" value="{{ request.path }}">
+          
           <div class="form-group">
-            <input type="email" class="form-control" id="email" name="email" placeholder="Seu Email" required>
+              <input type="email" class="form-control" id="email" name="email" placeholder="Seu Email" required>
           </div>
-
+      
           <div class="form-group">
-            <textarea class="form-control" id="mensagem" name="mensagem" rows="2" placeholder="Sua Mensagem" required></textarea>
+              <textarea class="form-control" id="mensagem" name="mensagem" rows="2" placeholder="Sua Mensagem" required></textarea>
           </div>
-
+      
           <button type="submit" class="btn btn-light btn-sm">Enviar</button>
-        </form>
+      </form>
       </div>
     </div>
   </div>

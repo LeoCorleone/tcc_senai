@@ -42,5 +42,8 @@ class Comentario(models.Model):
     data_publicacao = models.DateTimeField(auto_now_add=True)
 
 class FaleConosco(models.Model):
-    email = models.TextField()
-    texto = models.TextField()
+    email = models.EmailField()
+    mensagem = models.TextField()
+
+    def __str__(self):
+        return self.email
