@@ -21,7 +21,14 @@
                 </a>
               </li>
               <li>
-                {% if user.is_authenticated %}
+                {% if user.is_superuser %}
+                <a href="{% url 'adm' %}" class="nav-link text-dark underline-link">
+                  Admin
+                </a>
+                <a href="{% url 'logout' %}" class="nav-link text-dark underline-link">
+                  Logout
+                </a>
+                {% elif user.is_authenticated %}
                   <a href="{% url 'logout' %}" class="nav-link text-dark underline-link">
                     Logout
                   </a>

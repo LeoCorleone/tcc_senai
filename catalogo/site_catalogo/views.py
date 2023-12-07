@@ -115,6 +115,7 @@ def adicionar_comentario(request, produto_id):
 
             return redirect('index')
 
+
 @login_required
 def logout(request):
     auth.logout(request)

@@ -22,9 +22,9 @@
                         <h4>Comentários</h4>
                         <div class="container-sm shadow" style="height: 180px; overflow-y: scroll;">
                             {% for comentario in x.comentarios.all %}
-                            <div class="container-md justify-content-begin" id="coment">
-                                <p><b>{{ comentario.usuario }}:</b> {{ comentario.texto }}</p>
-                            </div>
+                                    <div class="container-md justify-content-begin" id="coment">
+                                        <p><b>{{ comentario.usuario }}:</b> {{ comentario.texto }}</p>
+                                    </div>
                             {% endfor %}
                         </div>
                         <form method="post" id="formulario" action="{% url 'adicionar_comentario' produto_id=x.id %}">
