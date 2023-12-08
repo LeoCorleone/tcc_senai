@@ -4,15 +4,38 @@
     top: 0;
     z-index: 1000;
   }
-  @media only screen and (max-device-width: 400px) {
+  @media only screen and (device-width: 400px) {
         .navtext{
           justify-content: end;
           position: fixed;
-          width: 95%;
+          width: 375px;
           top: 0;
           z-index: 1000;
           margin-top: 6%;
         }
+        .navmain{
+          width: 400px;
+        }
+
+  }
+
+  @media only screen and (max-device-width: 414px) {
+    .navmain{
+      width: 414px;
     }
+  }
+
+  @media only screen and (max-device-width: 430px) {
+    .navmain{
+      width: 430px;
+    }
+  }
+
+  @media only screen and (max-device-width: 360px) {
+    .navmain{
+      width: 360px;
+    }
+  }
+
 
    
