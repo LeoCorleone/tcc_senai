@@ -18,35 +18,41 @@ O projeto tem como objetivo desenvolver um site que funcionará como catálogo o
 
 
 `Hight Fashion:`A High Fashion Confecções Ltda, foi fundada em São João Nepomuceno, em 25 de fevereiro de 1972, pelos visionários Gianni Givenchy e Yves Dior. Desde o início, a empresa tem se dedicado à criação de moda adulta feminina, com um compromisso inabalável de combinar praticidade, conforto e beleza cotidiana em cada peça.
+# Versões dos programas utilizados no projeto
+
+Django 4.2.3 <br>
+mysqlclient 2.2.0 <br>
+Python 3.11.6<br>
 
 # Estrutura do projeto
-Após baixar o sistema em sua máquina, execute:
+Após baixar a pasta compactada em sua máquina ou após de copiar e executar "git clone (link do repositório) no terminal", execute:
 
-1. Na pasta "catálogo" instale o MYSQL
-
-```python
-pip install mysqlclient
-```
-
-2. Após a execução dos comandos a cima, é hora de subir a estrutura para o Banco de Dados. Para isso execute:
+1. No Terminal execute o comando a seguir:
 
 ```python
-python manage.py makemigrations
+pip install -r requeriments.txt
 ```
 
-3. Crie as tabelas a serem utilizadas através do comando:
+2. Após a execução do comando acima, nos seu mysql crie um banco de dados chamado "catalago"
+
+3. Após a criação do banco , execute em seu terminal o seguinte comando:
 
 ```python
 python manage.py migrate
 ```
+4. Após dar o comando migrate , execute:
 
-4. Agora imposte os arquivos para o Banco de Dados:
+```python
+python manage.py createsuperuser
+```
+
+5. Agora imposte os arquivos para o Banco de Dados:
 
 ```python
 python manage.py loaddata roupas.json
 ```
 
-5. Inicie o projeto:
+6. Inicie o projeto:
 
 ```python
 python manage.py runserver
