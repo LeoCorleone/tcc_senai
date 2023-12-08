@@ -82,3 +82,29 @@ body{
     font-size: 60px;
     padding: 2%;
 }
+
+.navmain{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+  }
+  @media only screen and (max-device-width: 430px) {
+        .navtext{
+          justify-content: end;
+          position: fixed;
+          width: 375px;
+          top: 0;
+          z-index: 1000;
+          margin-top: 6%;
+        }
+
+        .navmain{
+            width: 430px;
+        }
+
+        .quemsomos img{
+            width: 1px;
+            height: auto;
+        }
+    }

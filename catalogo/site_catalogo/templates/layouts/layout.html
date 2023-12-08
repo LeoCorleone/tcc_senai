@@ -1,6 +1,7 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,6 +13,8 @@
     <link rel="stylesheet" href="{% static 'assets/css/edit_roupa.css' %}">
     <link rel="stylesheet" href="{% static 'assets/css/artdicas.css' %}">
     <link rel="stylesheet" href="{% static 'assets/css/sobre.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/csspagina/navbar.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/csspagina/loading.css' %}">
     <script src="{% static 'assets/js/bootstrap.bundle.js' %}"></script>
     <!-- biblioteca ScrollReveal  -->
     <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
@@ -20,18 +23,25 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Sacramento&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Cardo&family=Sacramento&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Ms+Madi&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Ms+Madi&family=Quicksand:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Ms+Madi&family=Quicksand:wght@300&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300&family=Roboto:wght@100&display=swap"
+        rel="stylesheet">
     <!-- fim fonte  -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="{% static 'assets/js/loading.js' %}"></script>
     <title>High Fashion</title>
 </head>
+
 <body>
     {% block content %}
     {% endblock %}
 </body>
+
 </html>

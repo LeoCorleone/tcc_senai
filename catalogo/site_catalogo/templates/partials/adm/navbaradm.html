@@ -1,16 +1,9 @@
-<style>
-  .navmain{
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-  }
-</style>
 {% load static %}
+<link rel="stylesheet" href="{% static 'assets/css/csspagina/navbar.css' %}">
 <div class="px-3 py-2 text-white border-bottom navmain" style="background-color: #ADE0DB;">
   <div class="container">
     <div class="d-flex flex-wrap align-items-center justify-content-between">
-      <a href="/" class="d-flex align-items-center my-2 my-lg-0 text-dark text-decoration-none" >
+      <a href="/" class="d-flex align-items-center my-2 my-lg-0 text-dark text-decoration-none">
         <img src="{% static 'assets/img/high.png' %}" alt="" style="height: 50px; width: 100px;">
       </a>
       <div class="text-end">
@@ -26,11 +19,17 @@
             </a>
           </li>
           <li>
+            <a href="{% url 'fale' %}" class="nav-link text-dark underline-link">
+              Fale Conosco
+            </a>
+          </li>
+          <li>
             <a href="{% url 'logout' %}" class="nav-link text-dark underline-link">
               Logout
             </a>
           </li>
         </ul>
+
       </div>
     </div>
   </div>

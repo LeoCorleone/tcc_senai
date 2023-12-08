@@ -40,3 +40,10 @@ class Comentario(models.Model):
     usuario = models.ForeignKey(User, on_delete=models.CASCADE)
     product = models.ForeignKey(Produto, on_delete=models.CASCADE, related_name="comentarios")
     data_publicacao = models.DateTimeField(auto_now_add=True)
+
+class FaleConosco(models.Model):
+    email = models.EmailField()
+    mensagem = models.TextField()
+
+    def __str__(self):
+        return self.email

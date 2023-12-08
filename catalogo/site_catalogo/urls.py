@@ -4,10 +4,6 @@ from django.conf import settings
 from django.conf.urls.static import static
 from .views import *
 
-from django.conf.urls.static import static
-
-from . import views 
-
 urlpatterns = [
 
     path("", index, name="index"),
@@ -30,6 +26,8 @@ urlpatterns = [
     path('curtir/<int:postagem_id>/', curtir_postagem, name='curtir_postagem'),
     path('index/<int:produto_id>/adicionar_comentario/', adicionar_comentario, name='adicionar_comentario'),
     # path('index/<int:roupa_id>/exibir', exibir_comentario, name='exibir_comentario'),
+    path('fale-conosco/', fale_conosco, name='fale_conosco'),
+    path('fale/', fale, name='fale'),
 
 ]
 

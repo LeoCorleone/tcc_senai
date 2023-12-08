@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from .models import Produto
+from .models import Produto, FaleConosco
 from django.core.paginator import Paginator, InvalidPage, EmptyPage
 from .forms import *
 from django.contrib import auth
@@ -43,6 +43,27 @@ def index(request):
         postagem = paginator.page(paginator.num_pages)
 
     return render(request, 'index.html', {'postagem': postagem, 'formcomentario': formcomentario, 'filtro_form': filtro_form, 'form': form})
+
+
+def fale_conosco(request):
+    if request.method == 'POST':
+        email = request.POST.get('email')
+        mensagem = request.POST.get('mensagem')
+
+        # Salve a mensagem no banco de dados
+        fale_conosco = FaleConosco(email=email, mensagem=mensagem)
+        fale_conosco.save()
+
+        # Redirecione sempre para a página 'index'
+        return redirect('index')
+
+    return render(request, 'index.html')
+
+@user_passes_test(is_superuser)
+def fale(request):
+    mensagens_fale_conosco = FaleConosco.objects.all()
+    return render(request, 'adm/faleconosco.html', {'mensagens_fale_conosco': mensagens_fale_conosco})
+
 
 def artdicas(request):
     form = LoginForms()
@@ -114,6 +135,7 @@ def adicionar_comentario(request, produto_id):
             produto.save()
 
             return redirect('index')
+
 
 @login_required
 def logout(request):

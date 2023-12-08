@@ -1,31 +1,9 @@
-<style>
-    .filtro{
-        position: fixed;
-        top: 5%;
-        width: 100%;
-        background-color: #ffffff; 
-        z-index: 1000;
-        padding-top: 1%; 
-    }
-    select{
-        color: black;
-        padding: 1%;
-        border-radius: 30px;
-        font-family: Arial, Helvetica, sans-serif;
-    }
-    @media only screen and (max-device-width: 400px) {
-    select, button{
-        width: 95%;
-        }
-    .filtro{
-        top: 9.5%;
-    }
-    }
-    
-</style>
+{% load static %}
+<link rel="stylesheet" href="{% static 'assets/css/csspagina/pesquisa.css' %}">
+
 <div class="container-fluid mt-3 filtro">
     <form method="get" action="{% url 'index' %}">
-        {% csrf_token %} 
+        {% csrf_token %}
         <div class="d-flex justify-content-center mb-3 align-items-center">
             <div class="custom-dropdown mr-4">
                 {{ filtro_form.ano }}
@@ -34,7 +12,7 @@
             <div class="custom-dropdown mr-4">
                 {{ filtro_form.colecao }}
             </div>
-            
+
             <div class="custom-dropdown mr-4">
                 {{ filtro_form.tipo }}
             </div>

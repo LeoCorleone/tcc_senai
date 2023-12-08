@@ -2,7 +2,8 @@
 {% load static %}
 {% block content %}
 
-{% include 'partials/adm/navbar.html' %}
+{% include 'partials/adm/navbaradm.html' %}
+{% include 'partials/loading.html'%}
 
 <div class="container text-center" style="padding: 5%;">
     <div class="row shadow" id="info">
@@ -11,14 +12,14 @@
             <form method="post" enctype="multipart/form-data" id="productForm">
                 {% csrf_token %}
                 {% for field in form.visible_fields %}
-                    <div class="row mb-3">
-                        <div class="col-md-6 text-right">
-                            <label for="{{ field.id_for_label }}" class="form-label">{{ field.label }}</label>
-                        </div>
-                        <div class="col-md-6 text-left">
-                            {{ field }}
-                        </div>
+                <div class="row mb-3">
+                    <div class="col-md-6 text-right">
+                        <label for="{{ field.id_for_label }}" class="form-label">{{ field.label }}</label>
                     </div>
+                    <div class="col-md-6 text-left">
+                        {{ field }}
+                    </div>
+                </div>
                 {% endfor %}
                 <div class="row mt-3">
                     <div class="col-md-12 text-center">

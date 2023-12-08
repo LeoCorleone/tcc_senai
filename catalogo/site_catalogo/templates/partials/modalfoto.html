@@ -1,85 +1,41 @@
 {% load static %}
-<style>
-*{
-    padding: 0%;
-}
-#coments h4{
-    margin: 0px;
-    margin-bottom: 2%;
-    font-size: 25px;
-}
-#coment p{
-    padding-bottom: 2px;
-    padding-top: 1%;
-    color: black;
-    padding: 3px;
-    text-align: left;
-}
-#description{
-    padding: 2%;
-    opacity: 85%;
-}
-#description p{
-    padding-top: 1%;
-    text-align: left;
-    font-size: 15px;   
-    color: black;
-    margin-bottom:1px;
-}
-#formulario p{
-    text-align: center;
-    color: black;
-    font-size: 20px;
-    margin-bottom: 3%;
-}
-#formulario label{
-    font-size: 25px;
-}
-
-#formulario input{
-    border: 1px solid gray;
-    padding: 1%;
-    border-radius: 10px;
-}
-
-.modal-title{
-    text-align: left;
-    font-size: 50px;
-    font-family: 'Ms Madi', cursive;
-  }
-}
-
-</style>
-<div class="modal fade" id="modalFoto{{x.id}}" tabindex="-1" role="dialog" aria-labelledby="modalFotoLabel"aria-hidden="true">
+<link rel="stylesheet" href="{% static 'assets/css/csspagina/modalfoto.css' %}">
+<div class="modal fade" id="modalFoto{{x.id}}" tabindex="-1" role="dialog" aria-labelledby="modalFotoLabel"
+    aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-body">
                 <h5 class="modal-title" id="modalFotoLabel">{{x.titulo_produto}}</h5>
                 <div class="row d-flex">
-                        <img src="{{x.imagem_produto.url}}" alt="{{x.titulo_roupa}}" class="img-fluid" style="width: 100%; height: 100%;">
+                    <img src="{{x.imagem_produto.url}}" alt="{{x.titulo_roupa}}" class="img-fluid"
+                        style="width: 100%; height: 100%;">
                     <div id="description">
-                        <p><b>Descrição:</b>{{x.descricao_produto}}.</p> 
+                        <div class="card-actions">
+                            <div class="icon">&#9825; {{ x.likes }} Likes &#x1F5E8; {{ x.numero_comentarios }} Coments
+                            </div>
+                        </div>
+                        <p><b>Descrição:</b>{{x.descricao_produto}}.</p>
                         <p><b>Composição:</b>{{x.composicao_produto}}.</p>
-                        <p><b>Coleção:</b>{{x.colecao}}.</p>                       
+                        <p><b>Coleção:</b>{{x.colecao}}.</p>
                         <p><b>Tipo:</b>{{x.tipo}}.</p>
-                        <p><b>Ano:</b>{{x.ano}}.</p>                   
+                        <p><b>Ano:</b>{{x.ano}}.</p>
                     </div>
                 </div>
-                    <div class="container-fluid text-center" id="coments" style="padding: 3%;">
-                        <h4>Comentários</h4>
-                        <div class="container-sm shadow" style="height: 180px; overflow-y: scroll;">
-                            {% for comentario in x.comentarios.all %}
-                            <div class="container-md justify-content-begin" id="coment">
-                                <p><b>{{ comentario.usuario }}:</b> {{ comentario.texto }}</p>
-                            </div>
-                            {% endfor %}
+                <div class="container-fluid text-center" id="coments" style="padding: 3%;">
+                    <h4>Comentários</h4>
+                    <div class="container-sm shadow" style="height: 180px; overflow-y: scroll;">
+                        {% for comentario in x.comentarios.all %}
+                        <div class="container-md justify-content-begin" id="coment">
+                            <p><b>{{ comentario.usuario }}:</b> {{ comentario.texto }}</p>
                         </div>
-                        <form method="post" id="formulario" action="{% url 'adicionar_comentario' produto_id=x.id %}">
-                            {% csrf_token %}
-                            {{ formcomentario.as_p }}
-                            <button type="submit" class="btn btn-dark btn-lg">Comentar</button>
-                        </form>
-                    </div>                
+                        {% endfor %}
+                    </div>
+                    <form method="post" id="formulario" action="{% url 'adicionar_comentario' produto_id=x.id %}">
+                        {% csrf_token %}
+                        {{ formcomentario.as_p }}
+                        <button type="submit" class="btn btn-dark btn-lg">Comentar</button>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
