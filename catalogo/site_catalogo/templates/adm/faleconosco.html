@@ -27,22 +27,21 @@
 
     <div class="row">
         {% for mensagem in mensagens_fale_conosco %}
-            <div class="col-md-6">
-                <div class="card mb-3 mensagem-card">
-                    <div class="card-body">
-                        <h5 class="card-title">{{ mensagem.email }}</h5>
-                        <p class="card-text mensagem-text">{{ mensagem.mensagem }}</p>
-                    </div>
+        <div class="col-md-6">
+            <div class="card mb-3 mensagem-card">
+                <div class="card-body">
+                    <h5 class="card-title">{{ mensagem.email }}</h5>
+                    <p class="card-text mensagem-text">{{ mensagem.mensagem }}</p>
                 </div>
             </div>
+        </div>
         {% endfor %}
 
         {% if not mensagens_fale_conosco %}
-            <p class="text-center">Nenhuma mensagem encontrada.</p>
+        <p class="text-center">Nenhuma mensagem encontrada.</p>
         {% endif %}
     </div>
 </div>
 
 {% include 'partials/footer.html' %}
 {% endblock %}
-

@@ -8,14 +8,16 @@
 {% include 'partials/loading.html'%}
 
 <style>
-  .col-4{
+  .col-4 {
     margin-bottom: 2%;
   }
-  .card-text{
+
+  .card-text {
     padding: 2% 0;
     text-align: left;
   }
-  .card-title{
+
+  .card-title {
     text-align: left;
     font-size: 30px;
     font-family: 'Ms Madi', cursive;
@@ -23,64 +25,65 @@
 </style>
 
 <div class="container text-center" style="padding: 5%; margin-top: 2%;">
-    <!-- {% include 'partials/alerts.html' %} -->
-    <div class="row">
-      <a href="{% url 'postagem' %}">
-        <button type="button" class="btn">
-          <img src="{% static 'assets/img/adicionar.png' %}" alt="botao-add" style="height: 40px; width: 40px;">
-        </button>
-      </a> 
-        {% for x in postagem %}
-      <div class="col-4">
-        <div class="row">
-          <div class="container-fluid">
-            <div class="card" style="width: 18rem;">
-              <img src="{{x.imagem_produto.url}}" style="width: 100%; height: auto;" class="card-img-top" alt="{{x.titulo_roupa}}">
-              <div class="card-body" style="line-height: 1;">
-                <h5 class="card-title">{{ x.titulo_produto }}</h5>
-                <p class="card-text" style="margin-bottom: 0;"><b>Descrição:</b>{{ x.descricao_produto }}</p>
-                <p class="card-text" style="margin-bottom: 0;"><b>Composição:</b>{{ x.composicao_produto }}</p>
-                <p class="card-text" style="margin-bottom: 0;"><b>Coleção:</b>{{ x.colecao.nome }}</p>
-                <p class="card-text" style="margin-bottom: 0;"><b>Tipo:</b>{{ x.tipo.nome }}</p>
-                <p class="card-text" style="margin-bottom: 0;"><b>Ano:</b>{{ x.ano.valor }}</p>
-                <a href="{% url 'delete' x.id %}">
-                  <button type="button" class="btn">
-                     <img src="{% static 'assets/img/lixeira.png' %}" alt="botao-excluir">
-                  </button>
-               </a>
-                <a href="{% url 'edit_roupa' x.id %}">
-                  <button type="button" class="btn">
-                     <img src="{% static 'assets/img/editar.png' %}" alt="botao-editar">
-                   </button>
-                 </a>
-              </div>
-          </div>
+  <!-- {% include 'partials/alerts.html' %} -->
+  <div class="row">
+    <a href="{% url 'postagem' %}">
+      <button type="button" class="btn">
+        <img src="{% static 'assets/img/adicionar.png' %}" alt="botao-add" style="height: 40px; width: 40px;">
+      </button>
+    </a>
+    {% for x in postagem %}
+    <div class="col-4">
+      <div class="row">
+        <div class="container-fluid">
+          <div class="card" style="width: 18rem;">
+            <img src="{{x.imagem_produto.url}}" style="width: 100%; height: auto;" class="card-img-top"
+              alt="{{x.titulo_roupa}}">
+            <div class="card-body" style="line-height: 1;">
+              <h5 class="card-title">{{ x.titulo_produto }}</h5>
+              <p class="card-text" style="margin-bottom: 0;"><b>Descrição:</b>{{ x.descricao_produto }}</p>
+              <p class="card-text" style="margin-bottom: 0;"><b>Composição:</b>{{ x.composicao_produto }}</p>
+              <p class="card-text" style="margin-bottom: 0;"><b>Coleção:</b>{{ x.colecao.nome }}</p>
+              <p class="card-text" style="margin-bottom: 0;"><b>Tipo:</b>{{ x.tipo.nome }}</p>
+              <p class="card-text" style="margin-bottom: 0;"><b>Ano:</b>{{ x.ano.valor }}</p>
+              <a href="{% url 'delete' x.id %}">
+                <button type="button" class="btn">
+                  <img src="{% static 'assets/img/lixeira.png' %}" alt="botao-excluir">
+                </button>
+              </a>
+              <a href="{% url 'edit_roupa' x.id %}">
+                <button type="button" class="btn">
+                  <img src="{% static 'assets/img/editar.png' %}" alt="botao-editar">
+                </button>
+              </a>
+            </div>
           </div>
         </div>
       </div>
-      {% endfor %}
     </div>
-    <!--pagination-->
-    <nav aria-label="...">
-      <ul class="pagination">
-        <li class="page-item ">
-          {% if postagem.has_previous %}
-              <a class="page-link" href="?page={{ postagem.previous_page_number }}">anterior</a>
-          {% endif %}
-        </li>
-        <li class="page-item disabled"><a class="page-link" href="#">{{ postagem.number }} de {{ postagem.paginator.num_pages }}</a></li>
-        <li class="page-item">
-          {% if postagem.has_next %}
-              <a class="page-link" href="?page={{ postagem.next_page_number }}">próxima</a>
-          {% endif %}
-        </li>
-      </ul>
-    </nav>
+    {% endfor %}
+  </div>
+  <!--pagination-->
+  <nav aria-label="...">
+    <ul class="pagination">
+      <li class="page-item ">
+        {% if postagem.has_previous %}
+        <a class="page-link" href="?page={{ postagem.previous_page_number }}">anterior</a>
+        {% endif %}
+      </li>
+      <li class="page-item disabled"><a class="page-link" href="#">{{ postagem.number }} de {{
+          postagem.paginator.num_pages }}</a></li>
+      <li class="page-item">
+        {% if postagem.has_next %}
+        <a class="page-link" href="?page={{ postagem.next_page_number }}">próxima</a>
+        {% endif %}
+      </li>
+    </ul>
+  </nav>
   <!-- end pagination-->
 </div>
 
 
 {% include 'partials/footer.html' %}
-    
-{% endblock%}
 
+{% endblock%}

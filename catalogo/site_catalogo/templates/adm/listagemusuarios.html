@@ -8,87 +8,92 @@
 
 <div class="container-fluid text-center" style="padding: 18%;">
 
-  <table class="table table-dark table-striped mx-auto">
-      <thead>
-          <tr>
-              <th scope="col" colspan="4">
-                  <form method="GET" action="{% url 'listar_usuario' %}" class="form-inline">
-                  </form>
-              </th>
-          </tr>
-          <tr>
-              <th class="align-middle border text-center" scope="col">Id</th>
-              <th class="align-middle border text-center" scope="col">Nome</th>
-              <th class="align-middle border text-center" scope="col">E-Mail</th>
-              <th class="align-middle border text-center" scope="col">Status</th>
-              <th class="align-middle border text-center" scope="col">Cargo</th>
-              <th class="align-middle border text-center" scope="col">Ativar/Desativar</th>
-              <th class="align-middle border text-center" scope="col">
-                  <a href="{% url 'adicionar_usuario' %}">
-                      <button type="button" class="btn">
-                          <img src="{% static 'assets/img/adicionar.png' %}" alt="" style="height: 40px; width: 40px;">
-                      </button>
-                  </a>
-              </th>
-          </tr>
-      </thead>
-      <tbody>
-          {% for x in usuarios %}
-          <tr>
-              <th class="align-middle border" scope="row">{{x.id}}</th>
-              <td class="align-middle border">{{x.username}}</td>
-              <td class="align-middle border">{{x.email}}</td>
-              <td class="align-middle border">
-                <div class="row justify-content-center">
-                    <div class="col-12 text-center">
-                        {% if x.is_active %}
+    <table class="table table-dark table-striped mx-auto">
+        <thead>
+            <tr>
+                <th scope="col" colspan="4">
+                    <form method="GET" action="{% url 'listar_usuario' %}" class="form-inline">
+                    </form>
+                </th>
+            </tr>
+            <tr>
+                <th class="align-middle border text-center" scope="col">Id</th>
+                <th class="align-middle border text-center" scope="col">Nome</th>
+                <th class="align-middle border text-center" scope="col">E-Mail</th>
+                <th class="align-middle border text-center" scope="col">Status</th>
+                <th class="align-middle border text-center" scope="col">Cargo</th>
+                <th class="align-middle border text-center" scope="col">Ativar/Desativar</th>
+                <th class="align-middle border text-center" scope="col">
+                    <a href="{% url 'adicionar_usuario' %}">
+                        <button type="button" class="btn">
+                            <img src="{% static 'assets/img/adicionar.png' %}" alt=""
+                                style="height: 40px; width: 40px;">
+                        </button>
+                    </a>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for x in usuarios %}
+            <tr>
+                <th class="align-middle border" scope="row">{{x.id}}</th>
+                <td class="align-middle border">{{x.username}}</td>
+                <td class="align-middle border">{{x.email}}</td>
+                <td class="align-middle border">
+                    <div class="row justify-content-center">
+                        <div class="col-12 text-center">
+                            {% if x.is_active %}
                             Ativo
-                        {% else %} 
+                            {% else %}
                             Inativo
-                        {% endif %}
+                            {% endif %}
+                        </div>
                     </div>
-                </div>
-              </td>
-              <td class="align-middle border">
-                <div class="row justify-content-center">
-                    <div class="col-12 text-center">
-                        {% if x.is_superuser %}
+                </td>
+                <td class="align-middle border">
+                    <div class="row justify-content-center">
+                        <div class="col-12 text-center">
+                            {% if x.is_superuser %}
                             Admin
-                        {% else %} 
+                            {% else %}
                             User
-                        {% endif %}
+                            {% endif %}
+                        </div>
                     </div>
-                </div>
-              </td>
-              <td class="align-middle border">
-                <div class="row justify-content-center">
-                    <div class="col-3">
-                        <a href="{% url 'active_user' x.id %}" style="text-decoration:none;color:green">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
-                                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
-                            </svg>
-                        </a>
+                </td>
+                <td class="align-middle border">
+                    <div class="row justify-content-center">
+                        <div class="col-3">
+                            <a href="{% url 'active_user' x.id %}" style="text-decoration:none;color:green">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+                                    <path
+                                        d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
+                                </svg>
+                            </a>
+                        </div>
+                        <div class="col-3">
+                            <a href="{% url 'inative_user' x.id %}" style="text-decoration:none;color:red">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-dash-circle-fill" viewBox="0 0 16 16">
+                                    <path
+                                        d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM4.5 7.5a.5.5 0 0 0 0 1h7a.5.5 0 0 0 0-1h-7z" />
+                                </svg>
+                            </a>
+                        </div>
                     </div>
-                    <div class="col-3">
-                        <a href="{% url 'inative_user' x.id %}" style="text-decoration:none;color:red">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-dash-circle-fill" viewBox="0 0 16 16">
-                                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM4.5 7.5a.5.5 0 0 0 0 1h7a.5.5 0 0 0 0-1h-7z"/>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-              </td>
-              <td class="align-middle border">
-                <a href="{% url 'update_usuario' x.id %}">
-                    <button type="button" class="btn">
-                        <img src="{% static 'assets/img/editar.png' %}" alt="botaoeditar">
-                    </button>
-                </a>
-              </td>
-          </tr>
-          {% endfor %}
-      </tbody>
-  </table>
+                </td>
+                <td class="align-middle border">
+                    <a href="{% url 'update_usuario' x.id %}">
+                        <button type="button" class="btn">
+                            <img src="{% static 'assets/img/editar.png' %}" alt="botaoeditar">
+                        </button>
+                    </a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
 </div>
 
 {% include 'partials/footer.html' %}

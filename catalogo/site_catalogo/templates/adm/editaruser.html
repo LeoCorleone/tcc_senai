@@ -5,27 +5,28 @@
 {% include 'partials/adm/navbaradm.html' %}
 {% include 'partials/loading.html'%}
 <style>
-  input, button{
+  input,
+  button {
     margin: 2%;
   }
 </style>
 
 <div class="container text-center" id="info" style="margin-top: 2%; width: 35%;">
   <div class="form">
-      <div class="card-header">
-          <h1>Editar User</h1>
+    <div class="card-header">
+      <h1>Editar User</h1>
+    </div>
+    <form action="{% url 'update_usuario' usuario.id %}" method="POST">
+      {% csrf_token %}
+      <input type="text" name="nome" value="{{usuario.username}}"><br>
+      <input type="password" name="senha" value="{{usuario.password}}"><br>
+      <input type="text" name="email" value="{{usuario.email}}"><br>
+      <label for="admin_checkbox">Administrador:</label>
+      <input type="checkbox" id="admin_checkbox" name="is_admin" {% if usuario.is_superuser %}checked{% endif %}><br>
+      <button class="btn btn-success" type="submit">Salvar</button>
+      <div class="container text-center" style="padding: 2%;">
       </div>
-      <form action="{% url 'update_usuario' usuario.id %}" method="POST">
-        {% csrf_token %}
-          <input type="text" name="nome" value="{{usuario.username}}"><br>
-          <input type="password" name="senha"  value="{{usuario.password}}"><br>
-          <input type="text" name="email" value="{{usuario.email}}"><br>
-          <label for="admin_checkbox">Administrador:</label>
-          <input type="checkbox" id="admin_checkbox" name="is_admin" {% if usuario.is_superuser %}checked{% endif %}><br>
-          <button class="btn btn-success" type="submit">Salvar</button>
-          <div class="container text-center" style="padding: 2%;">
-          </div>
-      </form>
+    </form>
   </div>
 </div>
 
