@@ -9,6 +9,21 @@
 {% include 'partials/pesquisa.html'%}
 
 
+<style>
+  /* Estilize a caixa de diálogo como desejar */
+#ajuda-dialogo {
+    display: none;
+    position: absolute;
+    width: 200px; /* Largura desejada */
+    padding: 10px;
+    background-color: #f2f2f2; /* Fundo cinza */
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+</style>
+
 <div class="imagem1 text-center"
     style="margin-top: 5%;  background-image: url({% static 'assets/img/modelorosa.jpg' %}); margin-bottom:0;">
     <h1>High Fashion <br>
@@ -45,6 +60,17 @@
 <div class="container-md">
     <div class="titulocat text-center">
         <h1>Catálogo</h1>
+        <button id="botao-ajuda">Ajuda</button>
+    </div>
+    
+    <!-- Caixa de diálogo de ajuda -->
+    <div id="ajuda-dialogo">
+        <p>Esta é a ajuda específica para a página de Catálogo.</p>
+        <button onclick="fecharAjuda()">Fechar</button>
+    </div>
+
+        <!-- Contêiner para exibir a ajuda -->
+        <div id="popup-ajuda"></div>
     </div>
     <div class="container-fluid">
         <div class="row" style="padding-top: 20px; padding-bottom: 20px;">
@@ -157,6 +183,8 @@
         });
     });
 </script>
+
+
 
 <!-- fim do body -->
 

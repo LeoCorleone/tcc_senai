@@ -1,3 +1,7 @@
+# admin.py
 from django.contrib import admin
+from .models import PaginaAjuda
 
-# Register your models here.
+@admin.register(PaginaAjuda)
+class PaginaAjudaAdmin(admin.ModelAdmin):
+    list_display = ('pagina',)
