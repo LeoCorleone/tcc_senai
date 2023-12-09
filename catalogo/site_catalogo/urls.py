@@ -27,7 +27,6 @@ urlpatterns = [
     # path('index/<int:roupa_id>/exibir', exibir_comentario, name='exibir_comentario'),
     path('fale-conosco/', fale_conosco, name='fale_conosco'),
     path('fale/', fale, name='fale'),
-    path('obter-ajuda/<str:pagina>/', obter_ajuda, name='obter_ajuda'),
 
 ]
 

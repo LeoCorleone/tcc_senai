@@ -47,10 +47,3 @@ class FaleConosco(models.Model):
 
     def __str__(self):
         return self.email
-    
-class PaginaAjuda(models.Model):
-    pagina = models.CharField(max_length=255, unique=True)
-    conteudo = models.TextField()
-
-    def __str__(self):
-        return self.pagina

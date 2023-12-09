@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from .models import Produto, FaleConosco, PaginaAjuda
+from .models import Produto, FaleConosco
 from django.core.paginator import Paginator, InvalidPage, EmptyPage
 from .forms import *
 from django.contrib import auth
@@ -282,7 +282,3 @@ def active(request, id):
     user.save()
     messages.success(request, 'Usuario ativado com sucesso!')
     return redirect('listar_usuario')
-
-def obter_ajuda(request, pagina):
-    ajuda = get_object_or_404(PaginaAjuda, pagina=pagina)
-    return JsonResponse({'conteudo': ajuda.conteudo})
