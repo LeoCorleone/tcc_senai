@@ -23,13 +23,6 @@
             <a href="{% url 'logout' %}" class="nav-link text-dark underline-link">
               Logout
             </a>
-          {% elif user.is_superuser %}
-            <a href="{% url 'adm' %}" class="nav-link text-dark underline-link">
-              Admin
-            </a>
-            <a href="{% url 'logout' %}" class="nav-link text-dark underline-link">
-              Logout
-            </a>
           {% else %}
             <a href="#ModalForm" class="nav-link text-dark underline-link" data-bs-toggle="modal" data-bs-target="#ModalForm">
               Login

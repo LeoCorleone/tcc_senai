@@ -99,7 +99,7 @@ def login(request):
         if user is not None:
             auth.login(request, user)
             messages.success(request, f'Foi logado com sucesso!')
-            return redirect('adm')
+            return redirect('listar_roupas')
         else:
             messages.error(request, 'Erro ao efetuar login')
             return redirect('index')
@@ -144,9 +144,6 @@ def logout(request):
     messages.success(request, 'Logout efetuado com sucesso!')
     return redirect('index')
 
-@user_passes_test(is_superuser)
-def adm(request):
-    return render(request, 'adm/adm.html')
 
 @user_passes_test(is_superuser)
 def postagem(request):

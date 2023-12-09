@@ -7,6 +7,9 @@
         <ul class="list-unstyled">
           <li><a href="{% url 'artdicas' %}" class="text-white">Dicas</a></li>
           <li><a href="{% url 'sobre' %}" class="text-white">Sobre</a></li>
+          {% if user.is_superuser %}
+           <li><a href="{% url 'listar_roupas' %}" class="text-white">Admin</a></li>
+          {% endif %}
         </ul>
       </div>
 
