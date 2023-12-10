@@ -140,3 +140,12 @@ MEDIA_URL = '/media/'
 LOGIN_URL = "index"
 
 
+# myproject/settings.py
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'tccsenaisjn@gmail.com'  # Substitua pelo seu endereço de email do Gmail
+EMAIL_HOST_PASSWORD = 'husywjewnvenpyey'  # Substitua pela senha do seu email do Gmail
+DEFAULT_FROM_EMAIL = 'Teste'  # Substitua pelo seu endereço de email do Gmail

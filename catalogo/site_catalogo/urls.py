@@ -27,7 +27,8 @@ urlpatterns = [
     # path('index/<int:roupa_id>/exibir', exibir_comentario, name='exibir_comentario'),
     path('fale-conosco/', fale_conosco, name='fale_conosco'),
     path('fale/', fale, name='fale'),
-
+    path('subscribe/', subscribe, name='subscribe'),
+    path('newslatter/', newslatter, name='newslatter')
 ]
 
 # if settings.DEBUG:

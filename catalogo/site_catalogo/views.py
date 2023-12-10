@@ -7,7 +7,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.contrib.auth.decorators import user_passes_test
-from django.http import JsonResponse
+
 
 
 def is_superuser(user):
@@ -282,3 +282,19 @@ def active(request, id):
     user.save()
     messages.success(request, 'Usuario ativado com sucesso!')
     return redirect('listar_usuario')
+
+def subscribe(request):
+    if request.method == 'POST':
+        email = request.POST.get('newsletter_email')
+
+        try:
+            Subscriber.objects.create(email=email)
+            messages.success(request, 'Inscrição realizada com sucesso!')
+        except:
+            messages.error(request, 'Erro ao processar a inscrição.')
+
+    return redirect('index')  # Redirecione para a página inicial ou qualquer página desejada
+
+def newslatter(request):
+    return render(request, 'email/newslatter.html')
+

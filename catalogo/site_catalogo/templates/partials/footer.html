@@ -1,19 +1,20 @@
 {% load static %}
-<footer class="bg-dark text-white p-2 footer">
+<footer class="bg-dark text-white p-4 footer">
   <div class="container">
-    <div class="row">
-      <div class="col-md-3 text-center">
+    <!-- Adição da classe d-flex para a linha -->
+    <div class="row d-flex justify-content-around">
+      <div class="col-md-2 text-center mb-4">
         <img src="{% static 'assets/img/logobranca.png' %}" alt="" style="height: 130px; width: 100px; color: white;">
         <ul class="list-unstyled">
           <li><a href="{% url 'artdicas' %}" class="text-white">Dicas</a></li>
           <li><a href="{% url 'sobre' %}" class="text-white">Sobre</a></li>
           {% if user.is_superuser %}
-           <li><a href="{% url 'listar_roupas' %}" class="text-white">Admin</a></li>
+            <li><a href="{% url 'listar_roupas' %}" class="text-white">Admin</a></li>
           {% endif %}
         </ul>
       </div>
 
-      <div class="col-md-3 text-center">
+      <div class="col-md-2 text-center mb-4">
         <h5>Localização</h5>
         <a href="https://www.google.com.br/maps/place/R.+Cel.+Jos%C3%A9+Dutra,+128+-+S%C3%A3o+Jo%C3%A3o+Nepomuceno,+MG,+36680-000/@-21.5366019,-43.0108939,17z/data=!3m1!4b1!4m5!3m4!1s0xa292651e675261:0xb2c91a1a843ec83e!8m2!3d-21.5366069!4d-43.008319?entry=ttu"
           target="_blank">
@@ -67,24 +68,34 @@
         </a>
       </div>
 
-      <div class="col-md-3 text-center">
+      <div class="col-md-2 text-center mb-4">
         <h5>Fale Conosco</h5>
         <form method="post" action="{% url 'fale_conosco' %}">
           {% csrf_token %}
           <input type="hidden" name="redirecionar_para" value="{{ request.path }}">
-
           <div class="form-group">
             <input type="email" class="form-control" id="email" name="email" placeholder="Seu Email" required>
           </div>
-
           <div class="form-group">
             <textarea class="form-control" id="mensagem" name="mensagem" rows="2" placeholder="Sua Mensagem"
               required></textarea>
           </div>
-
           <button type="submit" class="btn btn-light btn-sm">Enviar</button>
         </form>
       </div>
+
+      <!-- Adição da coluna Receba Newsletter -->
+      <div class="col-md-3 text-center">
+        <h5>Receba nossas novidades</h5>
+        <form id="newsletter-form" action="{% url 'subscribe' %}" method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                <input type="email" class="form-control" id="newsletter_email" name="newsletter_email" placeholder="Seu Email" required>
+            </div>
+            <button type="submit" class="btn btn-light btn-sm">Inscrever</button>
+        </form>
+    </div>
+      <!-- Fim da coluna Receba Newsletter -->
     </div>
   </div>
 </footer>

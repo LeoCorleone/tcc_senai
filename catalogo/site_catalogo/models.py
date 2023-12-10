@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 import datetime
 
+
 class Ano(models.Model):
     valor = models.IntegerField()
 
@@ -47,3 +48,12 @@ class FaleConosco(models.Model):
 
     def __str__(self):
         return self.email
+    
+class Subscriber(models.Model):
+    email = models.EmailField(unique=True)
+
+    def __str__(self):
+        return self.email
+    
+
+    

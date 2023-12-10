@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Novo Produto Adicionado: {{ product.titulo_produto }}</title>
+</head>
+<body>
+    <p>Um novo produto foi adicionado:</p>
+    <h2>{{ product.titulo_produto }}</h2>
+
+    <p>Descrição: {{ product.descricao_produto }}</p>
+    <p>Composição: {{ product.composicao_produto }}</p>
+    <p>Ano: {{ product.ano }}</p>
+    <p>Coleção: {{ product.colecao }}</p>
+    <p>Tipo: {{ product.tipo }}</p>
+    <img src="cid:{{ product.titulo_produto }}_image" alt="{{ product.titulo_produto }} Image">
+
+</body>
+</html>
