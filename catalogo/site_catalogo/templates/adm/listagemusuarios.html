@@ -2,13 +2,46 @@
 {% load static %}
 {% block content %}
 
+<style>
+    .tabela-customizada {
+        background-color: #ADE0DB; /* Cor de fundo da tabela */
+    }
+
+    .tabela-customizada th,
+    .tabela-customizada td {
+        background-color: #ADE0DB; /* Cor de fundo das células */
+        color: #1B4965; /* Cor do texto */
+        border-left: 1px solid #1B4965; /* Adiciona uma borda à esquerda de cada célula */
+    }
+
+    .tabela-customizada th:first-child,
+    .tabela-customizada td:first-child {
+        border-left: none; /* Remove a borda à esquerda da primeira coluna */
+    }
+
+    .btn-customizada {
+        border: none; /* Remove a borda dos botões */
+        background-color: transparent; /* Remove o fundo dos botões */
+    }
+</style>
+
 {% include 'partials/adm/navbaradm.html' %}
 {% include 'partials/alerts.html' %}
 {% include 'partials/loading.html'%}
 
 <div class="container-fluid text-center" style="padding: 18%;">
 
-    <table class="table table-dark table-striped mx-auto">
+    <div class="text-center">
+        <button id="botao-ajuda">?</button>
+      </div>
+      
+    
+        <div id="ajuda-dialogo">
+          <p>Mais adiciona usuário <br> Ativar/Desativar ativa e desativa usuário <br> Caneta altera usuário</p>
+          <button id="fechar-btn" onclick="fecharAjuda()">X</button>
+      </div>
+
+    <table class="table table-striped mx-auto tabela-customizada">
         <thead>
             <tr>
                 <th scope="col" colspan="4">
@@ -17,15 +50,15 @@
                 </th>
             </tr>
             <tr>
-                <th class="align-middle border text-center" scope="col">Id</th>
-                <th class="align-middle border text-center" scope="col">Nome</th>
-                <th class="align-middle border text-center" scope="col">E-Mail</th>
-                <th class="align-middle border text-center" scope="col">Status</th>
-                <th class="align-middle border text-center" scope="col">Cargo</th>
-                <th class="align-middle border text-center" scope="col">Ativar/Desativar</th>
-                <th class="align-middle border text-center" scope="col">
+                <th class="align-middle text-center" scope="col">Id</th>
+                <th class="align-middle text-center" scope="col">Nome</th>
+                <th class="align-middle text-center" scope="col">E-Mail</th>
+                <th class="align-middle text-center" scope="col">Status</th>
+                <th class="align-middle text-center" scope="col">Cargo</th>
+                <th class="align-middle text-center" scope="col">Ativar/Desativar</th>
+                <th class="align-middle text-center" scope="col">
                     <a href="{% url 'adicionar_usuario' %}">
-                        <button type="button" class="btn">
+                        <button type="button" class="btn btn-success btn-customizada">
                             <img src="{% static 'assets/img/adicionar.png' %}" alt=""
                                 style="height: 40px; width: 40px;">
                         </button>
@@ -36,56 +69,60 @@
         <tbody>
             {% for x in usuarios %}
             <tr>
-                <th class="align-middle border" scope="row">{{x.id}}</th>
-                <td class="align-middle border">{{x.username}}</td>
-                <td class="align-middle border">{{x.email}}</td>
-                <td class="align-middle border">
+                <th class="align-middle" scope="row">{{x.id}}</th>
+                <td class="align-middle">{{x.username}}</td>
+                <td class="align-middle">{{x.email}}</td>
+                <td class="align-middle">
                     <div class="row justify-content-center">
-                        <div class="col-12 text-center">
+                        <div class="col-12">
                             {% if x.is_active %}
-                            Ativo
+                            <span class="badge badge-success">Ativo</span>
                             {% else %}
-                            Inativo
+                            <span class="badge badge-danger">Inativo</span>
                             {% endif %}
                         </div>
                     </div>
                 </td>
-                <td class="align-middle border">
+                <td class="align-middle">
                     <div class="row justify-content-center">
-                        <div class="col-12 text-center">
+                        <div class="col-12">
                             {% if x.is_superuser %}
-                            Admin
+                            <span class="badge badge-primary">Admin</span>
                             {% else %}
-                            User
+                            <span class="badge badge-secondary">User</span>
                             {% endif %}
                         </div>
                     </div>
                 </td>
-                <td class="align-middle border">
+                <td class="align-middle">
                     <div class="row justify-content-center">
                         <div class="col-3">
                             <a href="{% url 'active_user' x.id %}" style="text-decoration:none;color:green">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                    class="bi bi-check-circle-fill" viewBox="0 0 16 16">
-                                    <path
-                                        d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
-                                </svg>
+                                <span class="badge badge-success">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                        class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+                                        <path
+                                            d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
+                                    </svg>
+                                </span>
                             </a>
                         </div>
                         <div class="col-3">
                             <a href="{% url 'inative_user' x.id %}" style="text-decoration:none;color:red">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                    class="bi bi-dash-circle-fill" viewBox="0 0 16 16">
-                                    <path
-                                        d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM4.5 7.5a.5.5 0 0 0 0 1h7a.5.5 0 0 0 0-1h-7z" />
-                                </svg>
+                                <span class="badge badge-danger">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                        class="bi bi-dash-circle-fill" viewBox="0 0 16 16">
+                                        <path
+                                            d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM4.5 7.5a.5.5 0 0 0 0 1h7a.5.5 0 0 0 0-1h-7z" />
+                                    </svg>
+                                </span>
                             </a>
                         </div>
                     </div>
                 </td>
-                <td class="align-middle border">
+                <td class="align-middle">
                     <a href="{% url 'update_usuario' x.id %}">
-                        <button type="button" class="btn">
+                        <button type="button" class="btn btn-primary btn-customizada">
                             <img src="{% static 'assets/img/editar.png' %}" alt="botaoeditar">
                         </button>
                     </a>

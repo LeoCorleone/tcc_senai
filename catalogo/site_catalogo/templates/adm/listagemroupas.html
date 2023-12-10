@@ -22,21 +22,31 @@
     font-size: 30px;
     font-family: 'Ms Madi', cursive;
   }
+
+
+
 </style>
 
 <div class="container-md text-center" style="padding: 5%; margin-top: 2%;">
   <!-- {% include 'partials/alerts.html' %} -->
-  <div class="row">
+  
+
+<!-- TEM QUE AJUSTAR O CSS NO BOTÃO DE AJUDA -->
+  <div class="text-center">
+    <button type="button" class="btn" onclick="window.location.href='{% url 'postagem' %}'">
+      <img src="{% static 'assets/img/adicionar.png' %}" alt="botao-add" style="height: 40px; width: 40px;">
+    </button>
+    <button id="botao-ajuda">?</button>
+  </div>
+  
+
+    <div id="ajuda-dialogo">
+      <p>Mais adiciona produto <br> Lixeira exclui foto <br> Caneta altera o produto</p>
+      <button id="fechar-btn" onclick="fecharAjuda()">X</button>
+  </div>
 
 
-    <a href="{% url 'postagem' %}">
-      <button type="button" class="btn">
-        <img src="{% static 'assets/img/adicionar.png' %}" alt="botao-add" style="height: 40px; width: 40px;">
-      </button>
-    </a>
-
-
-    
+    <div class="row">
     {% for x in postagem %}
     <div class="col-12 col-sm-4 ">
       <div class="row">
@@ -89,5 +99,6 @@
 
 
 {% include 'partials/footer.html' %}
+
 
 {% endblock%}
