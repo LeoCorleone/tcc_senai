@@ -13,9 +13,6 @@ from .models import Produto, Subscriber
 @receiver(post_save, sender=Produto)
 def send_product_creation_email(sender, instance, created, **kwargs):
     if created:
-        print("Sinal acionado para Produto:", instance.titulo_produto)
-        print("Descricao:", instance.descricao_produto)
-        print("Composicao:", instance.composicao_produto)
         
         subject = 'Novo Produto Adicionado: {}'.format(instance.titulo_produto)
         message_html = render_to_string('email/newslatter.html', {'product': instance})
