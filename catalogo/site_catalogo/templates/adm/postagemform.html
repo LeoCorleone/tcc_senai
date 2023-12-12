@@ -5,22 +5,31 @@
 {% include 'partials/adm/navbaradm.html' %}
 {% include 'partials/loading.html'%}
 
-<div class="container text-center" style="padding: 5%;">
+<style>
+    @media only screen and (max-device-width: 700px) {
+      .addproduto{
+          margin-top: 300px;
+      }
+  }
+  </style>
+
+<div class="container text-center addproduto" style="padding: 5%;">
     <div class="row shadow" id="info">
         <h1 class="col-12">Adicionar Produto</h1>
         <div class="col-md-6">
             <form method="post" enctype="multipart/form-data" id="productForm">
                 {% csrf_token %}
                 {% for field in form.visible_fields %}
-                <div class="row mb-3">
-                    <div class="col-md-6 text-right">
+                <div class="row mb-3 align-items-center">
+                    <div class="col-md-6 text-md-end">
                         <label for="{{ field.id_for_label }}" class="form-label">{{ field.label }}</label>
                     </div>
-                    <div class="col-md-6 text-left">
+                    <div class="col-md-6 text-md-start">
                         {{ field }}
                     </div>
                 </div>
                 {% endfor %}
+                
                 <div class="row mt-3">
                     <div class="col-md-12 text-center">
                         <button class="btn btn-success" type="submit">Postar</button>

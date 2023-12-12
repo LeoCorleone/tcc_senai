@@ -3,15 +3,24 @@
 {% block content %}
 
 {% include 'partials/adm/navbaradm.html' %}
+{% include 'partials/alerts.html' %}
 {% include 'partials/loading.html'%}
 <style>
   input,
   button {
     margin: 2%;
   }
+
+
+    @media only screen and (max-device-width: 700px) {
+      .adduser{
+          margin-top: 300px;
+      }
+  }
+
 </style>
 
-<div class="container text-center" id="info" style="margin-top: 2%; width: 35%;">
+<div class="container text-center adduser" id="info">
   <div class="form">
     <div class="card-header">
       <h1>Adicionar User</h1>

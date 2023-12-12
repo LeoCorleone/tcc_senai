@@ -30,11 +30,14 @@
                         </div>
                         {% endfor %}
                     </div>
-                    <form method="post" id="formulario" action="{% url 'adicionar_comentario' produto_id=x.id %}">
+                    <form method="post" id="formulario" action="{% url 'adicionar_comentario' produto_id=x.id %}" style="margin-top: 10px;">
                         {% csrf_token %}
-                        {{ formcomentario.as_p }}
+                        <div class="form-group">
+                            {{ formcomentario.texto }}
+                        </div>
                         <button type="submit" class="btn btn-dark btn-lg">Comentar</button>
                     </form>
+                    
                 </div>
             </div>
         </div>

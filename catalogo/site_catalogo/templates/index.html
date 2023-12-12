@@ -42,10 +42,17 @@
 </div>
 
 
-<div class="container-md">
+<div class="container-md d-flex align-items-center justify-content-center">
     <div class="titulocat text-center">
-        <h1>Catálogo <button id="botao-ajuda">?</button></h1>
+        <h1 class="d-flex align-items-center">
+            Catálogo
+            <button id="botao-ajuda" class="mx-2" style="border: none; background-color: transparent;">
+                <img src="{% static 'assets/img/ajuda.png' %}" alt="" style="height: 35px; width: 35px;">
+            </button>
+        </h1>
     </div>
+</div>
+
     
     <!-- Caixa de diálogo de ajuda -->
     <div id="ajuda-dialogo">

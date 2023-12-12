@@ -85,6 +85,11 @@ class ComentarioForm(forms.ModelForm):
             'texto': forms.TextInput(attrs={'placeholder': 'Digite seu comentário...'}),
         }
 
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['texto'].label = ''  # Remover o rótulo do campo 'texto'
+
+
 class FiltroForm(forms.Form):
     ano = forms.ModelChoiceField(queryset=Ano.objects.all(), empty_label="Selecione o Ano", required=False, label="Ano")
     colecao = forms.ModelChoiceField(queryset=Colecao.objects.all(), empty_label="Selecione a Coleção", required=False, label="Coleção")
