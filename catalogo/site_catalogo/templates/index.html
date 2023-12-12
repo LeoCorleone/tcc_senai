@@ -3,6 +3,13 @@
 {% block content %}
 
 <link rel="stylesheet" href="{% static 'assets/css/csspagina/index.css' %}">
+<style>
+    .imagem-hover,
+    .icon-hover {
+    cursor: pointer; /* Altera o cursor para o estilo de clique */
+}
+
+</style>
 {% include 'partials/loading.html'%}
 {% include 'partials/navbar.html' %}
 {% include 'partials/alerts.html' %}
@@ -67,8 +74,7 @@
             {% for x in postagem %}
             <div class="col-12 col-sm-4 sobreposicao" style="margin-bottom: 3%;">
                 <div class="card">
-                    <img src="{{x.imagem_produto.url}}" alt="{{x.titulo_roupa}}" class="img-fluid"
-                        style="width: 100%; height: 100%;" data-toggle="modal" data-target="#modalFoto{{x.id}}">
+                    <img src="{{x.imagem_produto.url}}" alt="{{x.titulo_roupa}}" class="img-fluid imagem-hover" data-toggle="modal" data-target="#modalFoto{{x.id}}">
 
                     <div class="card-body" style="padding: 1%;">
                         {% if user in x.liked_by.all %}
@@ -91,15 +97,15 @@
                         </a>
                         {% endif %}
                         <a href="#" class="card-link"></a>
-                        <svg class="icone2 abrir-modal" data-target="#modalFoto{{x.id}}"
+                        <svg class="icone2 abrir-modal icon-hover" data-target="#modalFoto{{x.id}}"
                             xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                             <path
                                 d="M12 2c5.514 0 10 3.532 10 7.874 0 4.162-3.627 6.72-7.893 7.721l-2.107 2.958-2.107-2.958c-4.304-1.011-7.893-3.617-7.893-7.721 0-4.342 4.486-7.874 10-7.874zm0-2c-6.627 0-12 4.42-12 9.874 0 4.512 3.678 8.317 8.701 9.496l3.299 4.63 3.299-4.63c5.023-1.18 8.701-4.985 8.701-9.496 0-5.454-5.373-9.874-12-9.874z"
                                 fill="grey" />
                         </svg>
                         <div class="curtcoment">
-                            <p>{{ x.likes }} Likes</p>
-                            <p>{{ x.numero_comentarios }} Coments</p>
+                            <p>{% if x.likes == 0 or x.likes == 1 %}{{ x.likes }} Like{% else %}{{ x.likes }} Likes{% endif %}</p>
+                            <p>{% if x.numero_comentarios == 0 or x.numero_comentarios == 1 %}{{ x.numero_comentarios }} Coment{% else %}{{ x.numero_comentarios }} Coments{% endif %}</p>
                         </div>
                     </div>
                 </div>
