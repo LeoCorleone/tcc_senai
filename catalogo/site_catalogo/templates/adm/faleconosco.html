@@ -6,6 +6,12 @@
 {% include 'partials/loading.html' %}
 
 <style>
+    .main{
+        
+        /* background-image: url({% static 'assets/img/fundohf.png' %}); */
+        font-family: 'Roboto', sans-serif;
+        /* height: 80vh; */
+    }
     .mensagem-card {
         max-width: 400px;
         margin: 0 auto;
@@ -15,10 +21,14 @@
         margin-top: 0;
         text-align: left;
     }
+    @media only screen and (max-device-width: 700px) {
+    .main h2{
+        padding-top: 27%;
+    }
+}
 </style>
 
-
-<div class="container mt-5">
+<div class="container mt-5 main">
     <div class="row">
         <div class="col-md-12">
             <h2 class="text-center mb-4" style="margin-top: 30px;">Mensagens do Fale Conosco</h2>
@@ -30,7 +40,7 @@
         <div class="col-md-6">
             <div class="card mb-3 mensagem-card">
                 <div class="card-body">
-                    <h5 class="card-title">{{ mensagem.email }}</h5>
+                    <h5 class="card-title" style="font-weight: bold;">{{ mensagem.email }}</h5>
                     <p class="card-text mensagem-text">{{ mensagem.mensagem }}</p>
                 </div>
             </div>

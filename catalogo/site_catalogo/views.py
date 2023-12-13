@@ -224,24 +224,31 @@ def adicionar_usuario(request):
     if request.method == "POST":
         form = CriarLoginForms(request.POST)
         if form.is_valid():
-            user = User.objects.create_user(
-                username=form.cleaned_data['nome'],
-                email=form.cleaned_data['email'],
-                password=form.cleaned_data['senha']
-            )
+            # Verificar se o nome de usuário ou e-mail já existem
+            existing_user_username = User.objects.filter(username=form.cleaned_data['nome']).first()
+            existing_user_email = User.objects.filter(email=form.cleaned_data['email']).first()
 
-            if form.cleaned_data['is_admin']:
-                user.is_superuser = True
-                user.save()
+            if existing_user_username:
+                messages.error(request, 'O nome de usuário já está em uso. Escolha outro.')
+            elif existing_user_email:
+                messages.error(request, 'O e-mail já está em uso. Escolha outro.')
+            else:
+                user = User.objects.create_user(
+                    username=form.cleaned_data['nome'],
+                    email=form.cleaned_data['email'],
+                    password=form.cleaned_data['senha']
+                )
 
-            messages.success(request, 'Usuário cadastrado com sucesso!')
-            return redirect('listar_usuario')
+                if form.cleaned_data['is_admin']:
+                    user.is_superuser = True
+                    user.save()
+
+                messages.success(request, 'Usuário cadastrado com sucesso!')
+                return redirect('listar_usuario')
     else:
         form = CriarLoginForms()
 
-    return render(request, "adm/addusuario.html", {
-        'form': form
-    })
+    return render(request, "adm/addusuario.html", {'form': form})
 
 @user_passes_test(is_superuser)
 def listar_usuario(request):
@@ -255,15 +262,32 @@ def update_usuario(request, id):
     usuario = User.objects.get(pk=id)
     
     if request.method == 'POST':
-        usuario.username = request.POST['nome']
-        usuario.set_password(request.POST['senha'])
-        usuario.email = request.POST['email']
-        
-        is_admin = request.POST.get('is_admin', False)
-        usuario.is_superuser = bool(is_admin)
-        
-        usuario.save()
-        return redirect('listar_usuario')
+        new_username = request.POST['nome']
+        new_email = request.POST['email']
+        new_password = request.POST.get('senha', None)
+
+        # Verificar se o novo nome de usuário ou e-mail já existem
+        existing_user_username = User.objects.exclude(pk=id).filter(username=new_username).first()
+        existing_user_email = User.objects.exclude(pk=id).filter(email=new_email).first()
+
+        if existing_user_username:
+            messages.error(request, 'O nome de usuário já está em uso. Escolha outro.')
+        elif existing_user_email:
+            messages.error(request, 'O e-mail já está em uso. Escolha outro.')
+        else:
+            usuario.username = new_username
+
+            if new_password:
+                usuario.set_password(new_password)
+
+            usuario.email = new_email
+            
+            is_admin = request.POST.get('is_admin', False)
+            usuario.is_superuser = bool(is_admin)
+            
+            usuario.save()
+            messages.success(request, 'Usuário atualizado com sucesso!')
+            return redirect('listar_usuario')
     
     return render(request, 'adm/editaruser.html', {'usuario': usuario})
 

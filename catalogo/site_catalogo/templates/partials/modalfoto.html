@@ -4,15 +4,19 @@
     aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
+            <div class="modal-header">
+                <!-- Adicione o botão de fechar no canto superior direito -->
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="position: absolute; top: 10px; right: 10px;">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h5 class="modal-title" id="modalFotoLabel" style="margin-right: 30px;">{{x.titulo_produto}}</h5>
+            </div>
             <div class="modal-body">
-                <h5 class="modal-title" id="modalFotoLabel">{{x.titulo_produto}}</h5>
                 <div class="row d-flex">
-                    <img src="{{x.imagem_produto.url}}" alt="{{x.titulo_roupa}}" class="img-fluid"
-                        style="width: 100%; height: 100%;">
+                    <img src="{{x.imagem_produto.url}}" alt="{{x.titulo_roupa}}" class="img-fluid" style="width: 100%; height: 100%;">
                     <div id="description">
                         <div class="card-actions">
-                            <div class="icon">&#9825; {{ x.likes }} Likes &#x1F5E8; {{ x.numero_comentarios }} Coments
-                            </div>
+                            <div class="icon">&#9825; {{ x.likes }} Likes &#x1F5E8; {{ x.numero_comentarios }} Coments</div>
                         </div>
                         <p><b>Descrição:</b>{{x.descricao_produto}}.</p>
                         <p><b>Composição:</b>{{x.composicao_produto}}.</p>
@@ -30,9 +34,11 @@
                         </div>
                         {% endfor %}
                     </div>
-                    <form method="post" id="formulario" action="{% url 'adicionar_comentario' produto_id=x.id %}">
+                    <form method="post" id="formulario" action="{% url 'adicionar_comentario' produto_id=x.id %}" style="margin-top: 10px;">
                         {% csrf_token %}
-                        {{ formcomentario.as_p }}
+                        <div class="form-group">
+                            {{ formcomentario.texto }}
+                        </div>
                         <button type="submit" class="btn btn-dark btn-lg">Comentar</button>
                     </form>
                 </div>

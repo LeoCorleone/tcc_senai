@@ -309,5 +309,95 @@
             "numero_comentarios" : 0,
             "likes" : 0
         }
+    },
+    {
+        "model": "site_catalogo.Produto",
+        "pk" : 14,
+        "fields":{
+            "titulo_produto" : "Vestido Primavera",
+            "descricao_produto" : "Lindo vestido para a primavera",
+            "composicao_produto": "Linho",
+            "imagem_produto" : "uploads/vestidom.jpg",
+            "ano" : 1,
+            "colecao" : 1,
+            "tipo" : 7,
+            "numero_comentarios" : 0,
+            "likes" : 0
+        }
+    },
+    {
+        "model": "site_catalogo.Produto",
+        "pk" : 15,
+        "fields":{
+            "titulo_produto" : "Conjunto Verão",
+            "descricao_produto" : "Para curtir o verão com estilo",
+            "composicao_produto": "Crochê",
+            "imagem_produto" : "uploads/conjuntoverde.jpg",
+            "ano" : 3,
+            "colecao" : 2,
+            "tipo" : 8,
+            "numero_comentarios" : 0,
+            "likes" : 0
+        }
+    },
+    {
+        "model": "site_catalogo.Produto",
+        "pk" : 16,
+        "fields":{
+            "titulo_produto" : "Conjunto Branco",
+            "descricao_produto" : "Lindo conjunto para o verão",
+            "composicao_produto": "Linho",
+            "imagem_produto" : "uploads/conjbranco.jpg",
+            "ano" : 2,
+            "colecao" : 2,
+            "tipo" : 8,
+            "numero_comentarios" : 0,
+            "likes" : 0
+        }
+    },
+    {
+        "model": "site_catalogo.Produto",
+        "pk" : 17,
+        "fields":{
+            "titulo_produto" : "Conjunto Social",
+            "descricao_produto" : "Lindo conjunto inverno",
+            "composicao_produto": "Linho",
+            "imagem_produto" : "uploads/egirl.jpg",
+            "ano" : 3,
+            "colecao" : 4,
+            "tipo" : 8,
+            "numero_comentarios" : 0,
+            "likes" : 0
+        }
+    },
+    {
+        "model": "site_catalogo.Produto",
+        "pk" : 18,
+        "fields":{
+            "titulo_produto" : "Blusa Inverno",
+            "descricao_produto" : "Blusa verde para o inverno",
+            "composicao_produto": "Lã",
+            "imagem_produto" : "uploads/Moletom.jpg",
+            "ano" : 1,
+            "colecao" : 4,
+            "tipo" : 1,
+            "numero_comentarios" : 0,
+            "likes" : 0
+        }
+    },
+    {
+        "model": "site_catalogo.Produto",
+        "pk" : 19,
+        "fields":{
+            "titulo_produto" : "Blazer Branco",
+            "descricao_produto" : "Para um inverno com classe e estilo",
+            "composicao_produto": "Linho",
+            "imagem_produto" : "uploads/blazer.jpg",
+            "ano" : 1,
+            "colecao" : 4,
+            "tipo" : 6,
+            "numero_comentarios" : 0,
+            "likes" : 0
+        }
     }
 ]

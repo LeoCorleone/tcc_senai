@@ -23,24 +23,27 @@ O projeto tem como objetivo desenvolver um site que funcionará como catálogo o
 Django 4.2.3 <br>
 mysqlclient 2.2.0 <br>
 Python 3.11.6<br>
+MySql 8.0 <br>
 
 # Estrutura do projeto
 Após baixar a pasta compactada em sua máquina ou após de copiar e executar "git clone (link do repositório) no terminal", execute:
 
-1. No Terminal execute o comando a seguir:
+1. No Terminal do VSCode execute o comando a seguir na pasta catalogo:
 
 ```python
 pip install -r requeriments.txt
 ```
+Esse comando irá baixar todas as bibliotecas utilizadas no sistema.
 
-2. Após a execução do comando acima, nos seu mysql crie um banco de dados chamado "catalago"
 
-3. Após a criação do banco , execute em seu terminal o seguinte comando:
+2. Após a execução do comando acima, nos seu mysql crie um banco de dados chamado "catalago" ou crie com o nome de sua preferência. Não esqueça de ir no arquivo settings.py e alterar as configurações do banco
+
+3. Após a criação do banco , execute em seu terminal o seguinte comando para gerar todas as tabelas em seu banco.
 
 ```python
 python manage.py migrate
 ```
-4. Após dar o comando migrate , execute:
+4. Após dar o comando migrate , execute o seguite comando para poder criar um Usuário com todas as permissões.
 
 ```python
 python manage.py createsuperuser

@@ -5,18 +5,38 @@
 {% include 'partials/adm/navbaradm.html' %}
 {% include 'partials/loading.html'%}
 
-<div class="container text-center" style="padding: 5%;">
+<style>
+    .updateuser{
+        margin-top: 10%;
+        margin-bottom: 5%;
+    }
+    .updateuser input{
+        color:black;
+        font-family: Arial, Helvetica, sans-serif;
+        padding: 2%;
+        background-color: white;
+        border-radius: 20px;
+        border-color: rgba(0, 0, 0, 0.281);
+    }
+        @media only screen and (max-device-width: 700px) {
+      .updateuser{
+          margin-top: 250px;
+      }
+    
+  }
+</style>
+<div class="container text-center updateuser">
     <div class="row shadow" id="info">
         <h1 class="col-12">Editar Postagem</h1>
         <div class="col-md-6">
             <form action="{% url 'update_roupa' produto.id %}" method="post" enctype="multipart/form-data">
                 {% csrf_token %}
                 {% for field in form.visible_fields %}
-                <div class="row mb-3">
-                    <div class="col-md-6 text-right">
+                <div class="row mb-3 align-items-center">
+                    <div class="col-md-6 text-md-end">
                         <label for="{{ field.id_for_label }}" class="form-label">{{ field.label }}</label>
                     </div>
-                    <div class="col-md-6 text-left">
+                    <div class="col-md-6 text-md-start">
                         {{ field }}
                     </div>
                 </div>
@@ -36,6 +56,7 @@
         </div>
     </div>
 </div>
+
 {% include 'partials/footer.html' %}
 
 {% endblock %}

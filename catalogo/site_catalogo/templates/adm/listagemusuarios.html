@@ -23,6 +23,15 @@
         border: none; /* Remove a borda dos botões */
         background-color: transparent; /* Remove o fundo dos botões */
     }
+
+    @media only screen and (max-device-width: 700px) {
+      .help{
+          margin-top: 150px;
+      }
+      .tabelas{
+        margin-top: 40px;
+      }
+  }
 </style>
 
 {% include 'partials/adm/navbaradm.html' %}
@@ -30,10 +39,10 @@
 {% include 'partials/loading.html'%}
 
 <div class="container-fluid text-center" style="padding: 18%;">
-
-    <div class="text-center">
-        <button id="botao-ajuda">?</button>
-      </div>
+    
+    <button id="botao-ajuda" class="mx-2 help" style="border: none; background-color: transparent;">
+        <img src="{% static 'assets/img/ajuda.png' %}" alt="" style="height: 35px; width: 35px; margin-bottom: 30px;" class="">
+    </button>
       
     
         <div id="ajuda-dialogo">
@@ -41,7 +50,7 @@
           <button id="fechar-btn" onclick="fecharAjuda()">X</button>
       </div>
 
-    <table class="table table-striped mx-auto tabela-customizada">
+    <table class="table table-striped mx-auto tabela-customizada tabelas">
         <thead>
             <tr>
                 <th scope="col" colspan="4">
