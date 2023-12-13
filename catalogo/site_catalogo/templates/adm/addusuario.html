@@ -6,23 +6,42 @@
 {% include 'partials/alerts.html' %}
 {% include 'partials/loading.html'%}
 <style>
-  input,
-  button {
-    margin: 2%;
-  }
+  #info{
+      margin-top: 6%;
+      height: 80vh;
+    }
+    input{
+    color:black;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 0.5%;
+    background-color: white;
+    border-radius: 20px;
+    border-color: rgba(0, 0, 0, 0.281);
+    }
+    .card{
+      padding: 3%;
+      border-radius: 20px;
+    }
+    input,
+    button {
+      margin: 1%;
+    }
 
 
     @media only screen and (max-device-width: 700px) {
       .adduser{
-          margin-top: 300px;
+          margin-top: 250px;
+      }
+      .card{
+        margin-top: 200px;
       }
   }
 
 </style>
 
 <div class="container text-center adduser" id="info">
-  <div class="form">
-    <div class="card-header">
+  <div class="card">
+    <div class="header">
       <h1>Adicionar User</h1>
     </div>
     <form action="{% url 'adicionar_usuario' %}" method="POST">
