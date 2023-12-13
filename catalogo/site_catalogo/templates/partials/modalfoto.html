@@ -16,7 +16,7 @@
                     <img src="{{x.imagem_produto.url}}" alt="{{x.titulo_roupa}}" class="img-fluid" style="width: 100%; height: 100%;">
                     <div id="description">
                         <div class="card-actions">
-                            <div class="icon">&#9825; {{ x.likes }} Likes &#x1F5E8; {{ x.numero_comentarios }} Coments</div>
+                             <div class="icon">&#9825;{% if x.likes == 0 or x.likes == 1 %}{{ x.likes }} Like{% else %}{{ x.likes }} Likes{% endif %}&#x1F5E8;{% if x.numero_comentarios == 0 or x.numero_comentarios == 1 %}{{ x.numero_comentarios }} Coment{% else %}{{ x.numero_comentarios }} Coments{% endif %}</p></div>
                         </div>
                         <p><b>Descrição:</b>{{x.descricao_produto}}.</p>
                         <p><b>Composição:</b>{{x.composicao_produto}}.</p>
